@@ -1,0 +1,146 @@
+#+title: Introduction to Programming in Python
+#+startup: overview hideblocks inlineimages indent
+* General information
+
+This course is designed to provide students with a comprehensive
+introduction to programming in Python, covering fundamental concepts
+and practical applications of the language.
+
+- Course title: Introduction to Programming in Python
+- Course number and section: CSC 109.01
+- Meeting Times: Mon-Wed-Fri from 13:00-13:50 am
+- Meeting place: Batesville High school (room 647)
+- Professor: Marcus Birkenkrahe (birkenkrahe@lyon.edu)
+- Professor's Office: Lyon College, Derby Science Building 210
+- Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
+- Office hours: Mon/Wed 2-3pm, Tue 4-4.45pm, Thu 9.30-10:45am   
+- Textbook: Sweigart, Al (2020), Automate the Boring Stuff with Python
+  (2e), NoStarch Press. Online: [[https://automatetheboringstuff.com/2e/][automatetheboringstuff.com/2e/]]
+
+* Objectives
+
+Students will learn how to install Python and an IDE, and get started
+with basic data types, control flow statements, functions, files, and
+exceptions. They will also gain hands-on experience with more advanced
+topics such as object-oriented programming, modules and packages,
+testing and debugging, and data analysis and visualization.
+
+Throughout the course, students will have ample opportunity to
+practice their programming skills with a variety of exercises and
+projects using the Google Colaboratory and DataCamp platforms. They
+will also receive guidance and feedback from the instructor on their
+progress and final projects.
+
+By the end of the course, students should have a solid foundation in
+Python programming and be able to apply their skills to a wide range
+of projects, from game development to process automation, data
+analysis and visualization. This course is ideal for anyone with
+little or no programming experience who wants to learn Python or for
+those who have some experience in programming and want to learn more
+advanced concepts and practical applications.
+
+* Course requirements
+
+- Formal prerequisite MTH 101 (College Algebra)
+- No prior knowledge required
+- Curiosity is essential
+- Experience with computers is useful but not critical
+
+* Grading system
+
+You should be able to see your current grade at any time using the
+Canvas gradebook for the course.
+
+| WHEN    | DESCRIPTION                 | IMPACT |
+|---------+-----------------------------+--------|
+| Weekly  | DataCamp assignments        |    25% |
+| Monthly | Sprint review presentations |    25% |
+| Weekly  | Multiple-choice tests       |    25% |
+| TBD     | Final exam                  |    25% |
+
+Notes:
+- To pass: 60%
+- DataCamp assignments: there are 15 assignments spread out over 3
+  courses and two projects. Each assignment contributes 1.6667%
+  (25/15) to your final grade. Late assignments are counted as 60%
+  complete only.
+- Sprint review presentations: a customer-focused team effort
+  resulting in a project presentation, with 4 Scrum sprint reviews.
+- Tests: weekly online quizzes, which are previewed and reviewed in
+  class.
+- Final exam: selection of the most challenging weekly quiz questions.
+
+* Schedule
+
+| Week | Date          | Assignments                   | Project           |
+|------+---------------+-------------------------------+-------------------|
+|    1 | Aug 21-Aug 25 | Programming paradigms         |                   |
+|    2 | Aug 28-Sep 01 | Procedural programming        |                   |
+|    3 | Sep 04-Sep 08 | Functional programming        |                   |
+|    4 | Sep 11-Sep 15 | Object-oriented programming   | 1st sprint review |
+|    5 | Sep 18-Sep 22 | Python Basics                 |                   |
+|    6 | Sep 25-Sep 29 | Python Lists                  |                   |
+|    7 | Oct 02-Oct 06 | Functions/Packages            |                   |
+|    8 | Oct 09-Oct 13 | NumPy                         | 2nd sprint review |
+|    9 | Oct 16-Oct 20 | Matplotlib                    |                   |
+|   10 | Oct 23-Oct 27 | Dictionaries/Pandas           |                   |
+|   11 | Oct 30-Nov 03 | Logic,Control Flow, Filtering |                   |
+|   12 | Nov 06-Nov 10 | Loops                         | 3rd sprint review |
+|   13 | Nov 13-Nov 17 | Case Study: Hacker Statistics |                   |
+|   14 | Nov 20-Nov 24 | Intro to DataCamp Projects    |                   |
+|   15 | Nov 27-Dec 01 | EDA project (Netflix movies)  |                   |
+|   16 | Dec 04-Dec 08 | Final presentation            | 4th sprint review |
+
+- NO CLASSES: Aug 21, Oct 9 (Fall break), Nov 22 + 24
+  (Thanksgiving). See [[https://catalog.lyon.edu/202324-academic-calendar][2023-2024 academic calendar]]
+  (catalog.lyon.edu/202324-academic-calendar).
+- ONLINE CLASSES: Sept 15 + 22.
+
+* Learning management system
+
+- We use Lyon's Canvas installation for this course.
+- The course home page is at [[https://lyon.instructure.com/courses/1700][lyon.instructure.com/courses/1700]]
+- The home page contains: assignments, grades, pages, people,
+  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
+- The Zoom page includes cloud recordings of all past sessions.
+- Recorded sessions will be deleted after the last class.
+
+* DataCamp
+
+The course includes a free subscription to the DataCamp classroom at
+[[https://datacamp.com/][datacamp.com]] for further study, and for the opportunity to earn
+certificates for three courses. We will also use the DataCamp
+workspace environment for coding.
+
+* GitHub
+
+All course materials are available in a public GitHub repository
+([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students includes a
+free subscription to GitHub codespaces with the AI coding assistant
+Copilot. GitHub is the worldwide largest online platform for software
+development.
+
+* Textbooks
+
+This is a selection of text books and mixed media sources used to
+prepare this course, which was first offered in summer 2023. Planned
+to be offered again: fall 2023/2024 (Batesville High School), summer
+2024/2025.
+
+- Automate the Boring Stuff with Python (3e) by A Sweigart (NoStarch,
+  2023). [[https://automatetheboringstuff.com/][URL]]
+- Introduction to Programming in Python by D Malan (freeCodeCamp,
+  2023). [[https://www.freecodecamp.org/news/learn-python-from-harvard-university/][URL]]
+- Introduction to Data Science with Python by H Green-Lerman
+  (DataCamp, 2022)
+- Invent Your Own Computer Games With Python (4e) by A Sweigart
+  (NoStarch, 2023). [[https://inventwithpython.com/invent4thed/][URL]]
+- Learn to Code by Solving Prolbems by D Zingaro (NoStarch, 2021).
+- Python Crash Course (3e) by E Matthes (NoStarch, 2023).
+- Python Workout by R Lerner (Manning, 2020).
+- Whirlwind Tour of Python by J VanderPlas (O'Reilly, 2016). [[https://jakevdp.github.io/WhirlwindTourOfPython/][URL]]
+
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+
+Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+
