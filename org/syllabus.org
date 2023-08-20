@@ -115,7 +115,7 @@ workspace environment for coding.
 * GitHub
 
 All course materials are available in a public GitHub repository
-([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students includes a
+([[https://github.com/birkenkrahe/py109][github.com/birkenkrahe/py109]]). Registration for students includes a
 free subscription to GitHub codespaces with the AI coding assistant
 Copilot. GitHub is the worldwide largest online platform for software
 development.
