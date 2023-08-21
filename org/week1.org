@@ -127,17 +127,19 @@
 
 * Getting started
 
--  Can you log into your Lyon GMail account?
+- Can you log into your Lyon GMail account?
 
--  Can you see the GMail space "Python Chat"?
+- Can you see the GMail space "Python Chat"?
 
--  Did you get my GMail invitation to join datacamp.com?
+- Did you get my GMail invitation to join datacamp.com?
 
--  Can you see your assignments in DataCamp?
+- Can you see your assignments in DataCamp?
 
--  Can you log into lyon.instructure.com and see Canvas?
+- Can you log into lyon.instructure.com and see Canvas?
 
--  Can you see my GitHub repo in github.com/birkenkrahe/py109?
+- Can you add the Canvas calendar to your Google calendar?
+
+- Can you see my GitHub repo in github.com/birkenkrahe/py109?
 
 * Course overview
 Course and instructor overview information. The original version of
