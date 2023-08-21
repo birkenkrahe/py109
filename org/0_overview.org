@@ -2,7 +2,7 @@
 #+subtitle: CSC 109 Lyon College @ Batesville High
 #+startup: overview hideblocks indent inlineimages
 #+options: toc:1 num:1
-* Week 1:
+* Plan for week 1:
 
 1) Entry survey (take by tomorrow night)
 2) Getting started (infrastructure: GMail, DataCamp, Canvas, GitHub)
