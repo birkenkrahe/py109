@@ -4,11 +4,16 @@
 #+options: toc:1 num:1
 * Week 1:
 
-- Entry survey
-- Getting started (infrastructure: GMail, DataCamp, Canvas, GitHub)
-- DataCamp workspace practice
-- First DataCamp assignment
-- Mon/Wed/Fri class, Tue/Thu for assignments
+1) Entry survey (take by tomorrow night)
+2) Getting started (infrastructure: GMail, DataCamp, Canvas, GitHub)
+3) DataCamp workspace practice 
+4) First DataCamp assignment "Introduction to Programming Paradigms":
+   - complete by Sunday night
+   - review and first test on Monday
+   - test includes DataCamp assignment and last week's material
+5) Meetings:
+   - Mon/Wed/Fri in class
+   - Tue/Thu DIY for assignments
 
 * [[https://docs.google.com/forms/d/1y1Ha3Ytg7mhOf8R-HWd4Kf2mC2JArsvj-YDkrYsxZzw/edit][Entry survey]]
 
