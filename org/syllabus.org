@@ -59,10 +59,10 @@ Canvas gradebook for the course.
 | TBD     | Final exam                  |    25% |
 
 Notes:
-- To pass: 60%
+- To pass: 60% of all available points.
 - DataCamp assignments: there are 15 assignments spread out over 3
   courses and two projects. Each assignment contributes 1.6667%
-  (25/15) to your final grade. Late assignments are counted as 60%
+  (25/15) to your final grade. Late assignments are counted as 50%
   complete only.
 - Sprint review presentations: a customer-focused team effort
   resulting in a project presentation, with 4 Scrum sprint reviews.
