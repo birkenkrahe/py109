@@ -25,4 +25,20 @@
   engineering and now used much elsewhere ([[https://youtu.be/SWDhGSZNF9M][Scrum in 20 min - video]]).
 
   
+* 08/22/2023
+
+- Opened DataCamp workspace to a sample notebook at
+  [[NEXT ][tinyurl.com/WorkspaceDemoPython]].
+
+- Workspace has sample data, code along webinars. It runs on a virtual
+  Linux server (16GB RAM and 8 vCPUs).
+
+- Interactive notebooks are much easier to use than files because
+  documentation, code and output are all integrated already.
+
+- These are the steps that we save when using workspace: x1) Opening
+  Jupyter Lab launcher; 2) Opening a file editor for our first Python
+  file ("hello world"); 3) saving the file with the ending .py; 4)
+  opening a terminal and finding the file; 5) executing the file with
+  the ~python3~ command.
 
