@@ -30,6 +30,4 @@
 - What's a "cheat sheet"? Is that a bad thing?
 - What's a "portfolio" in this context?
 
-## Review of last session
-
 
