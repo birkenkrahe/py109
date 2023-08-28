@@ -64,6 +64,6 @@
 * Week preview
 
 - [ ] Complete DataCamp workspace demo online
-- [ ] Talk about the project/first sprint review 
+- [ ] Friday: talk about the project/first sprint review
 - [ ] Tuesday: complete the first test (max 30 min)
 - [ ] Tuesday/Thursday: complete the next DataCamp lesson (max 30 min)

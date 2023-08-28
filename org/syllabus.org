@@ -91,8 +91,8 @@ Notes:
 |   15 | Nov 27-Dec 01 | EDA project (Netflix movies)  |                   |
 |   16 | Dec 04-Dec 08 | Final presentation            | 4th sprint review |
 
-- NO CLASSES: Aug 21, Oct 9 (Fall break), Nov 22 + 24
-  (Thanksgiving). See [[https://catalog.lyon.edu/202324-academic-calendar][2023-2024 academic calendar]]
+- NO CLASSES: Aug 21, Sept 4 (Labor day), Oct 9 (Fall break), Nov 22 +
+  24 (Thanksgiving). See [[https://catalog.lyon.edu/202324-academic-calendar][2023-2024 academic calendar]]
   (catalog.lyon.edu/202324-academic-calendar).
 - ONLINE CLASSES: Sept 15 + 22.
 
