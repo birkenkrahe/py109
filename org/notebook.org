@@ -48,4 +48,22 @@
   code cells. Text cells can be edited, code cells can be run. The
   output appears below the code cell.
 
-  
+* Week review
+
+1. What are the graded course activities?
+2. What is a sprint review?
+3. Which tools are we using in this course?
+4. Is "Python code is indented" a programming paradigm?
+5. How many paradigms does Python support?
+6. Can you give an example of "modular code"?
+7. Which tools can you find in DataCamp workspace?
+8. Terminal / shell / Command line interface
+9. What are unicorn companies?
+10. ~pandas~ and ~pd.read_csv~
+
+* Week preview
+
+- [ ] Complete DataCamp workspace demo online
+- [ ] Talk about the project/first sprint review 
+- [ ] Tuesday: complete the first test (max 30 min)
+- [ ] Tuesday/Thursday: complete the next DataCamp lesson (max 30 min)
