@@ -67,3 +67,40 @@
 - [ ] Friday: talk about the project/first sprint review
 - [ ] Tuesday: complete the first test (max 30 min)
 - [ ] Tuesday/Thursday: complete the next DataCamp lesson (max 30 min)
+
+* Monday, 28-Aug
+
+- Testing the AI coding assistant.
+- Reading error messages (beginner: jump to the end).
+- Positional function arguments (function decides based on position
+  what it is).
+- To get help for the ~unique~ function in ~pandas~, use ~help(unique)~.
+- Syntax highlighting will help you distinguish (reserved) keywords.
+- When looking for help in the documentation, jump to the end to see
+  the examples.
+- If variables or functions aren't defined, you may have to run
+  previous cells again (see ~Run~ tab in workspace).
+- Extracting a data frame column with the index operator ~[]~,
+  e.g. ~df['Category']~ for the column named ~'Category'~ in ~df~.
+- To print items one per line (with a dummy variable), loop over the
+  values and ~print~ them one by one, or use a /list comprehension/.
+- Python can be written in a very condensed way ("one-liners").
+
+* Wednesday, 30-Aug
+
+- The dot operator allows you to access functions or attributes in
+  so-called classes (categories), e.g. ~pd.unique~ or
+  ~str.lower().title()~.
+- Python errors are named.
+- The ~[]~ operator is an index operator when it follows a structure
+  like a data frame, or the delimiter for the ~list~ data structure.
+- Grouping records by a values of a column using ~group_by~.
+- The 'not defined' error message may mean that some cells (with
+  definitions, e.g. to create a data frame) were not run.
+- Looking information up online.
+- Shared editing allows you to write code or text in other people's
+  notebooks.
+- Computing the ~size~ of a subset and sorting it.
+- Quick barplot plotting with ~plotly.express.bar~.
+- Checking a data type with ~type~.
+
