@@ -5,401 +5,416 @@
 #+PROPERTY: header-args:python :results output :exports both :session *Python*
 * Python Basics
 
-- Python is a rich high-level programming language (like C or R) with
-  many features. To master it takes a long time (5-10 years).
+To write handy little programs that automate 'boring' tasks, you only
+need some basics:
+1) expressions ~2 + 2~
+2) data types like ~integer~
+3) variables like ~spam~
+4) statements like ~spam = 1~
+5) debugging dealing with errors like ~NameError~
 
-- To write handy little programs that automate 'boring' tasks, you
-  only need some basics:
-  1) expressions 2 + 2
-  2) data types  integer
-  3) variables  spam
-  4) statements spam = 1
-  5) debugging dealing with errors
-
-- When I lecture, you should always keep Python open to code along:
-  1) Google Colab notebook
-  2) IDLE interactive shell
-  3) ~python~ on the command line
-  4) Console in replit.com or DataCamp workspace
-
-- The code is available as [[https://gist.github.com/birkenkrahe/445237c66cb015ca243c3c5fe40f9888][GitHub gist]] and in the ~ipynb~ directory.
+The code is available as [[https://gist.github.com/birkenkrahe/445237c66cb015ca243c3c5fe40f9888][GitHub gist]] and in the ~ipynb~ [[https://github.com/birkenkrahe/py109/tree/main/ipynb][in GitHub]].
 
 * Expressions: values and operators ([[https://gist.github.com/birkenkrahe/6fc1fca1e9021e0837175d41972bcb29][gist]])
 
-- Open an interactive Python shell. I have changed the default
-  settings in Colab to open with a "scratchpad" (not saved!).
+Enter the classic formula ~2 + 2~ at the prompt and press ~RET~ (Enter)
+to (hopefully) get the classic answer ~4~.
+#+begin_src python
+  print(2+2)
+#+end_src
 
-- Enter the classic formula ~2 + 2~ at the prompt and press ~RET~ (Enter)
-  to (hopefully) get the classic answer ~4~.
+#+RESULTS:
+: 4
 
-- In Colab, if you run your code with ~SHIFT + ENTER~, you get a new
-  code cell right away. If you us ~CTRL + ENTER~ you get nothing but now
-  you can add a text cell below with ~CTRL + ALT + t~
+~2 + 2~ is called an /expression/, a basic programming instruction.
 
-- ~2 + 2~ is called an /expression/, a basic programming instruction.
+An expression consist of /values/ (such as ~2~) in computer memory, and
+/operators/ (such as the binary operator ~+~), which are /functions/.
 
-- An expression consist of /values/ (such as ~2~) in computer memory, and
-  /operators/ (such as the binary operator ~+~), which are /functions/.
+Expressions can always /evaluate/ i.e. reduce to a single value - so
+you can e.g. use ~2+2~ anywhere instead of ~4~ because you know it's
+going to be reduced to ~4~.
 
-- Expressions can always /evaluate/ i.e. reduce to a single value - so
-  you can e.g. use ~2+2~ anywhere instead of ~4~ because you know it's
-  going to be reduced to ~4~.
+Examples:
+1) use ~2+2~ as the /argument/ of a ~print~ function.
+2) use ~2+2~ as the argument of a ~str~ function.
+3) look at the help for ~print~
+4) look at the help for ~str~
+#+begin_src python
+  print(2+2)
+  print(str(2+2))
+#+end_src
 
-- Examples:
-  1) use ~2+2~ as the /argument/ of a ~print~ function.
-  2) use ~2+2~ as the argument of a ~str~ function.
+#+RESULTS:
+: 4
+: 4
 
-- A single value like ~2~ is also an expression (it doesn't express
-  anything else but itself) and evaluates to itself.
+A single value like ~2~ is also an expression (it doesn't express
+anything else but itself) and evaluates to itself.
 
 * Error messages
 
-- When Python cannot evaluate an expression, it "throws" an
-  error. Here is [[http://inventwithpython.com/appendixd.html][list of common error messages]] in Python with a plain
-  English explanation (Sweigart, 2019).
+When Python cannot evaluate an expression, it "throws" an
+error. Here is [[http://inventwithpython.com/appendixd.html][list of common error messages]] in Python with a plain
+English explanation (Sweigart, 2019).
 
-- Let's create a couple of error messages using wrong expressions:
-  1) Enter ~2 +~
-  2) Enter ~2 + '2'~
-  3) Enter ~2~ and then on the next line enter ~2~ again in the 2nd column
-  4) Enter ~2 + ++ 2~ then change the first ~+~ to a ~-~
+Let's create a couple of error messages using wrong expressions:
+1) Enter ~2 +~
+2) Enter ~2 + '2'~
+3) Enter ~2~ and then on the next line enter ~2~ again
+4) Enter ~2~ then ~\~ and then on the next line ~2~ again
+5) Enter ~2 + ++ 2~ then change the first ~+~ to a ~-~
+#+begin_src python
+
+#+end_src
 
 * Operators
 
-- The table shows a lit of all math operators in Python. They are
-  listed from highest to lowest precedence:
-  #+attr_latex: :width 400px
-  [[../img/py_ops.png]]
+The table shows a list of all math operators in Python. They are
+listed from highest to lowest precedence:
 
-- The precedence is the order of operations: when Python gets an
-  expression with more than one operator, it evaluates from left to
-  right (you can force execution with parentheses).
+![img]("file")
 
-- For example, the expression ~-2+24/8~ is evaluated as ~1~ and not as
-  ~2.75~ because ~(24/8)=3~ and ~3-2=1~:
-  1) Enter ~-2 + 24 / 8~
-  2) Enter ~(-2 + 24) / 8~
+The precedence is the order of operations: when Python gets an
+expression with more than one operator, it evaluates from left to
+right (you can force execution with parentheses).
 
-- So-called "whitespace" (empty space) between symbols does not
-  matter, so ~24/8~ is evaluated identically to ~24 / 8~.
+For example, the expression ~-2+24/8~ is evaluated as ~1~ and not as ~2.75~
+because ~(24/8)=3~ and ~3-2=1~:
+1) Enter ~-2 + 24 / 8~
+2) Enter ~(-2 + 24) / 8~
+#+begin_src python
 
-- Enter the following expressions into the interactive shell:
-  #+begin_example python
-  2 + 3 * 6
-  (2 + 3) * 6
-  48565857 * 578453
-  2 ** 8
-  23 / 7
-  23 // 7
-  2      +     2
-  (5 - 1) * ((7 + 1 ) / (3 - 1))
-  #+end_example
+#+end_src
 
-- You should get this result:
-  #+attr_latex: :width 400px
-  #+caption: Expressions in the interactive Python shell (in Emacs)
-  [[../img/py_ops_example.png]]
+So-called "whitespace" (empty space) between symbols does not
+matter, so ~24/8~ is evaluated identically to ~24 / 8~.
 
-- The next diagram shows how Python ruthlessly evaluates parts of the
-  expression until it has reached a single value:
-  #+attr_latex: :width 250px
-  #+caption: Evaluation of composite expression to a single value
-  [[../img/py_ops_example1.png]]
+Enter the following expressions into the interactive shell:
+#+begin_example python
+2 + 3 * 6
+(2 + 3) * 6
+48565857 * 578453
+2 ** 8
+23 / 7
+23 // 7
+2      +     2
+(5 - 1) * ((7 + 1 ) / (3 - 1))
+#+end_example
+
+You can see the result in ~py_ops_example.png~.
+#+attr_latex: :width 400px
+#+caption: Expressions in the interactive Python shell (in Emacs)
+[[../img/py_ops_example.png]]
+
+This diagram shows how Python ruthlessly evaluates parts of the
+expression until it has reached a single value: ~py_ops_example1.png~.
+#+attr_latex: :width 250px
+#+caption: Evaluation of composite expression to a single value
+[[../img/py_ops_example1.png]]
 
 * Variables
 
-- A data type is a category for values: every value belongs to exactly
-  one data type.
+A data type is a category for values: every value belongs to exactly
+one data type.
 
-- Variables in Python do not need to be declared but they are
-  dynamically typed, i.e. at runtime.
+Variables in Python do not need to be declared but they are
+dynamically typed, i.e. at runtime.
 
-- Common data types are listed in this table:
-  #+attr_latex: :width 400px
-  #+caption: Common data types (Source: Sweigart, 2019)
-  [[../img/1_data_types.png]]
+Common data types are listed in this table: ~1_data_types.png~ - insert
+it here:
+#+attr_latex: :width 400px
+#+caption: Common data types (Source: Sweigart, 2019)
+[[../img/1_data_types.png]]
 
-- Python's names for these data types are: ~int~, ~float~ and ~str~.
+Python's names for these data types are:
+- ~int~ for integer numbers,
+- ~float~ for floating point numbers,
+- ~str~ for strings.
 
-- The ~type~ function reveals a value's or a variable's data type:
-  #+begin_example python
-    type(-2)
-    type(2)
-    type(1.25)
-    type('a')
-    type('name')
-    type(a)
-  #+end_example
+The ~type~ function reveals a value's or a variable's data type: check
+the type of ~-2~, ~2~, ~1.25~, ~'a'~, ~'name'~, ~a~.
+#+begin_example python
+  type(-2)
+  type(2)
+  type(1.25)
+  type('a')
+  type('name')
+  type(a)
+#+end_example
 
-- Why does ~type(a)~ give a "Name Error"? Because Python expects a
-  variable named ~a~.
+Why does ~type(a)~ give a "Name Error"? Answer: Because Python expects a
+variable named ~a~, which is not defined.
+
 * String concatenation and replication
 
-- The meaning of an operator may change based on the data types of its
-  operands.
+The meaning of an operator may change based on the data types of its
+operands.
 
-- Enter the following examples in separate code cells (otherwise you
-  only get the last result - or you have to add ~print~).
+Enter the following examples in separate code cells (otherwise you
+only get the last result - or you have to add ~print~). Create a new
+code cell after the current cell by typing ~b~.
 
-- Examples:
-  1) ~'Alice' + 'Bob'~
-  2) ~'Alice' + 42~
+Examples:
+1) ~'Alice' + 'Bob'~
+2) ~'Alice' + 42~
+#+begin_src python
+  print('Alice' + 'Bob')
+  print('Alice' + 42)
+#+end_src
 
-- Python can only concatenate numbers or strings. You have to
-  explicitly convert the 2nd argument to a string:
-  1) ~'Alice' + str(42)~
-  2) ~'Alice' + str(Bob)~
+#+RESULTS:
+: AliceBob
 
-- Unless ~Bob~ is initialized as an integer, this will not work:
-  1) ~Bob = 42~
-  2) ~'Alice' + str(Bob)~
+Python can only concatenate numbers or strings. You have to
+explicitly convert the 2nd argument to a string:
+1) ~'Alice' + str(42)~
+2) ~'Alice' + str(Bob)~
+#+begin_src python
 
-- The ~*~ operator can be used with one string and one integer value for
-  replication:
-  1) ~'Alice' * 'Bob'~
-  2) ~'Alice' * 5.0~
-  3) ~'Alice' * 5~
-  4) ~'Alice' * int(5.0)~
+#+end_src
+
+Unless ~Bob~ is initialized as an integer, this will not work:
+1) ~Bob = 42~
+2) ~'Alice' + str(Bob)~
+#+begin_src python
+
+#+end_src
+
+The ~*~ operator can be used with one string and one integer value for
+replication:
+1) ~'Alice' * 'Bob'~
+2) ~'Alice' * 5.0~
+3) ~'Alice' * 5~
+4) ~'Alice' * int(5.0)~
+#+begin_src python
+
+#+end_src
 
 * Assignments: storing values in variables
 
-- A /variable/ is like a box in the computer's memory where you can
-  store a single value.
+A /variable/ is like a box in the computer's memory where you can
+store a single value.
 
-- You store values in variables with an ~assignment statement~,
-  consisting of: a variable name, the ~=~ operator, and the value.
+You store values in variables with an ~assignment statement~,
+consisting of: a variable name, the ~=~ operator, and the value.
 
-- A variable is initialized or created the first time a value is
-  stored in it.
+A variable is initialized or created the first time a value is
+stored in it.
 
-- When a variable is assigned a new value, the old value is forgotten.
+When a variable is assigned a new value, the old value is forgotten.
 
-- For variables and flow control visualization, the site
-  ~pythontutor.com~ is particularly valuable.
-  #+attr_latex: :width 400px
-  #+caption: pythontutor.com home page
-  [[../img/py_pythontutor.png]]
+For variables and flow control visualization, the site
+~pythontutor.com~ is particularly valuable.
+#+attr_latex: :width 400px
+#+caption: pythontutor.com home page
+[[../img/py_pythontutor.png]]
 
+To visualize this, open ~pythontutor.com~ and enter this code:
+#+begin_example python
+  spam = 40
+  eggs = 2
+  spam + eggs
+  spam + eggs + spam
+  spam = spam + eggs
+  print(spam)
+#+end_example
 
-- To visualize this, open ~pythontutor.com~ and enter this code:
-  #+begin_example python
-    spam = 40
-    eggs = 2
-    spam + eggs
-    spam + eggs + spam
-    spam = spam + eggs
-    print(spam)
-  #+end_example
-
-- Similarly for strings:
-  #+begin_example python
-    spam = 'Hello'
-    print(spam)
-    spam = 'Goodbye'
-    print(spam)
-  #+end_example
+Similarly for strings:
+#+begin_example python
+  spam = 'Hello'
+  print(spam)
+  spam = 'Goodbye'
+  print(spam)
+#+end_example
 
 * Variable names
+
+Insert the table ~py_variable_names.png~ for example of valid and invalid
+variable names.
 #+attr_latex: :width 400px
 [[../img/py_variable_names.png]]
 
-- You can name a variable anything as long as it obeys these rules:
-  1. It can be only one word with no spaces
-  2. It can only use letters, numbers and the underscore character (~_~)
-  3. It can't begin with a number
+You can name a variable anything as long as it obeys these rules:
+1. It can be only one word with no spaces
+2. It can only use letters, numbers and the underscore character (~_~)
+3. It can't begin with a number
 
-- You should not use Python keywords, symbols, function or module
-  names as your variables (though you may be allowed to).
+You should not use Python keywords, symbols, function or module
+names as your variables (though you may be allowed to).
 
-- Variables in Python are case-sensitive.
+Variables in Python are case-sensitive.
 
-- Some people prefer camel-case for variable names instead of
-  underscores: ~helloWorld~ instead of ~hello_world~. Either is OK.
+Some people prefer camel-case for variable names instead of
+underscores: ~helloWorld~ instead of ~hello_world~. Either is OK.
 
 * Warming up: spooky season
 #+attr_latex: :width 400px
 #+caption: "spooky" by Tony Coates (flickr.com)
 [[../img/spooky.jpg]]
 
-- Problem: print "spooky" with 2 to 20 vowels ([[https://gist.github.com/birkenkrahe/3c4487280dbfaa10963be8a598a4ad53][solution]]).
+Problem: print "spooky" with 2 to 20 vowels ([[https://gist.github.com/birkenkrahe/3c4487280dbfaa10963be8a598a4ad53][solution]]).
 
-- *Let's do it together* - open a new Colab notebook ~spooky.ipynb~ for:
-  1. solution flow (from input to output)
-  2. variables (storing values)
-  3. functions and operators (doing stuff)
-  4. implementation (coding)
-  5. testing (debugging)
-  6. production (submission)
+*Let's do it together* - open a new notebook ~spooky.ipynb~ for:
+1. solution flow (from input to output)
+2. variables (storing values)
+3. functions and operators (doing stuff)
+4. implementation (coding)
+5. testing (debugging)
+6. production (submission)
 
 * Understanding standard data streams
 
-- We want to write a program that
-  1) Says 'Hello world!'
-  2) Asks for your name
-  3) Greets you with your name
-  4) Tells you how many characters your name has
-  5) Asks for your age
-  6) Tells you how old you're going to be in one year
+We want to write a program that
+1) Says 'Hello world!'
+2) Asks for your name
+3) Greets you with your name
+4) Tells you how many characters your name has
+5) Asks for your age
+6) Tells you how old you're going to be in one year
 
-- We're going to use this command sequence to learn a few functions
-  useful to get input from the keyboard and manipulate text.
+We're going to use this command sequence to learn a few functions
+useful to get input from the keyboard and manipulate text.
 
-- Check the ~help~ for ~input~ in the Python reference manual, or in
-  Colab, enter ~input?~ to get the /docstring/:
-  #+attr_latex: :width 400px
-  #+caption: Python help for keyboard input() function
-  [[../img/input.png]]
+Check the ~help~ for ~input~ in the Python reference manual, or in the
+notebook, enter ~?input~ to get the /docstring/ for the function.
+#+attr_latex: :width 400px
+#+caption: Python help for keyboard input() function
+[[../img/input.png]]
 
-- What does this mean?
-  1. ~input~ reads a string from the keyboard or from a file (/stdin/)
-  2. If ~input()~ is used, the default ~prompt~ is missing (~None~)
-  3. If a prompt is used, it is printed without newline (/stdout/)
-  4. If CTRL-D (End Of File) is hit, an ~EOFError~ is raised.
+What does this mean?
+1. ~input~ reads a string from the keyboard or from a file (/stdin/)
+2. If ~input()~ is used, the default ~prompt~ is missing (~None~)
+3. If a prompt is used, it is printed without newline (/stdout/)
+4. If CTRL-D (End Of File) is hit, an ~EOFError~ is raised.
 
-- Standard input, output and error are the three data streams:
-  #+attr_latex: :width 400px
-  #+caption: stdin, stdout, stderr for two shell commands
-  [[../img/streams.png]]
+Standard input, output and error are the three data streams:
+/[insert image ~streams.png~ here]/
+#+attr_latex: :width 400px
+#+caption: stdin, stdout, stderr for two shell commands
+[[../img/streams.png]]
 
-- Their standard direction is the screen but they can be redirected
-  anywhere, e.g. into files:
-  #+begin_src sh :results output
-    rm hello 2&>/dev/null
-    echo "Hello, world" > hello
-    cat hello
-  #+end_src
-
-  #+RESULTS:
-  : Hello, world
+Their standard direction is the screen but they can be redirected
+anywhere, e.g. into files:
+#+begin_example sh
+  rm hello 2&>/dev/null
+  echo "Hello, world" > hello
+  cat hello
+#+end_example
 
 * Getting input from the keyboard
 
-- Step 1: Ask for user's ~name~ and print out the number of characters
-  in the name:
-  #+name: step_1
-  #+begin_src python :tangle ../src/step1.py
-    print('hello world')
-    name = input('What is your name?' )
-    print('Good to meet you,' + name)
-    print('Your name has', len(name), 'characters')
-  #+end_src
+Step 1: Ask for user's ~name~ and print out the number of characters
+in the name:
+#+name: step_1
+#+begin_src python :tangle ../src/step1.py
+  print('hello world')
+  name = input('What is your name?' )
+  print('Good to meet you,' + name)
+  print('Your name has', len(name), 'characters')
+#+end_src
 
-- Why did we not use the ~+~ operator in the last line? Try it.
+Why did we not use the ~+~ operator in the last line? Try it.
 
-- Step 2: ask for user's age and print out age one year from now:
-  #+name: step_2
-  #+begin_src python :tangle ../src/step2.py
-    print('What is your age?')
-    age = input()
-    print('You are going to be ' + str(int(age) + 1) + ' years old')
-  #+end_src
+Step 2: ask for user's age and print out age one year from now:
+#+name: step_2
+#+begin_src python :tangle ../src/step2.py
+  print('What is your age?')
+  age = input()
+  print('You are going to be ' + str(int(age) + 1) + ' years old')
+#+end_src
 
 * Python script infrastructure
 
-- Not to forget about the Python script infrastructure:
-  1) You can save the Python code of your notebook as ~.py~ file
-  2) Open ~File > Download > Download as .py~
-  3) Look at the file (~""" ... """~ is a multi-line comment)
-  4) You can run the script on the terminal
+Not to forget about the Python script infrastructure:
+1) You can save the Python code of your notebook as ~.py~ file
+2) You can run the script on the terminal using Jupyter lab.
 
 * Getting keyboard input with a prompt
 
-- To save code, let's use the ability of ~input~ to display a ~prompt~ (as
-  shown in the docstring with ~input?~:
-  1) Put both programs in one code cell.
-  2) Use ~input~ to ask for the ~name~ and the ~age~.
-  3) Print greeting with ~name~, length of ~name~.
-  4) Print ~age~ next year.
-  5) Sample run (terminal):
-     #+attr_latex: :width 400px
-     #+caption: Testing input with prompt
-     [[../img/prompt.png]]
+To save code, let's use the ability of ~input~ to display a ~prompt~ (as
+shown in the docstring with ~?input~:
+1) Put both programs in one code cell.
+2) Use ~input~ to ask for the ~name~ and the ~age~.
+3) Print greeting with ~name~, length of ~name~.
+4) Print ~age~ next year.
+5) Sample run (terminal):
+   #+attr_latex: :width 400px
+   #+caption: Testing input with prompt
+   [[../img/prompt.png]]
 
-- Step 3: getting ~input~ with ~prompt~:
-  #+name: step_3
-  #+begin_src python :tangle ../src/prompt.py
-    print("Hello world!")
-    name = input("What is your name? ")
-    print("Good to meet you, " + name)
-    print("Your name has ", len(name), " characters")
-    age = input("What is your age? ")
-    print("You're going to be " + str(int(age) + 1) + " years old")
-  #+end_src
+#+begin_src python
+
+#+end_src
+
+Step 3: getting ~input~ with ~prompt~:
+#+name: step_3
+#+begin_src python :tangle ../src/prompt.py
+  print("Hello world!")
+  name = input("What is your name? ")
+  print("Good to meet you, " + name)
+  print("Your name has ", len(name), " characters")
+  age = input("What is your age? ")
+  print("You're going to be " + str(int(age) + 1) + " years old")
+#+end_src
 
 * Getting two input values at once
 
-- Step 4: getting two input values at once with ~split~:
-  #+name: step_4
-  #+begin_src python :tangle ../src/split.py
-    print("Hello world!")
-    input_data = input("Enter name and age separated by a space: ")
-    name, age = input_data.split()
-    print("Good to meet you, " + name)
-    print("Your name has ", len(name), " characters")
-    print("You're going to be " + str(int(age) + 1) + " years old")
-  #+end_src
+Step 4: getting two input values at once with ~split~:
+#+name: step_4
+#+begin_src python :tangle ../src/split.py
+  print("Hello world!")
+  input_data = input("Enter name and age separated by a space: ")
+  name, age = input_data.split()
+  print("Good to meet you, " + name)
+  print("Your name has ", len(name), " characters")
+  print("You're going to be " + str(int(age) + 1) + " years old")
+#+end_src
 
-- Check out the docstring of this new function with: ~split?~.
-  #+begin_quote
-  - ~split~ is a string method - outside of ~str~ it has no meaning.
-  - You have to look for ~str.split?~ to get the docstring.
-  - Notice that ~str.split()?~ or ~help(str.split())~ throw errors.
-  #+end_quote
+Check out the docstring of this new function with: ~split?~.
+#+begin_quote
+- ~split~ is a string method - outside of ~str~ it has no meaning.
+- You have to look for ~str.split?~ to get the docstring.
+- Notice that ~str.split()?~ or ~help(str.split())~ throw errors.
+#+end_quote
 
 * Function preview
 
-- Functions in your code are like mini programs. We called six
-  functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
-  1) ~print~ prints its arguments but can also evaluate:
-     #+begin_src python
-       print("Hi")
-       print(5 + 5)
-     #+end_src
-
-     #+RESULTS:
-     : Hi
-     : 10
-  2) ~input~ takes input from the keyboard or from the command line
-     (input stream ~stdin~) and either prints it or
-     lets you assign it to a variable (output stream ~stdout~):
-     #+begin_example python
-       input("What's your name? ") # prints and waits for input
-     #+end_example
-  3) ~len~ computes the length of its (string) argument and returns an
-     integer:
-     #+begin_src python
-       print(len("Birkenkrahe"))
-       var = 'Dampfschiffahrtsgesellschaftskapitän'
-       print(len(var))  # with the len() function
-       print(var.__len__())  # with the str.__len__ method
-     #+end_src
-
-     #+RESULTS:
-     : 11
-     : 37
-     : 37
-  4) ~str~ returns its value as a string:
-     #+begin_src python
-       print(str(1000) + " random numbers")
-       print(str('1000') + " random numbers")
-     #+end_src
-
-     #+RESULTS:
-     : 1000 random numbers
-     : 1000 random numbers
-  5) ~split~ returns a ~list~ of words that can be split up among
-     different variables:
-     #+begin_src python
-       name = "Marcus 2  Birkenkrahe"
-       print(name.split()) # default: split on whitespace, ignore ' '
-       first, last = name.split()  # split name in two parts
-       print(first,last)
-       print(first + last)
-     #+end_src
-
-     #+RESULTS:
-     : ['Marcus', '2', 'Birkenkrahe']
-
+Functions in your code are like mini programs. We called six
+functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
+1) ~print~ prints its arguments but can also evaluate:
+   #+begin_src python
+     print("Hi")
+     print(5 + 5)
+   #+end_src
+2) ~input~ takes input from the keyboard or from the command line
+   (input stream ~stdin~) and either prints it or
+   lets you assign it to a variable (output stream ~stdout~):
+   #+begin_example python
+     input("What's your name? ") # prints and waits for input
+   #+end_example
+3) ~len~ computes the length of its (string) argument and returns an
+   integer:
+   #+begin_src python
+     print(len("Birkenkrahe"))
+     var = 'Dampfschiffahrtsgesellschaftskapitän'
+     print(len(var))  # with the len() function
+     print(var.__len__())  # with the str.__len__ method
+   #+end_src
+4) ~str~ returns its value as a string:
+   #+begin_src python
+     print(str(1000) + " random numbers")
+     print(str('1000') + " random numbers")
+   #+end_src
+5) ~split~ returns a ~list~ of words that can be split up among
+   different variables:
+   #+begin_src python
+     name = "Marcus 2  Birkenkrahe"
+     print(name.split()) # default: split on whitespace, ignore ' '
+     first, last = name.split()  # split name in two parts
+     print(first,last)
+     print(first + last)
+   #+end_src
 * SOMEDAY A few open questions
 
 - What does the expression ~str(int(age) + 1)~ do?
@@ -468,7 +483,7 @@
     a, b = 'Marcus'.split()
     print(a,b)
   #+end_src
-  
+
 - Why?
   #+begin_src python :results output
     help(str.split)
@@ -508,7 +523,7 @@
     print(str.split('Marcus_Birkenkrahe','_'))
     print(str.split('Marcus_Birkenkrahe',sep='_'))
     print('Marcus_Birkenkrahe'.split(sep='_'))
-    print('Marcus_Birkenkrahe'.split('_'))    
+    print('Marcus_Birkenkrahe'.split('_'))
   #+end_src
 
   #+RESULTS:

@@ -106,3 +106,21 @@
 - Checking a data type with ~type~.
 
 * NEXT 2.3 Friday, 1-Sep
+
+** Review
+
+- What does the ~.~ operator do?
+- What does the ~[]~ operator do?
+- What could the error "not defined" mean when you work in a notebook
+  with multiple code cells?
+- What is the format of a Python error message?
+- How can you share the same workspace so that you can edit each
+  other's files?
+- What's a bar plot?
+- How can you check the type of data?
+
+** Python basics
+
+Practice file: https://tinyurl.com/BasicsPython
+
+
