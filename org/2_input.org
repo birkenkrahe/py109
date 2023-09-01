@@ -1,0 +1,328 @@
+#+TITLE: INPUT
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: CSC 109 - Introduction to programming in Python - Fall 2023
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY: header-args:python :results output :exports both :session *Python*
+* Understanding standard data streams
+
+We want to write a program that
+1) Says 'Hello world!'
+2) Asks for your name
+3) Greets you with your name
+4) Tells you how many characters your name has
+5) Asks for your age
+6) Tells you how old you're going to be in one year
+
+We're going to use this command sequence to learn a few functions
+useful to get input from the keyboard and manipulate text.
+
+Check the ~help~ for ~input~ in the Python reference manual, or in the
+notebook, enter ~?input~ to get the /docstring/ for the function.
+#+attr_latex: :width 400px
+#+caption: Python help for keyboard input() function
+[[../img/input.png]]
+
+What does this mean?
+1. ~input~ reads a string from the keyboard or from a file (/stdin/)
+2. If ~input()~ is used, the default ~prompt~ is missing (~None~)
+3. If a prompt is used, it is printed without newline (/stdout/)
+4. If CTRL-D (End Of File) is hit, an ~EOFError~ is raised.
+
+Standard input, output and error are the three data streams:
+/[insert image ~streams.png~ here]/
+#+attr_latex: :width 400px
+#+caption: stdin, stdout, stderr for two shell commands
+[[../img/streams.png]]
+
+Their standard direction is the screen but they can be redirected
+anywhere, e.g. into files:
+#+begin_example sh
+  rm hello 2&>/dev/null
+  echo "Hello, world" > hello
+  cat hello
+#+end_example
+
+* Getting input from the keyboard
+
+Step 1: Ask for user's ~name~ and print out the number of characters
+in the name:
+#+name: step_1
+#+begin_src python :tangle ../src/step1.py
+  print('hello world')
+  name = input('What is your name?' )
+  print('Good to meet you,' + name)
+  print('Your name has', len(name), 'characters')
+#+end_src
+
+Why did we not use the ~+~ operator in the last line? Try it.
+
+Step 2: ask for user's age and print out age one year from now:
+#+name: step_2
+#+begin_src python :tangle ../src/step2.py
+  print('What is your age?')
+  age = input()
+  print('You are going to be ' + str(int(age) + 1) + ' years old')
+#+end_src
+
+* Python script infrastructure
+
+Not to forget about the Python script infrastructure:
+1) You can save the Python code of your notebook as ~.py~ file
+2) You can run the script on the terminal using Jupyter lab.
+
+* Getting keyboard input with a prompt
+
+To save code, let's use the ability of ~input~ to display a ~prompt~ (as
+shown in the docstring with ~?input~:
+1) Put both programs in one code cell.
+2) Use ~input~ to ask for the ~name~ and the ~age~.
+3) Print greeting with ~name~, length of ~name~.
+4) Print ~age~ next year.
+5) Sample run (terminal):
+   #+attr_latex: :width 400px
+   #+caption: Testing input with prompt
+   [[../img/prompt.png]]
+
+#+begin_src python
+
+#+end_src
+
+Step 3: getting ~input~ with ~prompt~:
+#+name: step_3
+#+begin_src python :tangle ../src/prompt.py
+  print("Hello world!")
+  name = input("What is your name? ")
+  print("Good to meet you, " + name)
+  print("Your name has ", len(name), " characters")
+  age = input("What is your age? ")
+  print("You're going to be " + str(int(age) + 1) + " years old")
+#+end_src
+
+* Getting two input values at once
+
+Step 4: getting two input values at once with ~split~:
+#+name: step_4
+#+begin_src python :tangle ../src/split.py
+  print("Hello world!")
+  input_data = input("Enter name and age separated by a space: ")
+  name, age = input_data.split()
+  print("Good to meet you, " + name)
+  print("Your name has ", len(name), " characters")
+  print("You're going to be " + str(int(age) + 1) + " years old")
+#+end_src
+
+Check out the docstring of this new function with: ~split?~.
+#+begin_quote
+- ~split~ is a string method - outside of ~str~ it has no meaning.
+- You have to look for ~str.split?~ to get the docstring.
+- Notice that ~str.split()?~ or ~help(str.split())~ throw errors.
+#+end_quote
+
+* Function preview
+Functions in your code are like mini programs. We called six
+functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
+1) ~print~ prints its arguments but can also evaluate:
+   #+begin_src python
+     print("Hi")
+     print(5 + 5)
+   #+end_src
+2) ~input~ takes input from the keyboard or from the command line
+   (input stream ~stdin~) and either prints it or
+   lets you assign it to a variable (output stream ~stdout~):
+   #+begin_example python
+     input("What's your name? ") # prints and waits for input
+   #+end_example
+3) ~len~ computes the length of its (string) argument and returns an
+   integer:
+   #+begin_src python
+     print(len("Birkenkrahe"))
+     var = 'Dampfschiffahrtsgesellschaftskapitän'
+     print(len(var))  # with the len() function
+     print(var.__len__())  # with the str.__len__ method
+   #+end_src
+4) ~str~ returns its value as a string:
+   #+begin_src python
+     print(str(1000) + " random numbers")
+     print(str('1000') + " random numbers")
+   #+end_src
+5) ~split~ returns a ~list~ of words that can be split up among
+   different variables:
+   #+begin_src python
+     name = "Marcus 2  Birkenkrahe"
+     print(name.split()) # default: split on whitespace, ignore ' '
+     first, last = name.split()  # split name in two parts
+     print(first,last)
+     print(first + last)
+   #+end_src
+* SOMEDAY A few open questions
+
+- What does the expression ~str(int(age) + 1)~ do?
+  1) ~age~ is string ~input~
+  2) ~int(age)~ converts the string to a number - you cannot do that
+     with any character like "a": ~int("a")~ throws an error. To convert
+     characters to their Unicode standard, you need to use ~ord~:
+     #+begin_src python
+       print(int("25"))
+       print(ord("a"))
+       print(ord("A"))
+     #+end_src
+  3) ~int(age) + 1~ adds 1 to whatever number ~int(age)~ evaluates to:
+     #+begin_src python
+       age = "25"
+       print(age)
+       print(age + " years old")
+       print(int(age))
+       print(int(age)+1)
+     #+end_src
+
+     #+RESULTS:
+     : 25
+     : 25 years old
+     : 25
+     : 26
+  4) ~str(int(age) + 1)~ converts the result to a string:
+     #+begin_src python
+       age = "25"
+       print(age)
+       print(age + " years old")
+       print(int(age))
+       print(int(age)+1)
+       print(str(int(age)+1))
+       print(str(int(age)+1) + " years old")
+     #+end_src
+
+     #+RESULTS:
+     : 25
+     : 25 years old
+     : 25
+     : 26
+     : 26
+     : 26 years old
+
+- [[https://automatetheboringstuff.com/eval/3-4.html][Here is an HTML animation to illustrate these steps]] (Sweigart, 2023)
+
+- ~split(self, / , sep=None, maxsplit=-1)~ is a /string method/ with two
+  optional (defaulted) arguments - it returns list of words in the
+  string using ~sep~ as the delimiter, at most ~maxsplit~ splits are done:
+  elements (note the implicit arguments):
+  #+begin_src python
+    print('1,2,3'.split(','))  # default maxsplit = -1 means no limit
+    print('1,2,3'.split(',',0)) # don't split
+    print('1,2,3'.split(',',1)) # split once
+    print('1,2,3'.split(',',2)) # split twice
+    print('1,2,3'.split(',',3)) # split thrice - nothing more to do
+  #+end_src
+
+- The dot-operator ~.~ is an /accessor/: it allows you to access anything
+  that's stored inside an object, e.g. the /string/ class ~str~, or an
+  instance of that class, a particular string.
+
+- What happens when the string to be split does not have substrings?
+  #+begin_src python :results output
+    a, b = 'Marcus'.split()
+    print(a,b)
+  #+end_src
+
+- Why?
+  #+begin_src python :results output
+    help(str.split)
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  Help on method_descriptor:
+
+  split(self, /, sep=None, maxsplit=-1)
+      Return a list of the substrings in the string, using sep as the separator string.
+
+        sep
+          The separator used to split the string.
+
+          When set to None (the default value), will split on any whitespace
+          character (including \\n \\r \\t \\f and spaces) and will discard
+          empty strings from the result.
+        maxsplit
+          Maximum number of splits (starting from the left).
+          -1 (the default value) means no limit.
+
+      Note, str.split() is mainly useful for data that has been intentionally
+      delimited.  With natural text that includes punctuation, consider using
+      the regular expression module.
+  #+end_example
+
+- What does the ~/~ refer to in the ~str.split~ docstring:
+  #+begin_example
+    str.split(self, /, sep=None, maxsplit=-1)
+  #+end_example
+  The ~/~ is a /parameter separator/: it denotes the end of
+  positional-only parameters. After ~self~ (the string itself), the
+  parameters ~sep~ and ~maxsplit~ can be explicitly assigned:
+  #+begin_src python :results output
+    print(str.split('Marcus Birkenkrahe'))
+    print(str.split('Marcus_Birkenkrahe','_'))
+    print(str.split('Marcus_Birkenkrahe',sep='_'))
+    print('Marcus_Birkenkrahe'.split(sep='_'))
+    print('Marcus_Birkenkrahe'.split('_'))
+  #+end_src
+
+  #+RESULTS:
+  : ['Marcus', 'Birkenkrahe']
+  : ['Marcus', 'Birkenkrahe']
+  : ['Marcus', 'Birkenkrahe']
+  : ['Marcus', 'Birkenkrahe']
+  : ['Marcus', 'Birkenkrahe']
+
+* Summary
+
+- An instruction that evaluates to a single value is an
+  *expression*. An instruction that doesn't is a *statement*.
+- Data types are: integer (~int~), floating-point (~float~), string (~str~)
+- Strings hold text and begin and end with quotes: ~‘Hello world!'~
+- Strings can be concatenated (~+~) and replicated (~*~)
+- Values can be stored in variables: ~spam = 42~
+- Variables can be used anywhere where values can be used in
+  expressions: ~spam + 1~
+- Variable names: one word, letters, numbers (not at beginning),
+  underscore only
+- Comments begin with a # character and are ignored by Python; they
+  are notes & reminders for the programmer.
+- Functions are like mini-programs in your program.
+- The ~print~ function displays the value passed to it.
+- The ~input~ function lets users type in a value.
+- The ~len~ function takes a string value and returns an integer value
+  of the string's length.
+- The ~int~, ~str~, and ~float~ functions can be used to convert data.
+
+* Glossary
+
+| TERM/COMMAND    | MEANING                                       |
+|-----------------+-----------------------------------------------|
+| expression      | a basic programming instruction, like ~2+2~     |
+| values          | something stored in a computer memory cell    |
+| operator        | a function that takes values to evaluate them |
+| binary operator | an operator that takes 2 values as arguments  |
+| whitespace      | empty space between values or operators       |
+| indentation     | empty spaces at the beginning of a line       |
+| precedence      | order of operations                           |
+| Syntax error    | you've broken the grammatical Python rules    |
+| Type error      | you've made a mistake with data types         |
+| Concatenation   | adding strings with +                         |
+| Replication     | replicating strings with *                    |
+| Conversion      | changing data types                           |
+| Coercion        | implicit conversion of data types             |
+| File type       | used by the computer to identify a language   |
+| Data type       | used by the computer to reserve memory        |
+| ~print~           | printing function                             |
+| ~input~           | takes input from stdin (e.g. keyboard, file)  |
+| ~len~             | returns length of argument                    |
+| ~str.split~       | splits string into substrings                 |
+| ~str.strip~       | removes leading and trailing whitespace       |
+| ~int~, ~float~, ~str~ | data type conversion functions                |
+
+* References
+
+- pythontutor.com (2023). Visualize code execution.
+- Sweigart, A. (2016). Invent your own computer games with
+  Python. NoStarch. URL: [[http://inventwithpython.com/][inventwithpython.com]].
+- Sweigart, A. (2019). Automate the boring stuff with
+  Python. NoStarch. URL: [[http://automatetheboringstuff.com][automatetheboringstuff.com]].
