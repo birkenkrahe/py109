@@ -105,7 +105,7 @@
 - Quick barplot plotting with ~plotly.express.bar~.
 - Checking a data type with ~type~.
 
-* NEXT 2.3 Friday, 1-Sep
+* 2.3 Friday, 1-Sep
 
 ** Review
 
@@ -123,8 +123,14 @@
 
 Practice file: https://tinyurl.com/BasicsPython
 
+** TODO Summary
 
-* 3.1 Wednesday, 6-Sep
 
-** Review DataCamp lesson
-** Test 2
+
+* TODO 3.1 Wednesday, 6-Sep
+
+** TODO Review DataCamp lesson 2 - Procedural programming
+
+
+** TODO Complete test 2 on Thursday!
+
