@@ -132,5 +132,15 @@ Practice file: https://tinyurl.com/BasicsPython
 ** TODO Review DataCamp lesson 2 - Procedural programming
 
 
+*** Concepts
+
+*** Code
+
+*** Creativity
+
 ** TODO Complete test 2 on Thursday!
+
+** DataCamp lesson extended to Wednesday next week
+
+** Friday: projects / DataCamp prep
 
