@@ -1,6 +1,6 @@
 #+startup: overview inlineimages indent hideblocks
 #+options: toc:nil num:nil
-#+property: header-args:python :results output
+#+property: header-args:python :results output :session *Python*
 * README
 
 - Notes usually based on whiteboard screenshots ([[https://drive.google.com/drive/folders/1_UwbKsqmefLu97aVizfUE_qCYeg6IvHm?usp=sharing][GDrive]]).
@@ -129,18 +129,96 @@ Practice file: https://tinyurl.com/BasicsPython
 
 * TODO 3.1 Wednesday, 6-Sep
 
-** TODO Review DataCamp lesson 2 - Procedural programming
-
+** Review DataCamp lesson 2 - Procedural programming
 
 *** Concepts
 
+- What's a procedure?
+  #+begin_quote
+  A series of steps that can be referenced and reused.
+  #+end_quote
+- How are procedures implemented in Python?
+  #+begin_quote
+  As functions, e.g. ~def hello(): print("hello")~
+  #+end_quote
+- When is procedural programming used?
+  #+begin_quote
+  When a problem can be broken down into steps.
+  #+end_quote
+
 *** Code
+
+- Define two variables ~my_height~ and ~your_height~ and assign values to
+  them, e.g. 180 cm and 170 cm.
+  #+begin_src python
+    my_height = 180
+    your_height = 175
+  #+end_src
+- Make a list ~height_list~ that contains the heights of four people:
+  179 cm, 185 cm, 175 cm and 189 cm.
+
+  /Tip: ~[1,2,3]~ is a list of numbers./
+  #+begin_src python
+    height_list = [179,185,175,189]
+  #+end_src
+- Write a /conditional statement/ (with ~if~) that checks if ~my_height~ is
+  greater than ~your_height~. If it is, print ~I'm taller~.
+  #+begin_src python
+    if my_height > your_height:
+        print("I'm taller")
+  #+end_src
+- Write a loop (with ~for~) that loops over the variable ~height~ in
+  ~height_list~ and prints out the ~height~ for every element of
+  ~height_list~:
+  #+begin_src python
+    for heigth in height_list:
+        print(height)
+  #+end_src
+- Put the conditional inside the loop and if ~my_height~ is greater than
+  the ~height~ element of the list, then print ~I'm taller than~ and the
+  ~height~.
+  #+begin_src python
+    for height in height_list:
+        if my_height > height:
+            print("I'm taller", height)
+  #+end_src
 
 *** Creativity
 
+- Create a function ~hello~ that says "Hi, [yourname]":
+  #+begin_src python :results silent
+    def hello():
+        print("Hi, Marcus")
+  #+end_src
+
+- Call the function.
+  #+begin_src python
+    hello()
+  #+end_src  
+
+  #+RESULTS:
+  : Hi, Marcus
+
+- Modify the function and rename it to ~hello_name~: add ~name~ as an
+  argument, and print ~name~. Call the function with different names.
+  #+begin_src python
+    def hello(name):
+        print(name)
+
+    hello("Marcus")
+    hello("Jane")
+    hello("John")        
+  #+end_src
+
+  #+RESULTS:
+  : Marcus
+  : Jane
+  : John
+
+- Add a conditional
+
+- Add a loop
+
+** DataCamp lesson schedule changed!
 ** TODO Complete test 2 on Thursday!
-
-** DataCamp lesson extended to Wednesday next week
-
-** Friday: projects / DataCamp prep
-
+** Friday: we'll talk about projects
