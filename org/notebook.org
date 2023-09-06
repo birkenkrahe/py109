@@ -1,6 +1,6 @@
 #+startup: overview inlineimages indent hideblocks
 #+options: toc:nil num:nil
-#+property: header-args:python :results output :session *Python*
+#+property: header-args:python :results output 
 * README
 
 - Notes usually based on whiteboard screenshots ([[https://drive.google.com/drive/folders/1_UwbKsqmefLu97aVizfUE_qCYeg6IvHm?usp=sharing][GDrive]]).
@@ -123,14 +123,36 @@
 
 Practice file: https://tinyurl.com/BasicsPython
 
-** TODO Summary
+** Summary
 
-
-
-* TODO 3.1 Wednesday, 6-Sep
+- How to enter images and links in the notebook text cells.
+- Expressions are basic programming instructions for the computer.
+- The computer always tries to reduce it to the shortest form by
+  evaluating all operations.
+- Python has named error messages: ~NameError~, ~TypeError~, ~SyntaxError~,
+  ~ValueError~ and so forth.
+  1) ~SyntaxError~: using a reserved keyword as a variable name.
+     #+begin_src python :results silent
+       print(x = "2)
+     #+end_src
+  2) ~NameError~: a variable name is not defined.
+     #+begin_src python :results silent
+       print(x)
+     #+end_src
+  3) ~ValueError~:
+     #+begin_src python :results silent
+       int("a")
+     #+end_src
+  4) ~TypeError~: applying a function to the wrong object.
+     #+begin_src python :results silent
+       x = 1
+       x()
+     #+end_src
+- Python has data types: ~int~, ~float~ and ~str~. You can check them: ~type~
+  
+* 3.1 Wednesday, 6-Sep
 
 ** Review DataCamp lesson 2 - Procedural programming
-
 *** Concepts
 
 - What's a procedure?
@@ -194,7 +216,7 @@ Practice file: https://tinyurl.com/BasicsPython
 - Call the function.
   #+begin_src python
     hello()
-  #+end_src  
+  #+end_src
 
   #+RESULTS:
   : Hi, Marcus
@@ -202,12 +224,13 @@ Practice file: https://tinyurl.com/BasicsPython
 - Modify the function and rename it to ~hello_name~: add ~name~ as an
   argument, and print ~name~. Call the function with different names.
   #+begin_src python
-    def hello(name):
+    def hello_name(name):
         print(name)
+        return
 
-    hello("Marcus")
-    hello("Jane")
-    hello("John")        
+    hello_name("Marcus")
+    hello_name("Jane")
+    hello_name("John")
   #+end_src
 
   #+RESULTS:
@@ -215,10 +238,45 @@ Practice file: https://tinyurl.com/BasicsPython
   : Jane
   : John
 
-- Add a conditional
+- Add a conditional to the function and rename it to ~hello_if~: print
+  the name only if it begins with the letter ~'J'~.
+  #+begin_src python
+    def hello_if(name):
+        if name[0]=='J':
+            print(name)
+        return
 
-- Add a loop
+    hello_if("Marcus")
+    hello_if("Jane")
+    hello_if("John")    
+  #+end_src
 
-** DataCamp lesson schedule changed!
-** TODO Complete test 2 on Thursday!
-** Friday: we'll talk about projects
+  #+RESULTS:
+  : Jane
+  : John
+  
+- Add a loop to the function and rename it to ~hello_for~:
+  1) Change the argument to ~name_list~.
+  2) Loop over ~name_list~ and greet each name with "hello".
+  3) Outside the function, before calling it, define a list of names
+     ~name_list~ with the names "Saige","Lou","Ethan","Loren".
+  4) Call the function with the argument ~name_list~.
+  #+begin_src python
+    def hello_for(name_list):
+        for name in name_list:
+            print("Hello,", name)
+        return
+
+    name_list = ["Saige","Lou","Ethan","Loren"]
+    hello_for(name_list)
+  #+end_src
+
+  #+RESULTS:
+  : Hello, Saige
+  : Hello, Lou
+  : Hello, Ethan
+  : Hello, Loren
+
+** DataCamp lesson schedule changed! (Start with "Intro")
+** TODO Complete test 2 on Thursday! (To be published)
+** Friday: we'll talk about projects (Think about something)
