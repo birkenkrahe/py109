@@ -149,7 +149,7 @@ Practice file: https://tinyurl.com/BasicsPython
        x()
      #+end_src
 - Python has data types: ~int~, ~float~ and ~str~. You can check them: ~type~
-  
+
 * 3.1 Wednesday, 6-Sep
 
 ** Review DataCamp lesson 2 - Procedural programming
@@ -278,5 +278,5 @@ Practice file: https://tinyurl.com/BasicsPython
   : Hello, Loren
 
 ** DataCamp lesson schedule changed! (Start with "Intro")
-** TODO Complete test 2 on Thursday! (To be published)
+** Complete test 2 on Thursday! (To be published)
 ** Friday: we'll talk about projects (Think about something)
