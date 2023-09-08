@@ -280,3 +280,9 @@ Practice file: https://tinyurl.com/BasicsPython
 ** DataCamp lesson schedule changed! (Start with "Intro")
 ** Complete test 2 on Thursday! (To be published)
 ** Friday: we'll talk about projects (Think about something)
+
+* 3.2 Friday, 8-Sep
+
+** Any questions on test 2?
+** Finish reviewing DataCamp lesson 2 (procedures)
+
