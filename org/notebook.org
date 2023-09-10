@@ -283,6 +283,54 @@ Practice file: https://tinyurl.com/BasicsPython
 
 * 3.2 Friday, 8-Sep
 
-** Any questions on test 2?
+** Reviewing test 2
+
+- In the statement ~x = 1~,
+  1) ~x~ is an integer variable (naming conventions apply)
+  2) ~=~ is an assignment operator (assigns RHS to LHS)
+  3) ~1~ is a numeric value (integer or ~int~ data type)
+
+- In the statement ~name = "Joe"~,
+  1) ~name~ is a string variable
+  2) ~=~ is an assignment operator (assigns RHS to LHS)
+  3) ~"Marcus"~ is a string of six characters
+  4) Once assigned, ~name[0]~ is ~'J'~ etc.
+     #+begin_src python
+       name = 'Joe'
+       for i in name: print(i)
+     #+end_src
+
+     #+RESULTS:
+     : J
+     : o
+     : e
+
+- Logical operators result in Boolean values (~True~ or ~False~):
+  #+begin_src python
+    x = 1   # store 1 in x
+    print(x == 1)  # output: True because x = 1
+    print(x > 1)   # output: False because x is not greater than 1
+    print(x >= 1)  # output: True because x is greater or equal than 1
+    print(x != 1)  # output: False because x = 1
+  #+end_src
+
+- Question: can you assign all values EXCEPT 1 to a variable?
+  #+begin_quote
+  You can use unpacking to assign all values in a list to variables,
+  and you can use ~*~ to assign all values except some to a variable as
+  a list:
+  #+end_quote
+  #+begin_src python
+    numbers = [1,2,3,4,5]
+    first, *rest = numbers
+    print(first, rest)
+    print(numbers[1:-1])
+  #+end_src
+
+  #+RESULTS:
+  : 1 [2, 3, 4, 5]
+  : [2, 3, 4]
+
 ** Finish reviewing DataCamp lesson 2 (procedures)
 
+** Getting grades into "hack"?
