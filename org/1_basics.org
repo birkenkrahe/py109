@@ -156,11 +156,11 @@ only get the last result - or you have to add ~print~). Create a new
 code cell after the current cell by typing ~b~.
 
 Examples:
-1) ~'Alice' + 'Bob'~
-2) ~'Alice' + 42~
+1) 'Alice' + 'Bob'
+2) 'Alice' + 42
 #+begin_src python
   print('Alice' + 'Bob')
-  print('Alice' + 42)
+  print('Alice' + 42)  # generates a TypeError (+ needs string or number
 #+end_src
 
 #+RESULTS:
@@ -168,27 +168,39 @@ Examples:
 
 Python can only concatenate numbers or strings. You have to
 explicitly convert the 2nd argument to a string:
-1) ~'Alice' + str(42)~
-2) ~'Alice' + str(Bob)~
+1) 'Alice' + str(42)
+2) 'Alice' + str(Bob)
 #+begin_src python
-
+  print('Alice' + str(42))
+  print('Alice' + str(Bob))  # Bob is not defined: NameError
 #+end_src
+
+#+RESULTS:
+: Alice42
 
 Unless ~Bob~ is initialized as an integer, this will not work:
-1) ~Bob = 42~
-2) ~'Alice' + str(Bob)~
+1) Bob = 42
+2) 'Alice' + str(Bob)
 #+begin_src python
-
+  Bob = 42
+  print('Alice' + str(Bob))
 #+end_src
+
+#+RESULTS:
+: Alice42
 
 The ~*~ operator can be used with one string and one integer value for
 replication:
-1) ~'Alice' * 'Bob'~
-2) ~'Alice' * 5.0~
-3) ~'Alice' * 5~
-4) ~'Alice' * int(5.0)~
+1) 'Alice' * 'Bob'
+2) 'Alice' * 5.0
+3) 'Alice' * 5
+4) 'Alice' * int(5.0)
 #+begin_src python
-
+  Bob = 5
+  print('Alice' * 'Bob')  # TypeError
+  print('Alice' * 5.0)    # TypeError
+  print('Alice' * 5)
+  print('Alice' * int(5.0))
 #+end_src
 
 * Assignments: storing values in variables
