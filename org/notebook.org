@@ -348,5 +348,6 @@ Practice file: https://tinyurl.com/BasicsPython
 - Getting and processing input from the keyboard
 - Introduce programming assignments ([[https://lyon.instructure.com/courses/2006/assignments/15592][word count]] / [[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]])
 - Talk about projects ([[https://lyon.instructure.com/courses/2006/pages/project-idea-s][sign up sheet]])
-
+- Get started with Google Colaboratory (colab.research.google.com)
+- ~input()~ works in the Jupyter Lab notebook (via the ~View~ tab).
 
