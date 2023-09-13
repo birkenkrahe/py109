@@ -42,6 +42,8 @@ anywhere, e.g. into files:
   cat hello
 #+end_example
 
+You can try this in the terminal - do you remember how to get to it?
+
 * Getting input from the keyboard
 
 Step 1: Ask for user's ~name~ and print out the number of characters
@@ -154,7 +156,7 @@ functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
      print(first,last)
      print(first + last)
    #+end_src
-* SOMEDAY A few open questions
+* A few open questions
 
 - What does the expression ~str(int(age) + 1)~ do?
   1) ~age~ is string ~input~
@@ -274,18 +276,6 @@ functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
 
 * Summary
 
-- An instruction that evaluates to a single value is an
-  *expression*. An instruction that doesn't is a *statement*.
-- Data types are: integer (~int~), floating-point (~float~), string (~str~)
-- Strings hold text and begin and end with quotes: ~‘Hello world!'~
-- Strings can be concatenated (~+~) and replicated (~*~)
-- Values can be stored in variables: ~spam = 42~
-- Variables can be used anywhere where values can be used in
-  expressions: ~spam + 1~
-- Variable names: one word, letters, numbers (not at beginning),
-  underscore only
-- Comments begin with a # character and are ignored by Python; they
-  are notes & reminders for the programmer.
 - Functions are like mini-programs in your program.
 - The ~print~ function displays the value passed to it.
 - The ~input~ function lets users type in a value.
@@ -297,21 +287,6 @@ functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
 
 | TERM/COMMAND    | MEANING                                       |
 |-----------------+-----------------------------------------------|
-| expression      | a basic programming instruction, like ~2+2~     |
-| values          | something stored in a computer memory cell    |
-| operator        | a function that takes values to evaluate them |
-| binary operator | an operator that takes 2 values as arguments  |
-| whitespace      | empty space between values or operators       |
-| indentation     | empty spaces at the beginning of a line       |
-| precedence      | order of operations                           |
-| Syntax error    | you've broken the grammatical Python rules    |
-| Type error      | you've made a mistake with data types         |
-| Concatenation   | adding strings with +                         |
-| Replication     | replicating strings with *                    |
-| Conversion      | changing data types                           |
-| Coercion        | implicit conversion of data types             |
-| File type       | used by the computer to identify a language   |
-| Data type       | used by the computer to reserve memory        |
 | ~print~           | printing function                             |
 | ~input~           | takes input from stdin (e.g. keyboard, file)  |
 | ~len~             | returns length of argument                    |

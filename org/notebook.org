@@ -282,7 +282,6 @@ Practice file: https://tinyurl.com/BasicsPython
 ** Friday: we'll talk about projects (Think about something)
 
 * 3.2 Friday, 8-Sep
-
 ** Reviewing test 2
 
 - In the statement ~x = 1~,
@@ -333,4 +332,17 @@ Practice file: https://tinyurl.com/BasicsPython
 
 ** Finish reviewing DataCamp lesson 2 (procedures)
 
-** Getting grades into "hack"?
+** Getting grades into "hack"? (Answer)
+* 4.1 Monday, 11-Sep
+
+- Finished "Python Basics" (handout / [[https://app.datacamp.com/workspace/w/edc90964-9713-4674-a19e-441e2ff4eddb/edit][notebook]])
+- Learnt about naming conventions in Python
+- 
+- Wrote a short program ~spooky.py~ as a notebook
+
+* 4.2 Wednesday, 13-Sep
+
+- NO CLASS ON FRIDAY: WORK ON PROJECTS/ASSIGNMENTS INSTEAD
+- How to get "dark mode" for DataCamp workspace
+- Review of DataCamp chapter "Introduction to Python: Python Basics"
+  
