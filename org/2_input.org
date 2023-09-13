@@ -37,17 +37,20 @@ Standard input, output and error are the three data streams:
 Their standard direction is the screen but they can be redirected
 anywhere, e.g. into files:
 #+begin_example sh
-  rm hello 2&>/dev/null
-  echo "Hello, world" > hello
-  cat hello
+  touch hello  # create empty file 'hello'
+  ls -l   # list all files in long format
+  rm hello 2&>/dev/null  # send 'hello' to the black hole
+  ls -l
+  echo "Hello, world" > hello  # put string into new file 'hello'
+  cat hello  # view 'hello'
 #+end_example
 
 You can try this in the terminal - do you remember how to get to it?
 
 * Getting input from the keyboard
 
-Step 1: Ask for user's ~name~ and print out the number of characters
-in the name:
+Step 1: Ask for user's ~name~ and print out the number of characters in
+the name.
 #+name: step_1
 #+begin_src python :tangle ../src/step1.py
   print('hello world')
@@ -56,7 +59,12 @@ in the name:
   print('Your name has', len(name), 'characters')
 #+end_src
 
-Why did we not use the ~+~ operator in the last line? Try it.
+Why did we not use the ~+~ operator in the last line? Try using it to
+put the strings together ('concatenate'):
+#+begin_src python
+  name_length = 12
+  print('Your name has' + str(name_length) + 'characters')
+#+end_src
 
 Step 2: ask for user's age and print out age one year from now:
 #+name: step_2
