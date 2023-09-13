@@ -335,9 +335,9 @@ Practice file: https://tinyurl.com/BasicsPython
 ** Getting grades into "hack"? (Answer)
 * 4.1 Monday, 11-Sep
 
-- Finished "Python Basics" (handout / [[https://app.datacamp.com/workspace/w/edc90964-9713-4674-a19e-441e2ff4eddb/edit][notebook]])
+- Finished "Python Basics" ([[https://github.com/birkenkrahe/py109/blob/main/pdf/1_basics.pdf][handout]] / [[https://app.datacamp.com/workspace/w/edc90964-9713-4674-a19e-441e2ff4eddb/edit][notebook]])
 - Learnt about naming conventions in Python
-- 
+- Learnt about string concatenation and replication
 - Wrote a short program ~spooky.py~ as a notebook
 
 * 4.2 Wednesday, 13-Sep
@@ -345,4 +345,8 @@ Practice file: https://tinyurl.com/BasicsPython
 - NO CLASS ON FRIDAY: WORK ON PROJECTS/ASSIGNMENTS INSTEAD
 - How to get "dark mode" for DataCamp workspace
 - Review of DataCamp chapter "Introduction to Python: Python Basics"
-  
+- Getting and processing input from the keyboard
+- Introduce programming assignments ([[https://lyon.instructure.com/courses/2006/assignments/15592][word count]] / [[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]])
+- Talk about projects ([[https://lyon.instructure.com/courses/2006/pages/project-idea-s][sign up sheet]])
+
+
