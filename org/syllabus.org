@@ -51,12 +51,12 @@ advanced concepts and practical applications.
 You should be able to see your current grade at any time using the
 Canvas gradebook for the course.
 
-| WHEN    | DESCRIPTION                 | IMPACT |
-|---------+-----------------------------+--------|
-| Weekly  | DataCamp assignments        |    25% |
-| Monthly | Sprint review presentations |    25% |
-| Weekly  | Multiple-choice tests       |    25% |
-| TBD     | Final exam                  |    25% |
+| WHEN    | DESCRIPTION                      | IMPACT |
+|---------+----------------------------------+--------|
+| Weekly  | DataCamp/programming assignments |    25% |
+| Monthly | Sprint review presentations      |    25% |
+| Weekly  | Multiple-choice tests            |    25% |
+| TBD     | Final exam                       |    25% |
 
 Notes:
 - To pass: 60% of all available points.
