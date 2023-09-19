@@ -1,0 +1,497 @@
+#+TITLE:PYTHON BASICS - FLOW CONTROL
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: CSC 109 - Introduction to programming in Python - Fall 2023
+#+STARTUP: overview hideblocks indent inlineimages entitiespretty
+#+PROPERTY: header-args:python :results output :exports both :session *Python*
+* README
+#+attr_latex: :width 400px
+#+caption: Roman Guy, Against the Flow (Flickr.com)
+[[../img/flow.jpg]] 
+
+An interactive notebook is available [[https://gist.github.com/birkenkrahe/9f152c84c3928ef02086a48af0c8b90e][on GitHub as a gist]].
+
+* Introduction
+#+attr_latex: :width 400px
+#+caption: Flowchart template from app.creately.com
+[[../img/py_flowchart.png]]
+
+- A program is just a serious of instructions for the computer but the
+  real power of computing comes from making decisions.
+
+- Three common visualization methods are common:
+  1) No: Flow charts (easy but not standardized, hard to read)
+  2) Yes: BPMN (standard, widely used for decision modeling)
+  3) No: UML (standard, limited to IT folk, harder to learn)
+  
+- Based on how /expressions/ evaluate, the program can decide to
+  1) *skip* instructions
+  2) *repeat* instructions
+  3) *choose* one of several instructions
+
+- /Flow control statements/ decide what to do under which conditions.
+
+* Visualizing flow with BPMN
+
+- Processes can be visualized in a flowchart (or in a BPMN diagram as
+  shown below[fn:1]), with:
+  1) events or statuses (start/end)
+  2) gateways or decision points (exclusive/parallel)
+  3) tasks (action like "go outside", "wait a while")
+  4) sequence flow (directed lines)
+  #+attr_latex: :width 400px
+  #+caption: BPMN diagram to decide if to use ChatGPT or not
+  [[../img/py_chatbot_1.png]]
+
+- When there are more process participants, additional elements are
+  useful:
+  1) pools and lanes (participants like user/chatbot)
+  2) message events (sending/receiving stuff)
+  3) message flow (directed lines between pools)
+  #+attr_latex: :width 400px
+  #+caption: BPMN diagram modeling interaction with chatbot
+  [[../img/py_chatbot_2.png]]
+
+- This type of visualization is a /modeling/ activity[fn:2]:
+  syntactically correct BPMN diagrams can even be used to
+  automatically create code[fn:3].
+
+- You can see the full language model in this cheat sheet (bpmb.de):
+  #+attr_latex: :width 400px
+  [[../img/2_bpmn_cheat_sheet.png]]
+  
+- What are advantages of such models? What are disadvantages?
+  #+begin_quote
+  1. Advantages: simulate changes visually without changing code;
+     highlight structure by eliminating detail. Identify and check
+     process elements. Apply aesthetic criteria. Mathematical.
+  2. Disadvantages: dissociated from code; specifics are missing;
+     subjective selection of elements; static (however: see process
+     mining).
+  #+end_quote
+
+- Python is considered to be so simple as to amount to 'pseudocode'
+  (no syntax knowledge necessary) - really?[fn:4]
+  #+attr_latex: :width 400px
+  [[../img/2_complex.png]]
+  
+- To control process flow with Python code, we need a way to check if
+  an event has happened or not, and a way to compare events.
+
+- Mathematically, this means that we need:
+  1) Boolean values (~True~ and ~False~)
+  2) Comparison operators (to compare anything)
+  3) Boolean operators (to compare Boolean values)
+
+* Exercise: BPMN model
+
+1) Model our first Python program as a BPMN model using ~bpmn.io~:
+   #+attr_latex: :width 300px
+   [[../img/bpmn1.png]]  [[../img/bpmn2.png]]
+   
+2) Start with a pool and name it ~Computer~.
+3) Add suitable events and tasks connected by sequence flow.
+4) Take a screenshot. It should look [[https://github.com/birkenkrahe/admin/blob/main/RoamNotes/img/py_first.png][like this]].
+5) Add another pool and name it ~User~.
+6) Connect the two pools with suitable (message) flow.
+7) Take another screenshot. It should look [[https://github.com/birkenkrahe/admin/blob/main/RoamNotes/img/py_first_user.png][like this]].
+8) Save your diagram as ~.bpmn~ and as ~.svg~ files.
+9) Add your ~.svg~ diagram in a titled Colab text cell:
+10) Upload your diagram to a drive and link to it in the text cell.
+
+#+attr_latex: :width 400px
+[[../img/2_colab_diagram.png]]
+
+Note: BPMN process diagram elements can be /overloaded/, i.e. given meta
+information, such as 'tasks accepts input' or 'task sends output' (see
+overloaded diagrams [[https://github.com/birkenkrahe/admin/blob/main/RoamNotes/img/py_first_overloaded.png][here]] and [[https://github.com/birkenkrahe/admin/blob/main/RoamNotes/img/py_first_user_overloaded.png][here]]). [[https://camunda.com/bpmn/reference/][More about BPMN from camunda.com.]]
+
+* Boolean values
+
+- The Boolean[fn:5] data type only has the values ~True~ and ~False~ and
+  must be written in exactly this way. Try this on a Python shell:
+  #+begin_example python :
+    ham = TRUE
+    ham = True
+    ham
+    spam = False
+    spam
+    true
+    True = 2 + 2  
+  #+end_example
+  
+- Boolean values are used in expressions and can be stored in
+  variables of type Boolean:
+  #+begin_src python :results output
+    print(type(True))
+  #+end_src
+
+* Comparison operators
+
+- Comparison operators are binary operators (they have a left and a
+  right hand argument) and evaluate down to a single Boolean value:
+  #+attr_latex: :width 400px
+  #+caption: Comparison operators (Source: Sweigart, 2020).
+  [[../img/py_comparison.png]]
+
+- Let's try this in the shell - when you type each command, think
+  about what the answer might be before you type ENTER:
+  #+begin_example python
+    42 == 42
+    42 == 'Hello'
+    42 == 41
+    2 != 1
+    42 < 100
+    42 >= 100
+    42 < 42
+    42 <= 42
+    0 == 1e-350
+    0 == 1e-300
+  #+end_example
+
+- With variables: comparisons are expressions and evaluate to a single
+  (Boolean) value no matter what:
+  #+begin_example python
+    myAge = 59  # a statement
+    myAge < 60  # an expression
+  #+end_example
+
+- Integers and strings are never equal to one another:
+  #+begin_src python
+    print(42 == '42')
+  #+end_src
+
+- How can you get ~42 == '42'~ to evaluate to ~True~?
+  #+begin_src python
+    print(str(42) == '42')
+    print(42 == int('42'))
+  #+end_src
+
+- Float and integer values can be equal to one another:
+  #+begin_src python
+    print(42.0 == 42)
+  #+end_src
+
+- However, the ~<~, ~>~, ~<=~, and ~>=~ operators only work properly with
+  integer and floating-point values on either side:
+  #+begin_src python
+    print(42.0 < 42)
+    print(42.0 > 42)
+  #+end_src
+
+  #+RESULTS:
+  : False
+  : False
+  : True
+
+* Boolean operators
+
+- The ~and~ and ~or~ operators are /binary/ (they take two values) like
+  arithmetic operators, while the ~non~ operator is /unary/.
+
+- Test the ~and~ operator and the ~or~ operator in a Python shell.
+  #+attr_latex: :width 400px
+  #+caption: Table with Boolean operators (Source: Sweigart, 2020).
+  [[../img/py_or.png]]
+
+- The ~and~ operator only leads to ~True~ if both values are ~True~, while
+  the ~or~ operator only leads to ~False~ if both values are ~False~.
+
+- The ~not~ operator evaluates to the opposite Boolean value:
+  #+attr_latex: :width 400px
+  #+caption: Table with Boolean operators (Source: Sweigart, 2020).
+  [[../img/py_not.png]]
+
+- In code:
+  #+begin_src python
+    print(not True)
+    print(not False)
+  #+end_src
+
+  #+RESULTS:
+  : False
+  : True
+
+- The Boolean ~not~, ~and~, ~or~ operators have the lowest precedence of all
+  operators - what'll the output be of these expressions?
+  #+begin_src python
+    print(not True == False)    
+    print(not True == False + 1) 
+    print((not True == False) + 1)
+  #+end_src
+
+- What will the output be of this expression?[fn:6]
+  #+begin_src python
+    print(True == not True)
+  #+end_src
+
+- *Exercise:* Open a Colab notebook and check if De Morgan's laws are
+  implemented in Python:
+  #+attr_latex: :width 400px
+  #+caption: De Morgan's laws (Wikipedia).
+  [[../img/py_de_morgan.png]]
+
+- ~Bonus:~ in a text cell, include the logic formula in $LaTeX$
+  ([[https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols][here is a list of mathematical LaTeX symbols]]):
+  1) ~not~ is $\neg$
+  2) ~and~ is $\land$
+  3) ~or~ is $\lor$
+  4) ~==~ is $\Longleftrightarrow$
+
+- Remember that you can copy and paste whole text and code cells!
+
+- Solution in Python code:
+  #+begin_src python
+    # NOT (P OR Q) <=> NOT(P) AND NOT(Q)
+    print(not(True or True) == (not True and not True))
+    print(not(True or False) == (not True and not False))
+    print(not(False or True) == (not False and not True))
+    print(not(False or False) == (not False and not False))
+    # NOT (P AND Q) <=> NOT(P) OR NOT(Q)
+    print(not(True and True) == (not True or not True))
+    print(not(True and False) == (not True or not False))
+    print(not(False and True) == (not False or not True))
+    print(not(False and False) == (not False or not False))
+  #+end_src
+
+- *[[https://lyon.instructure.com/courses/1700/assignments/14732][Bonus exercise (home):]]* Instead of printing ~True~ after each
+  statement, show that De Morgan's laws hold, but this time:
+  1) print only the number of ~True~ statements at the end.
+  2) print the final statement using string concatenation
+  3) print the final statement using an 'f-string'
+
+- Demonstration of the f-string (formatted print):
+  #+begin_src python
+    whoami = 'Marcus Birkenkrahe'
+    print(whoami)  # plain string print
+    print('My name is', whoami) # plain string print w/text 
+    print('My name is ' + whoami) # concatenated string
+    print(f'My name is {whoami}') # f-string printing
+  #+end_src
+
+  #+RESULTS:
+  : Marcus Birkenkrahe
+  : My name is Marcus Birkenkrahe
+  : My name is Marcus Birkenkrahe
+  : My name is Marcus Birkenkrahe
+
+- The /exclusive/ gateway that you saw in the BPMN diagram earlier, is
+  the result of a composite Boolean operation. It is only ~True~ if
+  either of the two values are ~True~, and ~False~ otherwise.
+
+- This combination of Boolean operators does that \forall Booleans p, q:
+  #+attr_latex: :width 400px
+  #+caption: Exclusive OR operation (Wikipedia)
+  [[../img/py_xor.png]]
+
+- You can test if this is implemented in Python as before:
+  #+begin_src python
+    print((True or True) and (not True or not True))  # A = B = True
+    print((True or False) and (not True or not False)) # A=True, B=False
+    print((False or True) and (not False or not True)) # A=False, B=True
+    print((False or False) and (not False or not False)) # A = B = False
+  #+end_src
+
+  #+RESULTS:
+  : False
+  : True
+  : True
+  : False
+
+- Fortunately, Python has an bit-wise XOR ('exclusive ~or~) operator[fn:7]:
+  #+begin_src python
+    print(True ^ True)
+    print(True ^ False)
+    print(False ^ True)
+    print(False ^ False)
+  #+end_src
+
+* Compound logical operators
+
+- Comparison and Boolean operators can be mixed to establish more
+  complicated logical dependencies.
+  #+begin_src python
+    print(4 < 5 and 5 < 6)
+    print(4 < 5 and 9 < 6)
+    print(1 == 2 or 2 == 2)
+  #+end_src
+
+- Here is the evaluation process of the computer:
+  #+attr_latex: :width 150px
+  [[../img/py_compound.png]]
+
+- What will the output be? What's the order or precedence?
+  #+begin_src python
+    result = 5 < 10 and 2 + 2 == 4 or not (3 >= 5)
+    print(result)
+  #+end_src  
+
+  #+RESULTS:
+  : True
+
+- Order or evaluation:
+  #+begin_example python
+    2 + 2  # 4 (True)
+    5 < 10 # True
+    3 >= 5 # False
+    4 == 4 # True
+    not False  # True
+    True and True # True
+    True or True # True
+  #+end_example
+  
+- Compound logical expressions are common in database queries to
+  filter records that satisfy several conditions for different
+  features - here is an SQLite example:
+  #+begin_src sqlite
+    -- .databases -- check database
+    -- CREATE TABLE people -- create table
+    --        (f_name TEXT, l_name TEXT,
+    --         century text, phy INTEGER, eng INTEGER);
+    -- .tables -- check tables
+    -- INSERT INTO people VALUES ("Albert","Einstein","19",TRUE,FALSE);
+    -- INSERT INTO people VALUES ("Elon","Musk","20",FALSE,TRUE);
+    -- INSERT INTO people VALUES ("Nikola","Tesla","19",TRUE,TRUE);
+    -- ------------------------------------------------------------
+    .mode box
+    SELECT * FROM people; -- return only people born in the 19th century
+    -- who were both physicists and engineers:
+    SELECT * FROM people WHERE born=="19" AND eng==TRUE AND phy==TRUE;
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  ┌────────┬──────────┬──────┬─────┬─────┐
+  │ f_name │  l_name  │ born │ phy │ eng │
+  ├────────┼──────────┼──────┼─────┼─────┤
+  │ Albert │ Einstein │ 19   │ 1   │ 0   │
+  │ Elon   │ Musk     │ 20   │ 0   │ 1   │
+  │ Nikola │ Tesla    │ 19   │ 1   │ 1   │
+  └────────┴──────────┴──────┴─────┴─────┘
+  ┌────────┬────────┬──────┬─────┬─────┐
+  │ f_name │ l_name │ born │ phy │ eng │
+  ├────────┼────────┼──────┼─────┼─────┤
+  │ Nikola │ Tesla  │ 19   │ 1   │ 1   │
+  └────────┴────────┴──────┴─────┴─────┘
+  #+end_example
+
+  #+attr_latex: :width 400px
+  #+caption: Nikola Tesla (1856-1943)
+  [[../img/py_tesla.jpg]]
+
+- For example, to test if someone's age is both greater than 20 and if
+  he owns a cat:
+  #+begin_src python
+    age = 22
+    pet = 'cat'
+    print(age > 20 and pet == 'cat')
+  #+end_src
+
+  #+RESULTS:
+  : True
+
+- Exercise! Let's say Joe is 20 and Jane is 24 years old, Joe has a
+  dog, and Jane has a cat:
+  1) Establish suitable variables for Joe and Jane
+  2) Assign the correct values to these variables
+  3) Assign ALL of these values on ONE line only
+  #+begin_src python :results silent
+    # Assign age and pet for Joe and Jane
+    age_joe, pet_joe, age_jane, pet_jane = 20, 'dog', 24, 'cat'
+  #+end_src
+
+- Using these variables and their values, check:
+  1) Does Jane have a dog?
+  2) Is Joe younger or as old as Jane?
+  3) Is Jane as old as Joe, and do they have different pets?
+  4) Is Jane older than Joe, or is Jane's pet a dog?
+  #+begin_src python :results output
+    # Does Jane have a dog?
+    print(pet_jane == 'dog')
+    # Is Joe younger or as old as Jane?
+    print(age_joe <= age_jane)
+    # Is Jane as old as Joe, and do they have different pets?
+    print(age_jane == age_joe and pet_jane != pet_joe)
+    # Is Jane older than Joe, or is Jane's pet a dog?
+    print(age_jane >= age_joe or pet_jane == 'dog')
+  #+end_src
+
+  #+RESULTS:
+  : False
+  : True
+  : False
+  : True
+
+- Lastly, check if: 4 is 2+2 and 2*2, and 2+2 is not 5:
+  #+begin_src python
+    print(2 + 2 == 4 and 2 * 2 == 4 and not 2 + 2 == 5)
+    print(2 + 2 == 4 and 2 * 2 == 4 and 2 + 2 != 5)
+  #+end_src
+
+  #+RESULTS:
+  : True
+  : True
+
+- Alternative with the ~assert~ statement to debug: the string "x is not
+  1" is printed to the screen if an ~AssertionError~ is raised.
+  #+begin_src python :results none
+    x = 2
+    assert x == 1, "x is not 1"
+  #+end_src
+
+* Summary
+
+- The Boolean data type has only two values: ~True~ and ~False~ (both
+  beginning with capital letters).
+
+- Comparison operators compare two values and evaluate to a Boolean
+  value: ~==~, ~!=~, ~<~, ~>~, ~<=~, ~>=~
+
+- ~==~ is a comparison operator, while ~=~ is the assignment operator for
+  variables.
+
+- Boolean operators (~and~, ~or~, ~not~) also evaluate to Boolean values.
+
+* Glossary
+#+attr_latex: :width 400px
+#+caption: Glossary of commands for flow control
+[[../img/2_glossary.png]]
+
+* References
+
+- IBM (2023). BPEL process. URL: [[https://www.ibm.com/docs/en/baw/22.x?topic=types-bpel-process][ibm.com]].
+- Camunda (2022). Web-based tooling for BPMN, DMN and Forms. URL:
+  [[https://bpmn.io/][bpmn.io]].
+
+* Footnotes
+
+[fn:1]BPMN stands for "Business Process Model and Notation" and is a
+standardized, diagrammatic language especially suited to modeling
+business processes. Correct BPMN diagrams can be auto-translated into
+code using BPEL (Business Process Execution Language) - see
+OMG, 2010. For more information [[https://camunda.com/bpmn/][see here]], and to try it [[https://bpmn.io][see here]].
+
+[fn:2]For a (new, short) book on modeling in Python, see Downey,
+Modeling and Simulation in Python (NoStarch, 2023), [[https://allendowney.github.io/ModSimPy/index.html][free online]]. It is
+also one of the textbooks for DSC 482.02 Data and Process Modeling
+(fall 2023).
+
+[fn:3]IBM has developed a language called BPEL (Business Process
+Execution Language) that facilitates this process ([[https://www.ibm.com/docs/en/baw/22.x?topic=types-bpel-process][IBM, 2023]]).
+
+[fn:4] The code example (from [[https://realpython.com/python-refactoring/][Shaw, 2019]]) has 'cyclomatic complexity'
+of 5, i.e. there are 5 independent code paths that the Python
+interpreter can follow to get to the end of the application.
+
+[fn:5]This type name is capitalized because it is named after the
+mathematician [[https://en.wikipedia.org/wiki/George_Boole][George Boole]] (1815-1864) who found Boolean algebra,
+which can be used to design circuits in terms of logic gates.
+
+[fn:6]The ~not~ operator is a unary operator and requires an operand
+immediately after it - that's not what the computer sees here because
+it evaluates from left to right. Fixes:
+#+begin_example python
+  True == (not True)
+  not True == True
+#+end_example
+
+[fn:7]This operator does something else if fed with binary numbers.
