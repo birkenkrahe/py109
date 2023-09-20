@@ -381,15 +381,29 @@ Practice file: https://tinyurl.com/BasicsPython
 - Python Input practice
 - DataCamp Python intro chapter 1
 
-* 5.2 Tue, 19-Sep - Programming assignments
+* 5.2 Tue, 19-Sep - Work on programming assignments
 
 - Word count program (show your solutions)
 - A New Hope program (show your solutions)
 
-
 * 5.2 Wed, 20-Sep
 
 ** Review programming assignments
+
+- Solutions to [[https://gist.github.com/birkenkrahe/1b15fe6b573d22c5af08dc9584cfc086][word count assignment]]
+- Solutions to [[https://gist.github.com/birkenkrahe/ef6f2f3229e9a25e03fc81e1f007456d][A New Hope]] assignment
+
+** Boolean variables, values and operators
+
+- Important to master conditional statements (~if~, ~else~, ~elseif~)
+- See workbook and practice notebook
+
+** No class on Friday (me = conference)
+#+attr_html: :width 400px
+[[../img/Absolute_Reality_v16_literate_programming_0.jpg]]
+
+** New DataCamp lesson "lists" - due Friday night
+** New test available tonight - due Monday
 
 * 5.3 Thu, 21-Sep - Test 3
 
