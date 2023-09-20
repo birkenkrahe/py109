@@ -229,9 +229,11 @@ functions: ~print~, ~input~, ~len~, ~int~, ~str~, ~split~:
 
 - What happens when the string to be split does not have substrings?
   #+begin_src python :results output
-    a, b = 'Marcus'.split()
+    a,b = 'Marcus'.split()
     print(a,b)
   #+end_src
+
+  #+RESULTS:
 
 - Why?
   #+begin_src python :results output
