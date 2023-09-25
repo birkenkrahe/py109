@@ -438,10 +438,10 @@ your project in class.
 [[https://app.datacamp.com/workspace/w/a8e32458-35b1-4818-bb32-aee5d557cc78/edit][Workspace notebook with sample solutions.]]
 
 ** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
+* 6.2 Wed, 27-Sep
+** Flow control (BPMN)
 ** Review DataCamp Python lists
 
 [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]]
 
-* 6.2 Wed, 27-Sep
-** Flow control (BPMN)
 
