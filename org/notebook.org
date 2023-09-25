@@ -405,8 +405,43 @@ Practice file: https://tinyurl.com/BasicsPython
 ** New DataCamp lesson "lists" - due Friday night
 ** New test available tonight - due Monday
 
-* 5.3 Thu, 21-Sep - Test 3
-
+* 5.3 Thu, 21-Sep - Complete test 3
 * 5.3 Fri, 22-Sep (no class - reading assignment)
+* 6.1 Mon, 25-Sep
+** Review 1st sprint reviews - preview 2nd sprint
 
-** Review Test 3 (online)
+Please upload your proposals from the first sprint review to [[https://drive.google.com/drive/folders/1OyNNo1i83t626ChoZu8lAzZowKXtxQ01?usp=drive_link][this 
+GDrive repo]] (Lou has already done this).
+
+To give you an idea about how the final result might look like: here
+are two projects from my Python summer course - [[https://colab.research.google.com/drive/1CpIWEDXWOhyD5cSzpsqJqS7Q1RoPPBX3?usp=sharing][on web development]] (as
+a notebook), and on [[https://drive.google.com/file/d/1iWmtlp9rAZZymkaVgKOXFWDcgOJunlI-/view?usp=sharing][training images with AI]] (as a paper).
+
+For your second sprint, you need to do some literature research to
+validate your research question and identify your method of approach.
+
+The key deliverable is a curated, i.e. commented list of relevant
+references that you have found and that apply to your project.
+
+The reference citations need to be consistent (i.e. pick one style),
+and complete. Software and digital tools, videos, personal
+communication etc. needs to be referenced just like books or papers.
+
+You should also describe your method in appropriate detail. For an
+example see [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-second-sprint][this FAQ in GitHub]] (for an article of mine).
+
+Upload your reference list [[https://drive.google.com/drive/folders/1A2PE2DawpWQ7Te0gCsq6cA7TmdtNQlQb?usp=sharing][to this GDrive repo]], and briefly present
+your project in class.
+
+** Review pgm assignments [[https://lyon.instructure.com/courses/2006/assignments/15592][word count]]/[[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]]
+
+[[https://app.datacamp.com/workspace/w/a8e32458-35b1-4818-bb32-aee5d557cc78/edit][Workspace notebook with sample solutions.]]
+
+** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
+** Review DataCamp Python lists
+
+[[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]]
+
+* 6.2 Wed, 27-Sep
+** Flow control (BPMN)
+
