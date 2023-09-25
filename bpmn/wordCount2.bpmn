@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_11vhui9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="14.0.0">
+  <bpmn:collaboration id="Collaboration_0szqnht">
+    <bpmn:participant id="Participant_03yvy8a" name="Computer" processRef="Process_1n1v5yb" />
+    <bpmn:participant id="Participant_1519unh" name="KEYBOARD" />
+    <bpmn:participant id="Participant_17614gi" name="SCREEN" />
+    <bpmn:messageFlow id="Flow_0hk6b9t" sourceRef="Participant_1519unh" targetRef="Activity_17vtvki" />
+    <bpmn:messageFlow id="Flow_0j52zbe" sourceRef="Activity_03mtu7s" targetRef="Participant_17614gi" />
+    <bpmn:textAnnotation id="TextAnnotation_061o6n6">
+      <bpmn:text>1. Get input sentence from keyboard.
+2. Check if sentence &gt; 80 characters
+     and if it does, exit the program.
+3. Count empty spaces in sentence.
+4. Print empty spaces + 1 to screen.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0j3xw7x" sourceRef="Participant_03yvy8a" targetRef="TextAnnotation_061o6n6" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1n1v5yb" isExecutable="false">
+    <bpmn:task id="Activity_17vtvki" name="Get input sentence">
+      <bpmn:incoming>Flow_1jjmjlv</bpmn:incoming>
+      <bpmn:outgoing>Flow_088ubnq</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:startEvent id="StartEvent_1vu8mwx" name="Start">
+      <bpmn:outgoing>Flow_1jjmjlv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_0kxdcju" name="Stop">
+      <bpmn:incoming>Flow_1o7nddj</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Activity_03mtu7s" name="Print empty spaces + 1">
+      <bpmn:incoming>Flow_0fwa9mk</bpmn:incoming>
+      <bpmn:outgoing>Flow_1o7nddj</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1lvylky" name="Count empty spaces">
+      <bpmn:incoming>Flow_1njqpac</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fwa9mk</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_0zto2sq" name="Does sentence have more than 80 characters?">
+      <bpmn:incoming>Flow_088ubnq</bpmn:incoming>
+      <bpmn:outgoing>Flow_1njqpac</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1gvk5ck</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="Event_0gox8yh" name="Exit">
+      <bpmn:incoming>Flow_1gvk5ck</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1jjmjlv" sourceRef="StartEvent_1vu8mwx" targetRef="Activity_17vtvki" />
+    <bpmn:sequenceFlow id="Flow_088ubnq" sourceRef="Activity_17vtvki" targetRef="Gateway_0zto2sq" />
+    <bpmn:sequenceFlow id="Flow_1o7nddj" sourceRef="Activity_03mtu7s" targetRef="Event_0kxdcju" />
+    <bpmn:sequenceFlow id="Flow_0fwa9mk" sourceRef="Activity_1lvylky" targetRef="Activity_03mtu7s" />
+    <bpmn:sequenceFlow id="Flow_1njqpac" name="No" sourceRef="Gateway_0zto2sq" targetRef="Activity_1lvylky" />
+    <bpmn:sequenceFlow id="Flow_1gvk5ck" sourceRef="Gateway_0zto2sq" targetRef="Event_0gox8yh" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0szqnht">
+      <bpmndi:BPMNShape id="Participant_03yvy8a_di" bpmnElement="Participant_03yvy8a" isHorizontal="true">
+        <dc:Bounds x="156" y="180" width="894" height="338" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_17vtvki_di" bpmnElement="Activity_17vtvki">
+        <dc:Bounds x="310" y="283" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1vu8mwx">
+        <dc:Bounds x="222" y="305" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="228" y="348" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0kxdcju_di" bpmnElement="Event_0kxdcju">
+        <dc:Bounds x="932" y="305" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="939" y="348" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03mtu7s_di" bpmnElement="Activity_03mtu7s">
+        <dc:Bounds x="770" y="283" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1lvylky_di" bpmnElement="Activity_1lvylky">
+        <dc:Bounds x="610" y="283" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0zto2sq_di" bpmnElement="Gateway_0zto2sq" isMarkerVisible="true">
+        <dc:Bounds x="475" y="298" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="462" y="248" width="76" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0gox8yh_di" bpmnElement="Event_0gox8yh">
+        <dc:Bounds x="932" y="422" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="941" y="465" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1jjmjlv_di" bpmnElement="Flow_1jjmjlv">
+        <di:waypoint x="258" y="323" />
+        <di:waypoint x="310" y="323" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_088ubnq_di" bpmnElement="Flow_088ubnq">
+        <di:waypoint x="410" y="323" />
+        <di:waypoint x="475" y="323" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1o7nddj_di" bpmnElement="Flow_1o7nddj">
+        <di:waypoint x="870" y="323" />
+        <di:waypoint x="932" y="323" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fwa9mk_di" bpmnElement="Flow_0fwa9mk">
+        <di:waypoint x="710" y="323" />
+        <di:waypoint x="770" y="323" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1njqpac_di" bpmnElement="Flow_1njqpac">
+        <di:waypoint x="525" y="323" />
+        <di:waypoint x="610" y="323" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="561" y="305" width="14" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gvk5ck_di" bpmnElement="Flow_1gvk5ck">
+        <di:waypoint x="500" y="348" />
+        <di:waypoint x="500" y="440" />
+        <di:waypoint x="932" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_18qaezy_di" bpmnElement="Participant_1519unh" isHorizontal="true">
+        <dc:Bounds x="156" y="560" width="394" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0khjjtb_di" bpmnElement="Participant_17614gi" isHorizontal="true">
+        <dc:Bounds x="590" y="80" width="460" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_061o6n6_di" bpmnElement="TextAnnotation_061o6n6">
+        <dc:Bounds x="156" y="68" width="240" height="84" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0j3xw7x_di" bpmnElement="Association_0j3xw7x">
+        <di:waypoint x="300" y="180" />
+        <di:waypoint x="273" y="152" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hk6b9t_di" bpmnElement="Flow_0hk6b9t">
+        <di:waypoint x="360" y="560" />
+        <di:waypoint x="360" y="363" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0j52zbe_di" bpmnElement="Flow_0j52zbe">
+        <di:waypoint x="820" y="283" />
+        <di:waypoint x="820" y="140" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

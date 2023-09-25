@@ -441,12 +441,11 @@ Introduce bpmn.io with word count:
 #+attr_latex: :width 400px
 [[../img/wordCount1.png]]
 
+* 6.2 Tue, 26-Sep: 
+* 6.3 Wed, 27-Sep
 ** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
 
-* 6.2 Wed, 27-Sep
-
 ** Flow control (BPMN)
-
 ** Review DataCamp Python lists
 
 [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]]
