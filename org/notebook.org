@@ -441,7 +441,17 @@ Introduce bpmn.io with word count:
 #+attr_latex: :width 400px
 [[../img/wordCount1.png]]
 
-* 6.2 Tue, 26-Sep: 
+* 6.2 Tue, 26-Sep
+
+- Everyone got 1 extra point in test 3 because one question was
+  ambiguous.
+
+- Today: continue with "flow control", Booleans and comparison
+  operators.
+
+- Tuesday/Thursday: complete the 2nd Intro to Python chapter at
+  DataCamp.
+  
 * 6.3 Wed, 27-Sep
 ** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
 
