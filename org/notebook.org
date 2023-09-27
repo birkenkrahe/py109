@@ -386,7 +386,7 @@ Practice file: https://tinyurl.com/BasicsPython
 - Word count program (show your solutions)
 - A New Hope program (show your solutions)
 
-* 5.2 Wed, 20-Sep
+* 5.3 Wed, 20-Sep
 
 ** Review programming assignments
 
@@ -405,8 +405,8 @@ Practice file: https://tinyurl.com/BasicsPython
 ** New DataCamp lesson "lists" - due Friday night
 ** New test available tonight - due Monday
 
-* 5.3 Thu, 21-Sep - Complete test 3
-* 5.3 Fri, 22-Sep (no class - reading assignment)
+* 5.4 Thu, 21-Sep - Complete test 3
+* 5.5 Fri, 22-Sep (no class - reading assignment)
 * 6.1 Mon, 25-Sep
 ** Review 1st sprint reviews - preview 2nd sprint
 
@@ -441,21 +441,31 @@ Introduce bpmn.io with word count:
 #+attr_latex: :width 400px
 [[../img/wordCount1.png]]
 
+** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
+
 * 6.2 Tue, 26-Sep
-
-- Everyone got 1 extra point in test 3 because one question was
-  ambiguous.
-
-- Today: continue with "flow control", Booleans and comparison
-  operators.
 
 - Tuesday/Thursday: complete the 2nd Intro to Python chapter at
   DataCamp.
   
 * 6.3 Wed, 27-Sep
-** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
 
 ** Flow control (BPMN)
+
+- Visualizing flow
+- Advantages and disadvantages of modeling (pseudocode)
+- Practice: simple happy path model
+- Extending the happy path model with gateways
+- Boolean values in Python
+- Comparison operators in Python
+
+* 6.4 Thu, 28-Sep
+
+- Tuesday/Thursday: complete the 2nd Intro to Python chapter at
+  DataCamp.
+
+* 6.5 Fri, 29-Sep
+
 ** Review DataCamp Python lists
 
 [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]]
