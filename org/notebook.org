@@ -1,6 +1,6 @@
 #+startup: overview inlineimages indent hideblocks
 #+options: toc:nil num:nil
-#+property: header-args:python :results output 
+#+property: header-args:python :results output :session *Python* :exports both :noweb yes
 * README
 
 - Notes usually based on whiteboard screenshots ([[https://drive.google.com/drive/folders/1_UwbKsqmefLu97aVizfUE_qCYeg6IvHm?usp=sharing][GDrive]]).
@@ -249,13 +249,13 @@ Practice file: https://tinyurl.com/BasicsPython
 
     hello_if("Marcus")
     hello_if("Jane")
-    hello_if("John")    
+    hello_if("John")
   #+end_src
 
   #+RESULTS:
   : Jane
   : John
-  
+
 - Add a loop to the function and rename it to ~hello_for~:
   1) Change the argument to ~name_list~.
   2) Loop over ~name_list~ and greet each name with "hello".
@@ -356,7 +356,7 @@ Practice file: https://tinyurl.com/BasicsPython
 - What can you say about Python?
 
 - What can you say about the command line interface (CLI)?
-  
+
 - What can you say about interactive notebooks?
 
 - What can you say about Python libraries?
@@ -410,7 +410,7 @@ Practice file: https://tinyurl.com/BasicsPython
 * 6.1 Mon, 25-Sep
 ** Review 1st sprint reviews - preview 2nd sprint
 
-Please upload your proposals from the first sprint review to [[https://drive.google.com/drive/folders/1OyNNo1i83t626ChoZu8lAzZowKXtxQ01?usp=drive_link][this 
+Please upload your proposals from the first sprint review to [[https://drive.google.com/drive/folders/1OyNNo1i83t626ChoZu8lAzZowKXtxQ01?usp=drive_link][this
 GDrive repo]] (Lou has already done this).
 
 To give you an idea about how the final result might look like: here
@@ -447,9 +447,8 @@ Introduce bpmn.io with word count:
 
 - Tuesday/Thursday: complete the 2nd Intro to Python chapter at
   DataCamp.
-  
-* 6.3 Wed, 27-Sep
 
+* 6.3 Wed, 27-Sep
 ** Flow control (BPMN)
 
 - Visualizing flow
@@ -466,8 +465,117 @@ Introduce bpmn.io with word count:
 
 * 6.5 Fri, 29-Sep
 
-** Review DataCamp Python lists
+Different ways of getting into Python (on the PC/online):
+- Console/IDLE: Download Python on your Windows machine (Microsoft
+  Store): open it as a console ('Python' in the search bar) or as
+  'IDLE' (from search bar)
+- In IDLE you can create files and run them, including graphics or web
+  pages.
+  
+REPL (Read-Eval-Print-Loop): Sign up with replit.com and create a
+Python REPL: this gives you an editor (for .py files), and a console
+(for the output) and a shell (for file management).
 
-[[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]]
+Online with w3schools.com: Online editor - won't do graphics or web
+work.
+
+Visual Studio Code (VSCode) at vscode.dev: Online IDE (Integrated
+Development Environment) - owned by Microsoft, most popular editor
+right now. You can download it to your PC.
+
+The best Python editor: GNU Emacs + Org mode (that's for hackers
+only): [[https://realpython.com/emacs-the-best-python-editor/][see more]].
+
+* 7.1 Mon, 2-Oct
+
+** Review DataCamp Python lists - Test 4
+
+We're going to review [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]] - you'll find some of
+this in test 4, which will be available tomorrow.
+
+1) Make a list of names =course= (class mates) and print it.
+   #+begin_src python
+     course = ["Saige", "Ethan", "Lou", "Loren"]
+     print(course)
+   #+end_src
+
+   #+RESULTS:
+   : ['Saige', 'Ethan', 'Lou', 'Loren']
+
+2) The =areas= list from DataCamp as a Python dictionary:
+   #+begin_src python
+     hall = 11.25
+     kit = 18.0
+     liv = 20.0
+     bed = 10.75
+     bath = 9.50
+     areas = {
+         "hallway": hall,
+         "kitchen": kit,
+         "living room": liv,
+         "bedroom": bed,
+         "bathroom": bath}
+     print(areas)
+     for name, value in areas:
+         print(name, value)
+   #+end_src
+
+   #+RESULTS:
+   : {'hallway': 11.25, 'kitchen': 18.0, 'living room': 20.0, 'bedroom': 10.75, 'bathroom': 9.5}
+
+3) Make a dictionary of class mates =course_dict= with their name as key
+   and their sex and age as values.
+   #+begin_src python
+     course_dict = {
+         course[0]: ["male",17],
+         course[1]: ["male",17],
+         course[2]: ["female",17],
+         course[3]: ["female",17]
+         }                           
+     print(course_dict)
+   #+end_src
+
+   #+RESULTS:
+   : {'Saige': ['male', 17], 'Ethan': ['male', 17], 'Lou': ['female', 17], 'Loren': ['female', 17]}
+
+4) You can also print the list as a =for= loop:
+  #+begin_src python
+    for key, value in areas.items():
+        print(f'Key: {key}, value: {value}')
+  #+end_src
+
+  #+RESULTS:
+  : Key: hallway, value: 11.25
+  : Key: kitchen, value: 18.0
+  : Key: living room, value: 20.0
+  : Key: bedroom, value: 10.75
+  : Key: bathroom, value: 9.5
+
+5) Print ~course_dict~ as a =for= loop!
+   #+begin_src python
+    for key, value in course_dict.items():
+        print(f'Key: {key}, value: {value}')
+   #+end_src
+
+   #+RESULTS:
+   : Key: Saige, value: ['male', 17]
+   : Key: Ethan, value: ['male', 17]
+   : Key: Lou, value: ['female', 17]
+   : Key: Loren, value: ['female', 17]
 
 
+* 7.2 Tue, 3-Oct
+
+Complete test 4 (Python lists)
+
+* 7.3 Wed, 4-Oct
+
+Boolean values.
+
+* 7.4 Thu, 5-Oct
+
+Complete the programming assignment.
+
+* TODO 7.5 Fri, 6-Oct
+
+* Fri, 27-Oct NO CLASS (Lyon Founders Day)
