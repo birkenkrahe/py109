@@ -471,7 +471,7 @@ Different ways of getting into Python (on the PC/online):
   'IDLE' (from search bar)
 - In IDLE you can create files and run them, including graphics or web
   pages.
-  
+
 REPL (Read-Eval-Print-Loop): Sign up with replit.com and create a
 Python REPL: this gives you an editor (for .py files), and a console
 (for the output) and a shell (for file management).
@@ -487,13 +487,185 @@ The best Python editor: GNU Emacs + Org mode (that's for hackers
 only): [[https://realpython.com/emacs-the-best-python-editor/][see more]].
 
 * 7.1 Mon, 2-Oct
-
-** Review DataCamp Python lists - Test 4
+** Review Python lists - Preview Test 4
 
 We're going to review [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]] - you'll find some of
-this in test 4, which will be available tomorrow.
+this (only the =list= stuff) in test 4, which will be available
+tomorrow.
+1. Creating and printing lists (as comprehensions)
+2. Subsetting and slicing lists
+3. Replacing and extending lists
 
-1) Make a list of names =course= (class mates) and print it.
+-----
+
+1) Make a =list= named ~fam~ of your family members that includes everybody's
+   name followed by their age, and print it:
+   #+begin_src python
+     fam = ['Marcus', 59,
+            'Carlye', 64,
+            'Lucia', 22]
+     print(fam)
+   #+end_src
+
+   #+RESULTS:
+   : ['Marcus', 59, 'Carlye', 64, 'Lucia', 22]
+
+2) Make another =list= named ~fam2~ with the same information but this time
+   each family member and their age is a list item. So if you have 3
+   family members, ~fam~ had 6 elements but ~fam2~ has only 3:
+   #+begin_src python
+     fam2 = [['Marcus', 59],
+             ['Carlye', 64],
+             ['Lucia', 22]]
+     print(fam2)
+   #+end_src
+
+   #+RESULTS:
+   : [['Marcus', 59], ['Carlye', 64], ['Lucia', 22]]
+
+3) You can print lists as /comprehensions/, too, where ~foo~ is a (dummy)
+   counter variable, and ~bar~ is a =list=:
+   #+begin_src python
+     [print(foo) for foo in bar]
+   #+end_src
+   Do this for both ~fam~ and ~fam2~ now:
+   #+begin_src python
+     [print(i) for i in fam]
+     [print(i) for i in fam2]
+   #+end_src
+
+   #+RESULTS:
+   : Marcus
+   : 59
+   : Carlye
+   : 64
+   : Lucia
+   : 22
+   : ['Marcus', 59]
+   : ['Carlye', 64]
+   : ['Lucia', 22]
+   
+4) Print only the names of ~fam2~ using the index operator =[]=:
+   #+begin_src python
+     print(fam2[0][0],fam2[1][0],fam2[2][0])
+   #+end_src
+
+   #+RESULTS:
+   : Marcus Carlye Lucia
+
+5) Print only the ages of the family members of ~fam2~:
+   #+begin_src python
+     print(fam2[0][1],fam2[1][1],fam2[2][1])
+   #+end_src
+
+   #+RESULTS:
+   : 59 64 22
+
+6) Use /slicing/ to print the last two elements of ~fam~ (there are two
+   ways to do this). Remember that the first index before the slicing
+   operator is the start, which is included, and the second index is
+   the end, which is not included. Confusing!
+   #+begin_src python
+     print(fam)
+     print(fam[4:])  # from 4 to end
+     print(fam[4:6]) # from 4 to 6 (which does not exist)
+     print(fam[6]) # Output: IndexError 'index out of range'
+   #+end_src
+
+   #+RESULTS:
+   : ['Marcus', 59, 'Carlye', 64, 'Lucia', 22]
+   : ['Lucia', 22]
+   : ['Lucia', 22]
+
+7) Print the last element of ~fam~ (there are two ways):
+   #+begin_src python
+     print(fam[-1])
+     print(fam[5])
+   #+end_src
+
+   #+RESULTS:
+   : 22
+   : 22
+
+8) Your name elements are probable in title or lower case. You can use
+   =str.upper= to turn a string into upper case characters:
+   #+begin_src python
+     print("Marcus".upper())
+   #+end_src
+   Change the last name of your =list= ~fam~ to upper case, then print
+   ~fam~.
+   #+begin_src python
+     print(fam)
+     print(fam[4].upper())
+     fam[4] = fam[4].upper()
+     print(fam)
+   #+end_src
+
+   #+RESULTS:
+   : ['Marcus', 59, 'Carlye', 64, 'Lucia', 22]
+   : LUCIA
+   : ['Marcus', 59, 'Carlye', 64, 'LUCIA', 22]
+
+9) Turn the last element of your list into a string:
+   #+begin_src python
+     fam[-1] = str(fam[-1])
+     print(fam)
+   #+end_src
+
+   #+RESULTS:
+   : ['Marcus', 59, 'Carlye', 64, 'LUCIA', '22']
+
+10) Assume you get a cat named "Millie". She is 3 years old. Add her
+    data to ~fam~:
+    #+begin_src python
+      fam = fam + ['Millie', 3]
+      print(fam)
+    #+end_src
+
+    #+RESULTS:
+    : ['Marcus', 59, 'Carlye', 64, 'LUCIA', '22', 'Millie', 3]
+
+11) You give your cat Millie to a friend who is lonely. Remove her
+    data from the =list= ~fam~, then print it.
+    #+begin_src python
+      del(fam[6:])  # this will apply to fam immediately!
+      print(fam)
+    #+end_src
+
+    #+RESULTS:
+    : ['Marcus', 59, 'Carlye', 64, 'LUCIA', '22']
+
+12) What is ~foo~ at the end of the following code block? Remember that
+    lists are references to computer memory locations.
+    #+begin_src python
+      foo = [1,2,3]
+      bar = foo
+      bar[2:4] = [5,6]
+      print(bar)
+    #+end_src
+
+    #+RESULTS:
+    : [1, 2, 5, 6]
+
+13) When copying ~foo~ into ~bar~ and then changing ~bar~ as before, how can
+    you keep ~foo~ unchanged?
+    #+begin_src python
+      foo = [1,2,3]
+      bar = list(foo)  # copies foo values into bar
+      bar[2:4] = [5,6]
+      print(f'bar: {bar}\nfoo: {foo}')
+    #+end_src
+
+    #+RESULTS:
+    : bar: [1, 2, 5, 6]
+    : foo: [1, 2, 3]
+
+** Preview of dictionaries, tuples and comprehensions
+
+Here is a preview on even more data structures besides =list=, namely
+=dictionary= and =tuple=:
+
+1) Make a =list= of names ~course~ (class mates) and print it.
    #+begin_src python
      course = ["Saige", "Ethan", "Lou", "Loren"]
      print(course)
@@ -502,36 +674,39 @@ this in test 4, which will be available tomorrow.
    #+RESULTS:
    : ['Saige', 'Ethan', 'Lou', 'Loren']
 
-2) The =areas= list from DataCamp as a Python dictionary:
+2) The ~areas~ list from DataCamp can also be encoded as a Python
+   =dictionary= (another data structure):
    #+begin_src python
+     ## define variables
      hall = 11.25
      kit = 18.0
      liv = 20.0
      bed = 10.75
      bath = 9.50
+     ## define dictionary of key: value pairs
      areas = {
          "hallway": hall,
          "kitchen": kit,
          "living room": liv,
          "bedroom": bed,
          "bathroom": bath}
+     ## print the dictionary
      print(areas)
-     for name, value in areas:
-         print(name, value)
    #+end_src
 
    #+RESULTS:
    : {'hallway': 11.25, 'kitchen': 18.0, 'living room': 20.0, 'bedroom': 10.75, 'bathroom': 9.5}
 
-3) Make a dictionary of class mates =course_dict= with their name as key
-   and their sex and age as values.
+3) Your turn! Make a dictionary of class mates ~course_dict~ with their
+   name as key and their sex and age as values. For the key, use the
+   relevant ~course~ =list= item:
    #+begin_src python
      course_dict = {
          course[0]: ["male",17],
          course[1]: ["male",17],
          course[2]: ["female",17],
          course[3]: ["female",17]
-         }                           
+     }
      print(course_dict)
    #+end_src
 
@@ -539,22 +714,22 @@ this in test 4, which will be available tomorrow.
    : {'Saige': ['male', 17], 'Ethan': ['male', 17], 'Lou': ['female', 17], 'Loren': ['female', 17]}
 
 4) You can also print the list as a =for= loop:
-  #+begin_src python
-    for key, value in areas.items():
-        print(f'Key: {key}, value: {value}')
-  #+end_src
-
-  #+RESULTS:
-  : Key: hallway, value: 11.25
-  : Key: kitchen, value: 18.0
-  : Key: living room, value: 20.0
-  : Key: bedroom, value: 10.75
-  : Key: bathroom, value: 9.5
-
-5) Print ~course_dict~ as a =for= loop!
    #+begin_src python
-    for key, value in course_dict.items():
-        print(f'Key: {key}, value: {value}')
+     for key, value in areas.items():
+         print(f'Key: {key}, value: {value}')
+   #+end_src
+
+   #+RESULTS:
+   : Key: hallway, value: 11.25
+   : Key: kitchen, value: 18.0
+   : Key: living room, value: 20.0
+   : Key: bedroom, value: 10.75
+   : Key: bathroom, value: 9.5
+
+5) You turn! Print ~course_dict~ as a =for= loop!
+   #+begin_src python
+     for key, value in course_dict.items():
+         print(f'Key: {key}, value: {value}')
    #+end_src
 
    #+RESULTS:
@@ -563,6 +738,72 @@ this in test 4, which will be available tomorrow.
    : Key: Lou, value: ['female', 17]
    : Key: Loren, value: ['female', 17]
 
+6) You can also print this with a /comprehension/, a way of running a
+   function with a loop and defining a data structure in one line:
+   #+begin_src python
+     output = [print(key,value) for key, value in areas.items()]
+   #+end_src
+
+   #+RESULTS:
+   : hallway 11.25
+   : kitchen 18.0
+   : living room 20.0
+   : bedroom 10.75
+   : bathroom 9.5
+
+7) Given the =list= ~course~ from earlier, how would you print the items
+   line by line using a comprehension? This time you do not need
+   =items=. The general format of a list comprehension is:
+   #+begin_example python
+     [ function(arg) for arg in list ]
+   #+end_example
+   Try that for the ~course~ =list=:
+   #+begin_src python
+     [print(name) for name in course]
+   #+end_src
+
+   #+RESULTS:
+   : Saige
+   : Ethan
+   : Lou
+   : Loren
+
+8) Now, turn the dictionary ~areas~ into a =list= using the =list= function,
+   then print it as a =list= comprehension:
+   #+begin_src python
+     areas_list = list(areas.items())
+     [print(item) for item in areas_list]
+   #+end_src
+
+   #+RESULTS:
+   : ('hallway', 11.25)
+   : ('kitchen', 18.0)
+   : ('living room', 20.0)
+   : ('bedroom', 10.75)
+   : ('bathroom', 9.5)
+
+9) Notice the character of the =list= elements: they are tuples (ordered
+   pairs of values) which you can check by checking the =type= of any
+   element:
+   #+begin_src python
+     print(type(areas_list[0]))
+   #+end_src
+
+   #+RESULTS:
+   : <class 'tuple'>
+
+10) Since the =dictionary= has two types of elements, keys and values,
+    you can put them into separate lists if you want:
+    #+begin_src python
+      areas_list_keys = areas.keys()
+      print(areas_list_keys)
+      areas_list_values = areas.values()
+      print(areas_list_values)
+    #+end_src
+
+    #+RESULTS:
+    : dict_keys(['hallway', 'kitchen', 'living room', 'bedroom', 'bathroom'])
+    : dict_values([11.25, 18.0, 20.0, 10.75, 9.5])
 
 * 7.2 Tue, 3-Oct
 
@@ -576,6 +817,10 @@ Boolean values.
 
 Complete the programming assignment.
 
-* TODO 7.5 Fri, 6-Oct
+* 7.5 Fri, 6-Oct
+
+* Mon, 16-Oct
+
+Monthly summary
 
 * Fri, 27-Oct NO CLASS (Lyon Founders Day)
