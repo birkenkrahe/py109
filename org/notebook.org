@@ -491,7 +491,7 @@ only): [[https://realpython.com/emacs-the-best-python-editor/][see more]].
 
 We're going to review [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]] - you'll find some of
 this (only the =list= stuff) in test 4, which will be available
-tomorrow.
+tomorrow (Tue 3-Oct) for you to complete:
 1. Creating and printing lists (as comprehensions)
 2. Subsetting and slicing lists
 3. Replacing and extending lists
@@ -660,6 +660,20 @@ tomorrow.
     : bar: [1, 2, 5, 6]
     : foo: [1, 2, 3]
 
+** Continue: Boolean values and operators
+* 7.2 Tue, 3-Oct
+
+[[https://lyon.instructure.com/courses/2006/assignments/19350/edit?quiz_lti][Complete test 4 (Python lists)]]
+
+* 7.3 Wed, 4-Oct
+
+Boolean values.
+
+* 7.4 Thu, 5-Oct
+
+Complete the programming assignment.
+
+* 7.5 Fri, 6-Oct
 ** Preview of dictionaries, tuples and comprehensions
 
 Here is a preview on even more data structures besides =list=, namely
@@ -804,20 +818,6 @@ Here is a preview on even more data structures besides =list=, namely
     #+RESULTS:
     : dict_keys(['hallway', 'kitchen', 'living room', 'bedroom', 'bathroom'])
     : dict_values([11.25, 18.0, 20.0, 10.75, 9.5])
-
-* 7.2 Tue, 3-Oct
-
-Complete test 4 (Python lists)
-
-* 7.3 Wed, 4-Oct
-
-Boolean values.
-
-* 7.4 Thu, 5-Oct
-
-Complete the programming assignment.
-
-* 7.5 Fri, 6-Oct
 
 * Mon, 16-Oct
 
