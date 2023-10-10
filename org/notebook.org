@@ -486,7 +486,7 @@ right now. You can download it to your PC.
 The best Python editor: GNU Emacs + Org mode (that's for hackers
 only): [[https://realpython.com/emacs-the-best-python-editor/][see more]].
 
-* 7.1 Mon, 2-Oct
+* 7.1 Mon, 2-Oct: lists
 ** Review Python lists - Preview Test 4
 
 We're going to review [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]] - you'll find some of
@@ -661,19 +661,19 @@ tomorrow (Tue 3-Oct) for you to complete:
     : foo: [1, 2, 3]
 
 ** Continue: Boolean values and operators
-* 7.2 Tue, 3-Oct
+* 7.2 Tue, 3-Oct: test 4
 
 [[https://lyon.instructure.com/courses/2006/assignments/19350/edit?quiz_lti][Complete test 4 (Python lists)]]
 
-* 7.3 Wed, 4-Oct
+* 7.3 Wed, 4-Oct: Booleans
 
 Boolean values.
 
-* 7.4 Thu, 5-Oct
+* 7.4 Thu, 5-Oct: pgm assignment (Booleans)
 
 Complete the programming assignment.
 
-* 7.5 Fri, 6-Oct
+* 7.5 Fri, 6-Oct: DataCamp (functions/packages)
 ** Preview of dictionaries, tuples and comprehensions
 
 Here is a preview on even more data structures besides =list=, namely
@@ -819,8 +819,57 @@ Here is a preview on even more data structures besides =list=, namely
     : dict_keys(['hallway', 'kitchen', 'living room', 'bedroom', 'bathroom'])
     : dict_values([11.25, 18.0, 20.0, 10.75, 9.5])
 
-* Mon, 16-Oct
+* 8.3 Wed, 11-Oct: Review: Booleans
 
-Monthly summary
+** Preview: test 5 (Thursday)
 
-* Fri, 27-Oct NO CLASS (Lyon Founders Day)
+** Review
+Assignment for Thu 5 Oct: bonus assignment similar to what
+we did in class today - "De Morgan's Laws"
+https://lyon.instructure.com/courses/2006/assignments/15585
+
+Assignments for Friday Oct 6: DataCamp lesson "Python functions and
+packages" https://lyon.instructure.com/courses/2006/assignments/18718
+
+Assignment for Monday, Oct 9: Truth tables - three logic exercises -
+truth tables: develop truth tables for three different problems (do at
+least one of these). Ex 1: create simple truth tables. Ex 2: simplify
+using De Morgan's laws, Ex.3 show equivalence between logical
+expressions. Do at least one of
+these. https://lyon.instructure.com/courses/2006/assignments/19440
+
+Assignment for Tuesday, Oct 10: translate text scenarios into logical
+expressions (with Boolean operators), and then determine the truth
+values using a truth table, and interpret the results - do at least
+one of
+these. https://lyon.instructure.com/courses/2006/assignments/19441
+
+* 8.4 Thu, 12-Oct: Test 5
+* 8.5 Fri, 13-Oct: if, else, alif
+
+- Review: test 5
+- Conditional statements I
+  
+* 9.1 Mon, 16-Oct: sprint review
+
+- Monthly summary
+- 2nd sprint review
+- conditional statements II
+
+* 9.2 Tue, 17-Oct: programming assignment II
+
+* 9.3 Wed, 18-Oct: loops I
+
+* 9.4 Thu, 19-Oct: test 6
+
+* 9.5 Fri, 20-Oct: review assignment
+
+* 10.1 Mon, 23-Oct: loops II
+
+* 10.2 Tue, 24-Oct: DataCamp assignment
+
+* 10.3 Wed, 25-Oct: import
+
+* 10.4 Thu, 26-Oct: test 7
+
+* 10.5 Fri, 27-Oct NO CLASS - Pgm assignment III

@@ -1,0 +1,296 @@
+#+TITLE:PYTHON CONDITIONS AND CLAUSES - IF ELIF ELSE
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: CSC 109 - Introduction to programming in Python - Summer 2023
+#+STARTUP: overview hideblocks indent inlineimages entitiespretty
+#+PROPERTY: header-args:python :results output :exports both :session *Python*
+* Introduction
+#+attr_latex: :width 400px
+#+caption: Radio station Children's Christomas Party 1936 (Flickr.com)
+[[../img/claus.jpg]]
+
+- Flow control statements consist of
+  1) a /condition/ (expression)
+  2) a /clause/ (block of code)
+
+- A /condition/ is an /expression/ that evaluates to a Boolean value and
+  determines if the program enters the /clause/ or not.
+
+- Lines of Python code can be grouped into [indented] blocks:
+  1) Blocks begin when the indentation increases.
+  2) Blocks can contain other blocks.
+  3) Blocks end when the indentation decreases to zero or to the
+     indentation of a containing block.
+
+- Example: what are the blocks in this small program?
+  #+begin_src python :tangle ~/Downloads/swordfish.py
+    name = 'Mary'
+    password = 'swordfish'
+    if name == 'Mary':
+        print('Hello, Mary')
+        if password == 'swordfish':
+            print('Access granted')
+        else:
+            print('Wrong password.')
+  #+end_src
+
+- In the image, the blocks are highlighted: each colon ~:~ marks the
+  beginning of a new block.
+  #+attr_latex: :width 300px
+  #+caption: Python code blocks with indentation
+  [[../img/py_blocks.png]]
+
+- View the execution of this program at [[https://autbor.com/blocks/][autbor.com/blocks/]]:
+  1) Step through the program with ~Next~
+  2) The ~Frames/Objects~ area shows variables and their values
+  3) The ~Print output~ area shows the program output
+
+- Click on ~Edit this code~ and change ~password~ to ~''~ (empty string).
+
+- View the execution again and notice the differences.
+
+- An alternative to pythontutor.com is the built-in debugger ~pdb~: you
+  start it for a file ~file.py~ from the command line with:
+  #+begin_example sh
+  python -m pdb file.py
+  #+end_example
+  You can now step through the program with ~n~ and print variables with
+  ~print~.
+
+* Code blocks in other languages
+
+- It is good programming practice in all languages to use indentation
+  to mark code blocks, simply to make code more readable.
+
+- All modern IDEs and editors offer indentation and syntax
+  highlighting, including parenthesis, keywords, variables etc.
+
+- Very few other languages but Python use indentation as a significant
+  feature (Yunits, 2019). They include: Python, Haskell, COBOL,
+  Markdown [Colab, GitHub], Org [Emacs], yaml ['Yet Another Markup
+  Language'].
+
+- Org-mode example: ~C-M-\~ to indent all lines, or ~<TAB>~ for one line:
+  #+begin_src python :tangle ../src/pdb.py :results output
+    name = input('What is your name? ')
+    if name:
+        print(f'Hello, {name}.')
+    else:
+        print('Hello, stranger.')
+  #+end_src
+
+* If statements
+
+- Let's look at a simple example program with and its process diagram:
+  #+begin_src python
+    name = 'Alice'  # declare a variable `name`
+    if name == 'Alice':
+        print('Hi, Alice.')
+  #+end_src
+  #+attr_latex: :width 400px
+  [[../img/py_alice_1.png]]
+
+- Note the fact that (unlike in a flowchart) the gateway, once opened,
+  needs to be closed again to mark the end of the logical
+  operation. One practical effect is that it is easier to remove
+  decisions from processes because their beginning and end is clear.
+
+* Else statements
+
+- An ~if~ statement can be followed by an ~else~ statement whose clause is
+  executed only if the ~if~ statement's condition is ~False~.
+
+- The ~else~ statement does not have a condition. Let's offer a greeting
+  to a person that is not Alice:
+  #+begin_src python
+    if name == 'Alice':
+        print('Hi, Alice.')
+    else:
+        print('Hello, stranger.')
+  #+end_src
+
+  #+RESULTS:
+  : Hello, stranger.
+
+- *Exercise:* Go to [[https://bpmn.io][bpmn.io]] to create a BPMN diagram for this process!
+
+- Solution diagram:
+  #+attr_latex: :width 400px
+  #+caption: BPMN diagram for an if...else program
+  [[../img/py_alice_2.png]]
+
+- Contrast this result with a non-standard flow chart diagram:
+  #+attr_latex: :width 400px
+  #+caption: Flowchart for an else statement (Sweigart, 2019)
+  [[../img/py_flow.png]]
+
+* Comparison with C/C++ and R
+
+- In C/C++, a compiled language (that requires a compiler like ~gcc~
+  to generate a machine code file that is then executed), the last
+  program would look like this:
+  #+begin_src C :main no #includes: none :tangle ./src/alice.c :results output
+    #include <stdio.h>
+    #include <string.h>
+
+    int main() {
+      char name[] = "Alice";
+      if (strcmp(name,"Alice") == 0) {
+        puts("Hi, Alice.");
+      } else {
+        puts("Hello, stranger.");
+      }
+      return 0;
+    }
+  #+end_src
+
+  #+RESULTS:
+  : Hi, Alice.
+
+- In R, another interpreted language (with a console that executes
+  the code block), it would look like this:
+  #+begin_src R :tangle ./src/alice.R
+    name <- "Alice"
+    if (name == "Alice") {
+      paste("Hi, Alice.")
+    } else {
+      paste("Hello, stranger.")
+    }
+  #+end_src
+
+- Neither of these languages require indentation. They could look like
+  this and would still run - they're not very readable this way:
+  #+begin_src C :main no #includes: none
+    #include <stdio.h>
+    #include <string.h>
+    int main() { char name[] = "Alice"; if (strcmp(name,"Alice") == 0) {
+        puts("Hi, Alice."); } else { puts("Hello, stranger."); } return 0; }
+  #+end_src
+  #+begin_src R
+    name <- "Alice"
+    if (name == "Alice") { paste("Hi, Alice.")  } else {
+                                                  paste("Hello, stranger.")  }
+  #+end_src
+
+* Elif statements
+
+- If you want one of many possible clauses to execute, you can use an
+  "else if" statement called ~elif~ in Python.
+  
+- An ~elif~ statement consists of:
+  1) The ~elif~ keyword
+  2) A condition that evaluates to ~True~ or ~False~
+  3) A colon ~:~
+  4) An indented clause on the next line
+
+- *Exercise:*
+  1) Create a new section in your Python Colab notebook and title it
+     ~Elif example~.
+  3) Alter the ~if~... ~else~ "Alice" program by an ~elif~ block that prints
+     "You're not Alice, kiddo" if the variable ~age~ is less than ~12~.
+  4) To test the flow, copy your code into ~pythontutor.com~ and run it
+     with the following values:
+     1. ~name = 'Carol'~
+        ~age = 10~
+     2. ~name = 'Carol'~
+        ~'age = 28'~
+  5) Here is the BPMN diagram for this program:
+     #+attr_latex: :width 400px
+     #+caption: BPMN diagram for an if...elif program
+     [[../img/py_alice_3.png]]
+
+     The diagram shows: if neither of the conditions are fulfilled,
+     then nothing will be printed.
+
+- Solution (here [[https://pythontutor.com/visualize.html#code=name%20%3D%20'Carol'%0Aage%20%3D%2010%0Aif%20name%20%3D%3D%20'Alice'%3A%0A%20%20%20%20print%28%22Hi,%20Alice.%22%29%0Aelif%20age%20%3C%2012%3A%0A%20%20%20%20print%28%22You're%20not%20Alice,%20kiddo.%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false][in PythonTutor]]):
+  #+begin_src python
+    name = 'Carol'
+    age = 10
+    if name == 'Alice':
+        print("Hi, Alice.")
+    elif age < 12:
+        print("You're not Alice, kiddo.")
+  #+end_src
+
+- Expand the program further in your notebook by adding two additional
+  ~elif~ clauses:
+  1) if ~age~ is greater than ~2000~, print "Unlike you, Alice isn't a
+     vampire."
+  2) if ~age~ is greater than ~100~, print "You are not Alice, grannie."
+
+- Check out the program flow at [[https://autbor.com/vampire/][autbor.com/vampire/]].
+
+- The BPMN diagram looks like this:
+  #+attr_latex: :width 400px
+  #+caption: BPMN diagram for an expanded if...elif program
+  [[../img/py_alice_4.png]]
+
+- The order of the statements does matter: once a ~True~ condition has
+  been found in one of the ~elif~ conditions, the rest of the clauses
+  are automatically skipped.
+
+- Example: in [[https://autbor.com/vampire2/][autbor.com/vampire2/]], two of the condition/clause
+  pairs were swapped: the first one, ~age > 100~ is ~True~ for values
+  greater than ~2000~ as well - the vampire condition is a /deadlock/.
+
+- PythonTutor can help you understand how your code works (or does
+  not). Another useful tool is called a 'linter', after the Unix
+  utility ~lint~ so named because it removes small errors from code. The
+  VS Code IDE has a linter (I haven't tried it - low transfer value)
+
+* If, elif and else
+
+To round off this section, bring all statements together in one
+program: an added ~else~ makes sure that at least one decision is taken.
+1) in your Colab notebook, modify the 'Alice' program so that it
+   does what the following BPMN diagram shows:
+   #+attr_latex: :width 400px
+   #+caption: BPMN diagram for the 'Alice' program with if, elif, else
+   [[../img/py_alice_5.png]]
+2) Test the code in your Colab notebook for ~name, age = ~'Carol', 3000~.
+3) Copy and paste the code to PythonTutor and visualize the process.
+
+- [[https://autbor.com/littlekid/][Solution in PythonTutor]]:
+  #+begin_src python
+    name = 'Carol'
+    age = 3000
+    if name == 'Alice':
+        print('Hi, Alice.')
+    elif age < 12:
+        print('You are not Alice, kiddo.')
+    else:
+        print('You are neither Alice nor a little kid.')
+  #+end_src
+
+- All diagrams in overview:
+  #+attr_latex: :width 400px
+  [[../img/py_alice_1.png]]  [[../img/py_alice_2.png]]
+  [[../img/py_alice_3.png]]  [[../img/py_alice_5.png]]
+
+* Summary
+
+- Decisions are modeled with conditions that evaluate to Boolean
+  values (~True~, ~False~).
+
+- Decisions include what code to execute and what to skip (~if~, ~else~,
+  ~elif~).
+
+- Process models and flow charts show the logical structure clearly.
+
+- You can create compound logical conditions using multiple operators,
+  e.g. ~name == 'Alice' and int(age) > 12' to check if the input name
+  is BOTH Alice and if she is older than 12.
+
+* Glossary
+
+| TERM/COMMAND | MEANING                                 |
+|--------------+-----------------------------------------|
+| ~if~           | keyword before a condition (start)      |
+| ~elif~         | keyboard before a alternative condition |
+| ~else~         | keyword before a final condition        |
+
+* References
+
+- Sweigart, A. (2019). Automate the Boring Stuff with
+  Python. NoStarch. URL: [[https://automatetheboringstuff.com/2e/chapter2/][automatetheboringstuff.com]]
+- Yunits, B. (2019). Which programming languages use indentation? URL:
+  [[https://pldb.com/posts/which-programming-languages-use-indentation.html#:~:text=abc%2C%20aldor%2C%20boo%2C%20buddyscript,%2C%20stylus%2C%20xl%2Dprogramming%2D][pldb.com]].
