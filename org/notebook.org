@@ -823,7 +823,39 @@ Here is a preview on even more data structures besides =list=, namely
 
 ** Preview: test 5 (Thursday)
 
-** Review
+For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.com/workspace/w/f87132bd-3262-4a0f-bbd8-cbbc8222b00a/edit][this workspace]].
+
+- What's a function?
+- How can you get help?
+- What are function arguments and parameters?
+- What's a method in Python, and are methods functions?
+- Use a method to sort elements of a list.
+  #+begin_src python
+    foo = ["Saige", "Lou", "Ethan", "Loren"]
+    print(foo)
+    foo.sort()  # sorts the list 'in place'
+    print(foo)
+  #+end_src
+
+  #+RESULTS:
+  : ['Saige', 'Lou', 'Ethan', 'Loren']
+  : ['Ethan', 'Loren', 'Lou', 'Saige']
+- What's a package in Python?
+- How can you import a package or module or function?
+- What data type is the output of the function =max=?
+- How many arguments do you have to supply to =round=?
+- What does the =index= function do?
+  #+begin_src python
+    print(foo)
+    print(foo.index('Lou'))
+  #+end_src
+
+  #+RESULTS:
+  : ['Ethan', 'Loren', 'Lou', 'Saige']
+  : 2
+  
+** Review assignments
+
 Assignment for Thu 5 Oct: bonus assignment similar to what
 we did in class today - "De Morgan's Laws"
 https://lyon.instructure.com/courses/2006/assignments/15585
@@ -844,32 +876,33 @@ values using a truth table, and interpret the results - do at least
 one of
 these. https://lyon.instructure.com/courses/2006/assignments/19441
 
+
 * 8.4 Thu, 12-Oct: Test 5
-* 8.5 Fri, 13-Oct: if, else, alif
+* 8.5 Fri, 13-Oct: If, else, alif
 
 - Review: test 5
 - Conditional statements I
   
-* 9.1 Mon, 16-Oct: sprint review
+* 9.1 Mon, 16-Oct: Sprint review
 
 - Monthly summary
 - 2nd sprint review
 - conditional statements II
 
-* 9.2 Tue, 17-Oct: programming assignment II
+* 9.2 Tue, 17-Oct: Programming assignment II
 
-* 9.3 Wed, 18-Oct: loops I
+* 9.3 Wed, 18-Oct: Loops I
 
-* 9.4 Thu, 19-Oct: test 6
+* 9.4 Thu, 19-Oct: Test 6
 
-* 9.5 Fri, 20-Oct: review assignment
+* 9.5 Fri, 20-Oct: Review assignment
 
-* 10.1 Mon, 23-Oct: loops II
+* 10.1 Mon, 23-Oct: Loops II
 
 * 10.2 Tue, 24-Oct: DataCamp assignment
 
-* 10.3 Wed, 25-Oct: import
+* 10.3 Wed, 25-Oct: Import
 
-* 10.4 Thu, 26-Oct: test 7
+* 10.4 Thu, 26-Oct: Test 7
 
 * 10.5 Fri, 27-Oct NO CLASS - Pgm assignment III
