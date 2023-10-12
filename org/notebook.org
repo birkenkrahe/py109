@@ -820,7 +820,6 @@ Here is a preview on even more data structures besides =list=, namely
     : dict_values([11.25, 18.0, 20.0, 10.75, 9.5])
 
 * 8.3 Wed, 11-Oct: Review: Booleans
-
 ** Preview: test 5 (Thursday)
 
 For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.com/workspace/w/f87132bd-3262-4a0f-bbd8-cbbc8222b00a/edit][this workspace]].
@@ -854,30 +853,47 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
   : ['Ethan', 'Loren', 'Lou', 'Saige']
   : 2
   
-** Review assignments
+** Review assignments (deadlines extended!)
 
-Assignment for Thu 5 Oct: bonus assignment similar to what
-we did in class today - "De Morgan's Laws"
-https://lyon.instructure.com/courses/2006/assignments/15585
+- Assignment for Thu 5 Oct: bonus assignment similar to what we did in
+  class today - "De Morgan's Laws"
+  https://lyon.instructure.com/courses/2006/assignments/15585
 
-Assignments for Friday Oct 6: DataCamp lesson "Python functions and
-packages" https://lyon.instructure.com/courses/2006/assignments/18718
+  This assignment required using =if= statements.
 
-Assignment for Monday, Oct 9: Truth tables - three logic exercises -
-truth tables: develop truth tables for three different problems (do at
-least one of these). Ex 1: create simple truth tables. Ex 2: simplify
-using De Morgan's laws, Ex.3 show equivalence between logical
-expressions. Do at least one of
-these. https://lyon.instructure.com/courses/2006/assignments/19440
+- Assignments for Friday Oct 6: DataCamp lesson "Python functions and
+  packages"
+  https://lyon.instructure.com/courses/2006/assignments/18718
 
-Assignment for Tuesday, Oct 10: translate text scenarios into logical
-expressions (with Boolean operators), and then determine the truth
-values using a truth table, and interpret the results - do at least
-one of
-these. https://lyon.instructure.com/courses/2006/assignments/19441
+  We reviewed this lesson in class. See also test 5.
 
+- Assignment for Monday, Oct 9: Truth tables - three logic exercises -
+  truth tables: develop truth tables for three different problems (do
+  at least one of these). Ex 1: create simple truth tables. Ex 2:
+  simplify using De Morgan's laws, Ex.3 show equivalence between
+  logical expressions. Do at least one of
+  these. https://lyon.instructure.com/courses/2006/assignments/19440
 
-* 8.4 Thu, 12-Oct: Test 5
+  [[https://app.datacamp.com/workspace/w/4a2a3afc-f9e4-4857-abd5-3ca1f44b8c4b/edit][See examples in this notebook.]]
+
+- Assignment for Tuesday, Oct 10: translate text scenarios into
+  logical expressions (with Boolean operators), and then determine the
+  truth values using a truth table, and interpret the results - do at
+  least one of
+  these. https://lyon.instructure.com/courses/2006/assignments/19441
+
+  [[https://app.datacamp.com/workspace/w/4a2a3afc-f9e4-4857-abd5-3ca1f44b8c4b/edit][See examples in this notebook.]]
+
+* 8.4 Thu, 12-Oct: Complete test 5
+
+...And work on various bonus exercises (pick any of these):
+- [[https://lyon.instructure.com/courses/2006/assignments/15596][Spam]]: store an input string & print it in different =print= formats
+- [[https://lyon.instructure.com/courses/2006/assignments/15588][Formatted truth tables]]: =print= the truth table as an actual table
+- [[https://lyon.instructure.com/courses/2006/assignments/15582][Cone drill]]: calculate a simple formula.
+
+  You can do all of these in your own time, more or less: the
+  deadlines are end of October by when I will give you sample solutions.
+
 * 8.5 Fri, 13-Oct: If, else, alif
 
 - Review: test 5
