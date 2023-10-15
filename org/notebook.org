@@ -900,10 +900,23 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
 - Conditional statements I
   
 * 9.1 Mon, 16-Oct: Sprint review
+#+caption: Medieval colored woodcut scene inside a grand library with towering bookshelves. Teams of scholars in medieval robes discuss their projects. One team points to a large scroll laid out on a table, detailing their methods with hand-drawn diagrams. Another team presents a pile of ancient books, representing their literature review. A wise elder, possibly a librarian, listens intently, occasionally nodding in approval.
+#+attr_latex: :width 400px
+[[../img/2ndSprintReview.png]]
 
-- Monthly summary
-- 2nd sprint review
-- conditional statements II
+** Monthly summary
+
+
+
+** 2nd sprint review
+
+- Everybody presents their project progress briefly and informally.
+- Focus on the reviewed literature and your method or approach.
+- Comment on you general progress, pride, change issues.
+- Ask questions of the product owner and of other projects.
+- Upload any material to your project folder in GDrive.
+  
+
 
 * 9.2 Tue, 17-Oct: Programming assignment II
 
