@@ -6,7 +6,8 @@
 - Notes usually based on whiteboard screenshots ([[https://drive.google.com/drive/folders/1_UwbKsqmefLu97aVizfUE_qCYeg6IvHm?usp=sharing][GDrive]]).
 - Includes further reading, watching and comments
 
-* 1.1 Mon, 21-Aug
+* First part of term
+** 1.1 Mon, 21-Aug
 
 - R vs. Python: two dominant data science languages ([[https://www.datacamp.com/blog/python-vs-r-for-data-science-whats-the-difference?irclickid=0a2UQaStbxyNWhXRYE2FCwsmUkF3qu3eNVpDxo0&irgwc=1&utm_medium=affiliate&utm_source=impact&utm_campaign=000000_1-1310690_2-mix_3-all_4-na_5-na_6-na_7-mp_8-affl-ip_9-na_10-bau_11-Admitad%20-%201310690&utm_content=TEXT_LINK&utm_term=442763][more on the
   DataCamp blog]])
@@ -21,7 +22,7 @@
 - Scrum: agile project management method originating from software
   engineering and now used much elsewhere ([[https://youtu.be/SWDhGSZNF9M][Scrum in 20 min - video]]).
 
-* 1.2 Wed, 23-Aug
+** 1.2 Wed, 23-Aug
 
 - Opened DataCamp workspace to a sample notebook
   at tinyurl.com/WorkspaceDemoPython
@@ -37,7 +38,7 @@
 - CSV files (.csv) are comma-separated-value files i.e. individual
   values for the cells of a table are separated by a comma.
 
-* 1.3 Fri, 25-Aug
+** 1.3 Fri, 25-Aug
 
 - "Dynamically typed" languages take care of memory management for
   data types (e.g. integer, floating point, character).
@@ -50,7 +51,7 @@
   code cells. Text cells can be edited, code cells can be run. The
   output appears below the code cell.
 
-** Week review
+*** Week review
 
 1. What are the graded course activities?
 2. What is a sprint review?
@@ -63,14 +64,14 @@
 9. What are unicorn companies?
 10. ~pandas~ and ~pd.read_csv~
 
-** Week preview
+*** Week preview
 
 - [ ] Complete DataCamp workspace demo online
 - [ ] Friday: talk about the project/first sprint review
 - [ ] Tuesday: complete the first test (max 30 min)
 - [ ] Tuesday/Thursday: complete the next DataCamp lesson (max 30 min)
 
-* 2.1 Mon, 28-Aug
+** 2.1 Mon, 28-Aug
 
 - Testing the AI coding assistant.
 - Reading error messages (beginner: jump to the end).
@@ -88,7 +89,7 @@
   values and ~print~ them one by one, or use a /list comprehension/.
 - Python can be written in a very condensed way ("one-liners").
 
-* 2.2 Wed, 30-Aug
+** 2.2 Wed, 30-Aug
 
 - The dot operator allows you to access functions or attributes in
   so-called classes (categories), e.g. ~pd.unique~ or
@@ -106,9 +107,9 @@
 - Quick barplot plotting with ~plotly.express.bar~.
 - Checking a data type with ~type~.
 
-* 2.3 Fri, 1-Sep
+** 2.3 Fri, 1-Sep
 
-** Review
+*** Review
 
 - What does the ~.~ operator do?
 - What does the ~[]~ operator do?
@@ -120,11 +121,11 @@
 - What's a bar plot?
 - How can you check the type of data?
 
-** Python basics
+*** Python basics
 
 Practice file: https://tinyurl.com/BasicsPython
 
-** Summary
+*** Summary
 
 - How to enter images and links in the notebook text cells.
 - Expressions are basic programming instructions for the computer.
@@ -151,10 +152,10 @@ Practice file: https://tinyurl.com/BasicsPython
      #+end_src
 - Python has data types: ~int~, ~float~ and ~str~. You can check them: ~type~
 
-* 3.1 Wed, 6-Sep
+** 3.1 Wed, 6-Sep
 
-** Review DataCamp lesson 2 - Procedural programming
-*** Concepts
+*** Review DataCamp lesson 2 - Procedural programming
+**** Concepts
 
 - What's a procedure?
   #+begin_quote
@@ -169,7 +170,7 @@ Practice file: https://tinyurl.com/BasicsPython
   When a problem can be broken down into steps.
   #+end_quote
 
-*** Code
+**** Code
 
 - Define two variables ~my_height~ and ~your_height~ and assign values to
   them, e.g. 180 cm and 170 cm.
@@ -206,7 +207,7 @@ Practice file: https://tinyurl.com/BasicsPython
             print("I'm taller", height)
   #+end_src
 
-*** Creativity
+**** Creativity
 
 - Create a function ~hello~ that says "Hi, [yourname]":
   #+begin_src python :results silent
@@ -278,12 +279,12 @@ Practice file: https://tinyurl.com/BasicsPython
   : Hello, Ethan
   : Hello, Loren
 
-** DataCamp lesson schedule changed! (Start with "Intro")
-** Complete test 2 on Thursday! (To be published)
-** Friday: we'll talk about projects (Think about something)
+*** DataCamp lesson schedule changed! (Start with "Intro")
+*** Complete test 2 on Thursday! (To be published)
+*** Friday: we'll talk about projects (Think about something)
 
-* 3.2 Fri, 8-Sep
-** Reviewing test 2
+** 3.2 Fri, 8-Sep
+*** Reviewing test 2
 
 - In the statement ~x = 1~,
   1) ~x~ is an integer variable (naming conventions apply)
@@ -331,16 +332,16 @@ Practice file: https://tinyurl.com/BasicsPython
   : 1 [2, 3, 4, 5]
   : [2, 3, 4]
 
-** Finish reviewing DataCamp lesson 2 (procedures)
-** Getting grades into "hack"? (Answer)
-* 4.1 Mon, 11-Sep
+*** Finish reviewing DataCamp lesson 2 (procedures)
+*** Getting grades into "hack"? (Answer)
+** 4.1 Mon, 11-Sep
 
 - Finished "Python Basics" ([[https://github.com/birkenkrahe/py109/blob/main/pdf/1_basics.pdf][handout]] / [[https://app.datacamp.com/workspace/w/edc90964-9713-4674-a19e-441e2ff4eddb/edit][notebook]])
 - Learnt about naming conventions in Python
 - Learnt about string concatenation and replication
 - Wrote a short program ~spooky.py~ as a notebook
 
-* 4.2 Wed, 13-Sep
+** 4.2 Wed, 13-Sep
 
 - NO CLASS ON FRIDAY: WORK ON PROJECTS/ASSIGNMENTS INSTEAD
 - How to get "dark mode" for DataCamp workspace
@@ -349,9 +350,9 @@ Practice file: https://tinyurl.com/BasicsPython
 - Get started with Google Colaboratory (colab.research.google.com)
 - ~input()~ works in the Jupyter Lab notebook (via the ~View~ tab).
 
-* 4.3 Fri, 15-Sep (no class: sprint review)
-* 5.1 Mon, 18-Sep
-** Monthly summary
+** 4.3 Fri, 15-Sep (no class: sprint review)
+** 5.1 Mon, 18-Sep
+*** Monthly summary
 
 - What can you say about Python?
 
@@ -365,50 +366,50 @@ Practice file: https://tinyurl.com/BasicsPython
 
 - What can you say about Python errors?
 
-** Finish Python ~input~ Basics (workspace)
-** DataCamp assignments: you've got more time!
-** Discuss the programming assignments (for Tue)
+*** Finish Python ~input~ Basics (workspace)
+*** DataCamp assignments: you've got more time!
+*** Discuss the programming assignments (for Tue)
 
 - Introduce programming assignments ([[https://lyon.instructure.com/courses/2006/assignments/15592][word count]] / [[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]])
 
-** Discuss project ideas
+*** Discuss project ideas
 
 - Talk about projects ([[https://lyon.instructure.com/courses/2006/pages/project-idea-s][sign up sheet]])
 
-** Next test (3) for Thursday (basic Python)
+*** Next test (3) for Thursday (basic Python)
 
 - Python Basic practice
 - Python Input practice
 - DataCamp Python intro chapter 1
 
-* 5.2 Tue, 19-Sep - Work on programming assignments
+** 5.2 Tue, 19-Sep - Work on programming assignments
 
 - Word count program (show your solutions)
 - A New Hope program (show your solutions)
 
-* 5.3 Wed, 20-Sep
+** 5.3 Wed, 20-Sep
 
-** Review programming assignments
+*** Review programming assignments
 
 - Solutions to [[https://gist.github.com/birkenkrahe/1b15fe6b573d22c5af08dc9584cfc086][word count assignment]]
 - Solutions to [[https://gist.github.com/birkenkrahe/ef6f2f3229e9a25e03fc81e1f007456d][A New Hope]] assignment
 
-** Boolean variables, values and operators
+*** Boolean variables, values and operators
 
 - Important to master conditional statements (~if~, ~else~, ~elseif~)
 - See workbook and practice notebook
 
-** No class on Friday (me = conference)
+*** No class on Friday (me = conference)
 #+attr_html: :width 400px
 [[../img/Absolute_Reality_v16_literate_programming_0.jpg]]
 
-** New DataCamp lesson "lists" - due Friday night
-** New test available tonight - due Monday
+*** New DataCamp lesson "lists" - due Friday night
+*** New test available tonight - due Monday
 
-* 5.4 Thu, 21-Sep - Complete test 3
-* 5.5 Fri, 22-Sep (no class - reading assignment)
-* 6.1 Mon, 25-Sep
-** Review 1st sprint reviews - preview 2nd sprint
+** 5.4 Thu, 21-Sep - Complete test 3
+** 5.5 Fri, 22-Sep (no class - reading assignment)
+** 6.1 Mon, 25-Sep
+*** Review 1st sprint reviews - preview 2nd sprint
 
 Please upload your proposals from the first sprint review to [[https://drive.google.com/drive/folders/1OyNNo1i83t626ChoZu8lAzZowKXtxQ01?usp=drive_link][this
 GDrive repo]] (Lou has already done this).
@@ -433,7 +434,7 @@ example see [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should
 Upload your reference list [[https://drive.google.com/drive/folders/1A2PE2DawpWQ7Te0gCsq6cA7TmdtNQlQb?usp=sharing][to this GDrive repo]], and briefly present
 your project in class.
 
-** Review pgm assignments [[https://lyon.instructure.com/courses/2006/assignments/15592][word count]]/[[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]]
+*** Review pgm assignments [[https://lyon.instructure.com/courses/2006/assignments/15592][word count]]/[[https://lyon.instructure.com/courses/2006/assignments/15579][A New Hope]]
 
 [[https://app.datacamp.com/workspace/w/a8e32458-35b1-4818-bb32-aee5d557cc78/edit][Workspace notebook with sample solutions.]]
 
@@ -441,15 +442,15 @@ Introduce bpmn.io with word count:
 #+attr_latex: :width 400px
 [[../img/wordCount1.png]]
 
-** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
+*** Review test 3 ([[https://lyon.instructure.com/courses/2006/assignments/15598?display=full_width][Canvas]])
 
-* 6.2 Tue, 26-Sep
+** 6.2 Tue, 26-Sep
 
 - Tuesday/Thursday: complete the 2nd Intro to Python chapter at
   DataCamp.
 
-* 6.3 Wed, 27-Sep
-** Flow control (BPMN)
+** 6.3 Wed, 27-Sep
+*** Flow control (BPMN)
 
 - Visualizing flow
 - Advantages and disadvantages of modeling (pseudocode)
@@ -458,12 +459,12 @@ Introduce bpmn.io with word count:
 - Boolean values in Python
 - Comparison operators in Python
 
-* 6.4 Thu, 28-Sep
+** 6.4 Thu, 28-Sep
 
 - Tuesday/Thursday: complete the 2nd Intro to Python chapter at
   DataCamp.
 
-* 6.5 Fri, 29-Sep
+** 6.5 Fri, 29-Sep
 
 Different ways of getting into Python (on the PC/online):
 - Console/IDLE: Download Python on your Windows machine (Microsoft
@@ -486,8 +487,8 @@ right now. You can download it to your PC.
 The best Python editor: GNU Emacs + Org mode (that's for hackers
 only): [[https://realpython.com/emacs-the-best-python-editor/][see more]].
 
-* 7.1 Mon, 2-Oct: lists
-** Review Python lists - Preview Test 4
+** 7.1 Mon, 2-Oct: lists
+*** Review Python lists - Preview Test 4
 
 We're going to review [[https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-2-python-lists?ex=1][Chapter 2 - Python Lists]] - you'll find some of
 this (only the =list= stuff) in test 4, which will be available
@@ -660,21 +661,21 @@ tomorrow (Tue 3-Oct) for you to complete:
     : bar: [1, 2, 5, 6]
     : foo: [1, 2, 3]
 
-** Continue: Boolean values and operators
-* 7.2 Tue, 3-Oct: test 4
+*** Continue: Boolean values and operators
+** 7.2 Tue, 3-Oct: test 4
 
 [[https://lyon.instructure.com/courses/2006/assignments/19350/edit?quiz_lti][Complete test 4 (Python lists)]]
 
-* 7.3 Wed, 4-Oct: Booleans
+** 7.3 Wed, 4-Oct: Booleans
 
 Boolean values.
 
-* 7.4 Thu, 5-Oct: pgm assignment (Booleans)
+** 7.4 Thu, 5-Oct: pgm assignment (Booleans)
 
 Complete the programming assignment.
 
-* 7.5 Fri, 6-Oct: DataCamp (functions/packages)
-** Preview of dictionaries, tuples and comprehensions
+** 7.5 Fri, 6-Oct: DataCamp (functions/packages)
+*** Preview of dictionaries, tuples and comprehensions
 
 Here is a preview on even more data structures besides =list=, namely
 =dictionary= and =tuple=:
@@ -819,8 +820,8 @@ Here is a preview on even more data structures besides =list=, namely
     : dict_keys(['hallway', 'kitchen', 'living room', 'bedroom', 'bathroom'])
     : dict_values([11.25, 18.0, 20.0, 10.75, 9.5])
 
-* 8.3 Wed, 11-Oct: Review: Booleans
-** Preview: test 5 (Thursday)
+** 8.3 Wed, 11-Oct: Review: Booleans
+*** Preview: test 5 (Thursday)
 
 For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.com/workspace/w/f87132bd-3262-4a0f-bbd8-cbbc8222b00a/edit][this workspace]].
 
@@ -853,7 +854,7 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
   : ['Ethan', 'Loren', 'Lou', 'Saige']
   : 2
   
-** Review assignments (deadlines extended!)
+*** Review assignments (deadlines extended!)
 
 - Assignment for Thu 5 Oct: bonus assignment similar to what we did in
   class today - "De Morgan's Laws"
@@ -884,7 +885,7 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
 
   [[https://app.datacamp.com/workspace/w/4a2a3afc-f9e4-4857-abd5-3ca1f44b8c4b/edit][See examples in this notebook.]]
 
-* 8.4 Thu, 12-Oct: Complete test 5
+** 8.4 Thu, 12-Oct: Complete test 5
 
 ...And work on various bonus exercises (pick any of these):
 - [[https://lyon.instructure.com/courses/2006/assignments/15596][Spam]]: store an input string & print it in different =print= formats
@@ -894,44 +895,121 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
   You can do all of these in your own time, more or less: the
   deadlines are end of October by when I will give you sample solutions.
 
-* 8.5 Fri, 13-Oct: If, else, alif
+** 8.5 Fri, 13-Oct: If, else, alif
 
 - Review: test 5
 - Conditional statements I
   
-* 9.1 Mon, 16-Oct: Sprint review
+* 9.1 Mon, 16-Oct: Summary / Sprint review
+#+caption: Photo of a female 'Python Hacker' action figure in clear plastic wrapping. The figure sports a black hoodie with a prominent white Python logo. She has a utility belt filled with mini computer devices and USB drives. Posing confidently, one hand holds a mini tablet displaying code, while the other is poised with a stylus. The packaging features graphics such as 'Code Queen!', 'Debugging Diva!', 'Scripting Superstar!', and 'Automation Ace!' with illustrations of her masterfully navigating a digital landscape and resolving complex coding challenges.
+#+attr_latex: :width 400px
+[[../img/PythonSuperhero.png]]
+
+* Monthly summary
+
+Status: we're one week behind schedule.
+
+*** Extras (Google Space/chat)
+#+attr_html: :width 300px
+[[../img/ring.png]]
+1. Presentation: Generative AI in education
+2. Realpython tutorial: Python operators and expressions
+3. Python styleguide
+4. FreeCodeCamp course: Ultimate beginner's Python course (9 hrs)
+5. Tutorial: Using AI in DataCamp workspace
+6. Google Cybersecurity Certificate
+7. FreeCodeCamp course: Intermediate Python (6 hrs)
+8. Blog: Top 5 Practices in Python
+9. Realpython exercises: conditional logic
+10. Blog: 10 Essential Python skills all data scientists should master
+11. Realpython: new features in Python 3.12
+12. FreeCodeCamp tutorial: VS Code - become more productive (6 hrs)
+13. Realpython tutorial: min() and max()
+14. Realpython tutorial: how to sort unicode strings
+15. Coding with Minecraft in Python: Visualmodder.org
+
+*** Concepts
+
+#+begin_quote
+"[School] bored me. The teachers behaved like sergeants. I wanted to
+learn what I wanted to know, but they wanted me to learn for the
+exam. What I hated most was the competitive system there, and
+especially sports. Because of this, I wasn't worth anything, and
+several times they suggested I leave. [...] I felt that my thirst for
+knowledge was being strangled by my teachers; grades were their only
+measurement. (Albert Einstein)
+#+end_quote
+
+- Histograms
+- Logic operators and values
+- Flow control with conditional statements
+- Python lists and dataframes
+- Word counting
+- Stringing words together (concatenation) and replicating them
+- Getting keyboard input and converting it to numbers
+- Managing a project using Scrum (sprint reviews, prototypes)
+- Literate programming using interactive notebooks
+- Using the command line interface (terminal, shell)
+- Using IPython, Jupyter Lab, Google Colaboratory and DataCamp
+  Workspace
+- Programming paradigms: procedural, functional, literate programming
+- Variables and data types
+- Error types
+- Operator order or precedence
+- Standard data streams: stdin, stdout, stderr
+- f-string formatting
+- mandatory and optional function arguments (with defaults)
+- function arguments vs. parameters
+- Process modeling with BPMN (bpmn.io)
+- BPMN pools, flows, tasks, events, gateways
+- pseudocode
+- Comparison operators
+- De Morgan's laws
+- Quantum computing?
+
+*** Code - 30 functions/operators
+
+| print     | str         | int          | float       |
+| NameError | SyntaxError | ValueError   | TypeError   |
+| len       | str.split   | input        | str.strip   |
+| ~==~, ~!=~    | ^ (XOR)     | and, or, not | True, False |
+| return    | def         | (), [], [:]  | None        |
+| list.sort | str.upper   | type         | import      |
+
+** 2nd sprint review
 #+caption: Medieval colored woodcut scene inside a grand library with towering bookshelves. Teams of scholars in medieval robes discuss their projects. One team points to a large scroll laid out on a table, detailing their methods with hand-drawn diagrams. Another team presents a pile of ancient books, representing their literature review. A wise elder, possibly a librarian, listens intently, occasionally nodding in approval.
 #+attr_latex: :width 400px
 [[../img/2ndSprintReview.png]]
 
-** Monthly summary
+- Everybody *presents* their project status briefly and informally.
+- Focus on the reviewed *literature* and your method or *approach*.
+- Comment on you general *progress*, pride, change issues.
+- Ask *questions* of the product owner and of other projects.
+- *Upload* any material to your project folder in GDrive.
 
+** Assignments: Booleans, programming (Tue)
 
+* 9.2 Tue, 17-Oct: Programming assignments
 
-** 2nd sprint review
+I have opened three more simple (bonus) exercises. Solve as many of
+these as you can on Tuesday:
+1) [[https://lyon.instructure.com/courses/2006/assignments/15596][Spam]]: store an input string & print it in different print formats
+2) [[https://lyon.instructure.com/courses/2006/assignments/15588][Formatted truth tables]]: print the truth table as an actual table
+3) [[https://lyon.instructure.com/courses/2006/assignments/15582][Cone drill]]: calculate a simple formula.
 
-- Everybody presents their project progress briefly and informally.
-- Focus on the reviewed literature and your method or approach.
-- Comment on you general progress, pride, change issues.
-- Ask questions of the product owner and of other projects.
-- Upload any material to your project folder in GDrive.
-  
+Submit the links to the published DataCamp notebooks for 1+2, and to
+the Google Colab notebook (because of the input) for 3.
 
+I will comment your solutions in the notebook and give you a sample
+solution.
 
-* 9.2 Tue, 17-Oct: Programming assignment II
-
-* 9.3 Wed, 18-Oct: Loops I
-
-* 9.4 Thu, 19-Oct: Test 6
-
+* 9.3 Wed, 18-Oct: Conditional statements
+* 9.4 Thu, 19-Oct: Test 6: functions, if, else
 * 9.5 Fri, 20-Oct: Review assignment
 
-* 10.1 Mon, 23-Oct: Loops II
-
+* 10.1 Mon, 23-Oct: Iteration
 * 10.2 Tue, 24-Oct: DataCamp assignment
 
-* 10.3 Wed, 25-Oct: Import
-
+* 10.3 Wed, 25-Oct: Importing libraries
 * 10.4 Thu, 26-Oct: Test 7
-
 * 10.5 Fri, 27-Oct NO CLASS - Pgm assignment III

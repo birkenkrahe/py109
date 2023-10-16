@@ -72,8 +72,8 @@ Let's create a couple of error messages using wrong expressions:
 
 The table shows a list of all math operators in Python. They are
 listed from highest to lowest precedence:
-
-![img]("file")
+#+attr_latex: :width 400px
+[[../img/py_ops.png]]
 
 The precedence is the order of operations: when Python gets an
 expression with more than one operator, it evaluates from left to

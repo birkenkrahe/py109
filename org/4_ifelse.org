@@ -123,7 +123,7 @@
   #+caption: Flowchart for an else statement (Sweigart, 2019)
   [[../img/py_flow.png]]
 
-* Comparison with C/C++ and R
+* Comparison between C/C++ and R
 
 - In C/C++, a compiled language (that requires a compiler like ~gcc~
   to generate a machine code file that is then executed), the last
