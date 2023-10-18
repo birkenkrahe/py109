@@ -905,11 +905,11 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
 #+attr_latex: :width 400px
 [[../img/PythonSuperhero.png]]
 
-* Monthly summary
+** Monthly summary
 
 Status: we're one week behind schedule.
 
-*** Extras (Google Space/chat)
+**** Extras (Google Space/chat)
 #+attr_html: :width 300px
 [[../img/ring.png]]
 1. Presentation: Generative AI in education
@@ -928,7 +928,7 @@ Status: we're one week behind schedule.
 14. Realpython tutorial: how to sort unicode strings
 15. Coding with Minecraft in Python: Visualmodder.org
 
-*** Concepts
+**** Concepts
 
 #+begin_quote
 "[School] bored me. The teachers behaved like sergeants. I wanted to
@@ -967,7 +967,7 @@ measurement. (Albert Einstein)
 - De Morgan's laws
 - Quantum computing?
 
-*** Code - 30 functions/operators
+**** Code - 30 functions/operators
 
 | print     | str         | int          | float       |
 | NameError | SyntaxError | ValueError   | TypeError   |
@@ -976,7 +976,7 @@ measurement. (Albert Einstein)
 | return    | def         | (), [], [:]  | None        |
 | list.sort | str.upper   | type         | import      |
 
-** 2nd sprint review
+*** 2nd sprint review
 #+caption: Medieval colored woodcut scene inside a grand library with towering bookshelves. Teams of scholars in medieval robes discuss their projects. One team points to a large scroll laid out on a table, detailing their methods with hand-drawn diagrams. Another team presents a pile of ancient books, representing their literature review. A wise elder, possibly a librarian, listens intently, occasionally nodding in approval.
 #+attr_latex: :width 400px
 [[../img/2ndSprintReview.png]]
@@ -987,7 +987,7 @@ measurement. (Albert Einstein)
 - Ask *questions* of the product owner and of other projects.
 - *Upload* any material to your project folder in GDrive.
 
-** Assignments: Booleans, programming (Tue)
+*** Assignments: Booleans, programming (Tue)
 
 * 9.2 Tue, 17-Oct: Programming assignments
 
@@ -1004,9 +1004,11 @@ I will comment your solutions in the notebook and give you a sample
 solution.
 
 * 9.3 Wed, 18-Oct: Conditional statements
-* 9.4 Thu, 19-Oct: Test 6: functions, if, else
-* 9.5 Fri, 20-Oct: Review assignment
 
+New printout new lecture new practice.
+
+* 9.4 Thu, 19-Oct: Test 6: functions, if, else
+* 9.5 Fri, 20-Oct: NO CLASS
 * 10.1 Mon, 23-Oct: Iteration
 * 10.2 Tue, 24-Oct: DataCamp assignment
 
