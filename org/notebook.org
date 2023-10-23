@@ -1011,7 +1011,6 @@ New printout new lecture new practice.
 * 9.5 Fri, 20-Oct: NO CLASS
 * 10.1 Mon, 23-Oct: Iteration
 * 10.2 Tue, 24-Oct: DataCamp assignment
-
 * 10.3 Wed, 25-Oct: Importing libraries
 * 10.4 Thu, 26-Oct: Test 7
 * 10.5 Fri, 27-Oct NO CLASS - Pgm assignment III
