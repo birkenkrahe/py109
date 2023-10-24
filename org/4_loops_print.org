@@ -1,0 +1,401 @@
+#+TITLE:PYTHON LOOPS - WHILE, FOR, BREAK, CONTINUE, RANGE
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: CSC 109 - Introduction to programming in Python - Fall 2023
+#+STARTUP: overview hideblocks indent inlineimages entitiespretty
+#+PROPERTY: header-args:python :results output :exports both :session *Python*
+* Introduction
+#+attr_html: :width 400px
+#+caption: A Fokker looping (1915-20), Library of Congress@Flickr.com
+[[../img/loop.jpg]]
+
+- Loops are clauses that repeat any number of times.
+
+- Like all clauses, a condition is tested to check if the clause ought
+  to be entered.
+
+- But once it's been entered, the condition is tested again after
+  performing some action:
+  #+begin_example python
+     loop [condition]:
+        do something
+        go back to the loop condition
+  #+end_example
+
+- Python knows two loop types, ~while~ and ~for~, and two loop exit
+  strategies, ~break~ and ~continue~.
+
+* While loops
+
+- A ~while~ statement always consists of:
+  1) The ~while~ keyword
+  2) A condition (an expression that evaluates to ~True~ or ~False~)
+  3) A colon (~:~)
+  4) An indented block (~while~ clause) on the next line.
+
+- At the end of an ~if~ statement, execution continues. At the end of a
+  ~while~ statement, execution jumps back to test the condition again.
+
+- Here is an ~if~ statement to print 'Hello, world.'
+  #+begin_example python
+    spam = 0
+    if spam < 5:
+        print('Hello, world.')
+        spam = spam + 1
+  #+end_example
+
+  #+RESULTS:
+  : Hello, world.
+
+- Replacing ~if~ by ~while~: when executed, this prints 'Hello, world.'
+  five times.
+  #+begin_example python
+    spam = 0
+    while spam < 5:
+        print('Hello, world.')
+        spam = spam + 1
+  #+end_example
+
+  #+RESULTS:
+  : Hello, world.
+  : Hello, world.
+  : Hello, world.
+  : Hello, world.
+  : Hello, world.
+
+- Look at the BPMN process diagrams and the code side by side ([[https://docs.google.com/presentation/d/1B1eSv3pfQOCOoVl5dpuX6OcXsyXXPyvgAxUryBkGPL0/edit?usp=sharing][slide]]):
+  #+attr_html: :width 400px
+  #+caption: if vs. while statement
+  [[../img/py_if_while_full.png]]
+
+- In the ~while~ statement, the condition is checked at the start of
+  each /iteration/ (that is one loop execution).
+
+- Production BPMN diagrams with loops do not have any lines running
+  back: instead, the loop tasks are overloaded as shown here. To save
+  time, we're not using a production BPMN tool (like signavio.com) but
+  a simpler, free online tool like bpmn.io.
+  #+attr_html: :width 400px
+  #+caption: Loop task in BPMN (camunda.com)
+  [[../img/py_bpmn_loop.png]]
+
+* Annoying while it lasts
+
+- Create a new code block (or a new notebook) in Colab and enter the
+  following code, replacing ~'your name'~ by your actual name:
+  + collapse the print + input lines into one input + prompt line!
+  #+begin_example python :tangle ./src/yourName.py
+    name = ''
+    while name != 'your name':
+        print('Please type your name')
+        name = input()
+    print('Thank you!')
+  #+end_example
+
+- Run the file and try to understand what's going on:
+  1) The ~name~ variable is initialized as the empty string ~''~
+  2) The condition is tested for the first time: it's ~True~
+  3) The clause is entered and you're asked to enter your name
+  4) The ~input~ function assigns what you entered to ~name~
+  5) The condition is tested again (and again and again...)
+  6) As soon as you enter your name, with the correct spelling, the
+     condition becomes ~False~ and the program jumps to the last line.
+
+- Go to [[https://autbor.com/yourname/][autbor.com/yourname/]] to run the file. ~Edit this code~ to change
+  ~'your name'~ in the code to your own name.
+
+- Here is the process diagram for this code:
+  #+attr_html: :width 400px
+  #+caption: While loop that waits until you enter your name
+  [[../img/py_yourname.png]]
+
+* Breaking out of a loop
+
+- Loops are entered when the condition evaluates to ~True~ and they are
+  left only if it evaluates to ~False~ - it's easy to go "infinite".
+
+- When execution hits the ~break~ statement, it exits the current clause
+  immediately. In nested loops, it exits the innermost loop only.
+
+- Let's create an infinite loop and ~break~ it when a condition is met:
+  #+begin_example python
+    while True:
+        name = input('Please type your name: ')
+        if name == 'your name':
+            break
+    print('Thank you!')
+  #+end_example
+
+- Go to [[https://autbor.com/yourname2/][autbor.com/yourname2/]] to run the file. ~Edit this code~ to
+  change ~'your name'~ in the code to your own name.
+
+- Here is the process diagram for this and the previous loop:
+  #+attr_html: :width 400px
+  #+caption: Infinite while loop that must be broken out of
+  [[../img/py_yourname2.png]]
+  #+attr_html: :width 400px
+  [[../img/py_yourname.png]]
+
+- *Exercise:* what happens if you use ~break~ outside of a loop clause?
+  Can you fool Python by indenting the ~break~? Write a one-line "Hello,
+  world!" program followed by a ~break~ statement:
+  #+begin_example python
+    print("Hello, world!")
+    break
+  #+end_example
+
+- For fun, create an infinite loop /without/ break condition that prints
+  "Infinity!" forever until you break the execution with CTRL-D:
+  #+begin_example python
+    while True:
+        print('Infinity')
+  #+end_example
+
+- In Colab, delete the "infinite" output by clicking on the "X".  
+
+* Continuing a loop
+
+- Like ~break~, the ~continue~ statement is only used inside a loop.
+
+- When a ~continue~ statement is reached, the program jumps back to the
+  start of the loop and re-evaluates the loop condition.
+
+- Write a program that:
+  1) starts with an infinite ~while~ loop (always ~True~)
+  2) asks for ~input~ of a ~name~.
+  3) ~if~ the ~name~ is not equal to ~'Joe'~ it executes ~continue~
+  4) otherwise, it asks for ~input~ of the ~password~
+  5) ~if~ the ~password~ is ~'swordfish'~ it executes ~break~.
+  6) confirms ~'Access granted'~ when you're done.
+
+- Solution:
+  #+begin_example python :tangle ../src/swordfish.py
+    while True:
+        name = input("Who are you? ")
+        if name != 'Joe':
+            continue
+        password = input("What's the password? ")
+        if password == 'swordfish':
+            break
+    print('Access granted')
+  #+end_example
+
+- Copy the code, open pythontutor.com and paste the program code.
+
+- Run the program inside the pythontutor.com visualization tool.
+
+- The BPMN diagram shows the two break points clearly:
+  #+attr_html: :width 400px
+  #+caption: Continue and break with an infinite loop
+  [[../img/py_continue.png]]
+
+- [[https://pythontutor.com/visualize.html#code=while%20True%3A%0A%20%20%20%20name%20%3D%20input%28%22What's%20your%20name%3F%20%22%29%0A%20%20%20%20if%20name%20!%3D%20'Joe'%3A%0A%20%20%20%20%20%20%20%20continue%0A%20%20%20%20password%20%3D%20input%28%22What's%20the%20password%3F%20%22%29%0A%20%20%20%20if%20password%20%3D%3D%20'swordfish'%3A%0A%20%20%20%20%20%20%20%20break%0Aprint%28'Access%20granted'%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22Joe%22,%22salmon%22,%22Joe%22,%22swordfish%22%5D&textReferences=false][Solution (pythontutor.com)]]
+
+* Non-Boolean truth values
+
+- Recall: to the computer, when used in conditions, ~0~, ~0.0~ and ~''~
+  (empty string) are ~False~, while all other values are ~True~.
+
+- What does the following program do?
+  #+begin_example python :tangle ./src/guest1.py
+    name = ''
+    while not name:    # until you enter a name!
+        name = input('Enter your name: ')
+        guests = input('How many guests will you have? ')
+    if int(guests):    # if you have non-zero guests
+        print('Make sure to have enough room')
+    print('Done')
+  #+end_example
+
+- Try it in pythontutor: [[https://autbor.com/howmanyguests/][autbor.com/howmanyguests/]]
+
+- You could have entered ~while not name != ''~ instead of ~while not
+  name~ and you could have used ~if guests != 0~ instead of ~if guests~
+
+- The BPMN diagram:
+  #+attr_html: :width 400px
+  #+caption: Non-Boolean truth values
+  [[../img/py_yourguests.png]]
+
+- If you enter ~''~ in response to the second question (number of
+  ~guests~), an error is generated, because ~int~ cannot convert empty
+  space or whitespace to an integer. To fix this, you must handle it
+  as an /exception/:
+  #+begin_example python :tangle ./src/guest2.py
+    name, guests = '',''
+    while not name:
+        name = input('Enter your name: ')
+        guests = input('How many guests will you have? ')
+    if guests == '':
+        guests = 0
+        print('okay')
+    if int(guests):
+        print('Make sure to have enough room')
+        print('Done')
+  #+end_example
+
+* For loops
+
+- The ~for~ statement allows you to repeat a block of code a certain
+  number of times.
+
+- A ~for~ statement includes:
+  1) the ~for~ keyword
+  2) a loop variable
+  3) a call to the ~range~ function with up to 3 integers
+  4) a colon ~:~
+  5) An indented clause starting on the next line
+
+- Simple example: the program ~fiveTimes.py~ executes the statement in
+  its clause five times while ~i~ is counting up from 0 to 4:
+  #+begin_example python :results output :tangle ./src/fiveTimes.py
+    print('My name is')
+    for i in range(5):
+        print('Jimmy Five Times (' + str(i) + ')')
+  #+end_example
+
+  #+RESULTS:
+  : My name is
+  : Jimmy Five Times (0)
+  : Jimmy Five Times (1)
+  : Jimmy Five Times (2)
+  : Jimmy Five Times (3)
+  : Jimmy Five Times (4)
+  
+  #+attr_html: :width 400px
+  #+caption: For loop with range 5
+  [[../img/py_for.png]]
+
+- Challenge: how would the ~print~ statement look like with an f-string?
+
+- Solution:  
+  #+begin_example python :tangle ./src/ffiveTimes.py
+    print('My name is')
+    for i in range(5):
+        print(f'Jimmy Five Times ({i})')
+  #+end_example
+  
+- ~for~ loops are great for counting up and down in regular in- or
+  decrements. This program adds up all numbers from 1 to 100 and
+  stores the result in ~total~:
+  #+begin_example python
+    total = 0
+    for i in range(101):
+        total = total + i
+    print(total)
+  #+end_example
+
+  #+RESULTS:
+  : 5050
+
+- This last result relates to a story: when the mathematician Carl
+  Friedrich Gauss was a boy, he found a way to add up all the numbers
+  from 0 to 100. He noticed that there are 50 pairs of numbers that
+  add up to 101: 1 + 100, 2 + 99,...,50 + 51, and 50 * 101 = 5,050.
+
+- Check this program [[https://pythontutor.com/visualize.html#code=total%20%3D%200%0Afor%20i%20in%20range%28101%29%3A%0A%20%20%20%20total%20%3D%20total%20%2B%20i%0Aprint%28total%29%20%20%20%20%20%20%20%20%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false][in pythontutor.com]].
+
+* Equivalence of while and for
+
+- ~for~ loops and ~while~ loops are fully equivalent but the former are
+  more concise than the latter.
+
+- *Exercise*: rewrite ~fiveTimes.py~ as ~fiveTimes2.py~ with a ~while~ loop
+  instead of a ~for~ loop.
+
+- Solution:
+  #+begin_example python :tangle ./src/fiveTimes2.py
+    print('My name is')
+    i = 0
+    while i < 5:
+        print('Jimmy Five Times (' + str(i) + ')')
+        i = i + 1
+  #+end_example
+
+- Once you're done, run the program at [[https://autbor.com/fivetimeswhile/][pythontutor.com]].
+
+* Starting, stopping and stepping with ~range~
+
+- The shortest documentation can be had on the IPython shell with the
+  keyword (variable or function) ~?~
+
+- The ~range~ function ('constructor') e.g. is documented online in the
+  [[https://docs.python.org/3/library/stdtypes.html?highlight=range#range][Python standard library]]:
+  1) All parameters must be integers only, keywords are not allowed
+  2) Only the ~stop~ parameter is mandatory: ~range(5)~
+  3) The other paramaters: ~range(start, stop[, step])~ with defaults
+     ~start=0~ and ~step=1~.
+
+- For example, ~range(12,16)~ starts at 12 and stops at 16:
+  #+begin_example python
+    for i in range(12,16):
+        print(i)
+  #+end_example
+
+  #+RESULTS:
+  : 12
+  : 13
+  : 14
+  : 15
+
+- Counting up from 2 in steps of 2:
+  #+begin_example python
+    for i in range(2,10,2):
+        print(i)
+  #+end_example
+
+  #+RESULTS:
+  : 2
+  : 4
+  : 6
+  : 8
+
+- You can use a negative number for ~step~ to make the loop count down:
+  #+begin_example python
+    for i in range(5,-1,-1):
+        print(i)
+  #+end_example
+
+  #+RESULTS:
+  : 5
+  : 4
+  : 3
+  : 2
+  : 1
+  : 0
+
+- What ~type~ is ~range(5)~?
+  #+begin_example python :results output
+    print(type(range(5))
+  #+end_example
+
+  #+RESULTS:
+
+* Summary
+
+- Code can be executed repeatedly in a loop while their conditions
+  evaluate to ~True~ using ~while~ or ~for~.
+
+- The ~range~ function constructs a sequence of integers. Its parameters
+  are ~start~, ~stop~ and ~step~ values, with default ~start=0~, ~step=1~.
+
+- ~break~, ~continue~ and ~sys.exit~ can exit a loop, jump back to the
+  start, or terminate the execution.
+
+* Glossary
+
+| TERM/COMMAND | MEANING                       |
+|--------------+-------------------------------|
+| ~while~        | Conditional loop              |
+| ~for~          | Conditional loop with counter |
+| ~range~        | Create sequence of integers   |
+| ~break~        | Exit loop                     |
+| ~continue~     | Go to start of loop           |
+
+* References
+
+- Sweigart, A. (2019). Automate the Boring Stuff with
+  Python. NoStarch. URL: [[https://automatetheboringstuff.com/2e/chapter2/][automatetheboringstuff.com]]
+- Yunits, B. (2019). Which programming languages use indentation? URL:
+  [[https://pldb.com/posts/which-programming-languages-use-indentation.html#:~:text=abc%2C%20aldor%2C%20boo%2C%20buddyscript,%2C%20stylus%2C%20xl%2Dprogramming%2D][pldb.com]].
+
+
