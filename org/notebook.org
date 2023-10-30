@@ -1016,7 +1016,16 @@ New printout new lecture new practice.
 * DONE 10.5 Fri, 27-Oct NO CLASS - Pgm assignment II
 * 11.1 Mon, 30-Oct
 
-- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =if=, =elif=, =else=, =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
+- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =if=, =elif=, =else= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
+
+* 11.2 Tue, 31-Oct
+
+
+
+* 11.3 Wed, 01-Nov
+
+- Solution Tuesday problem (basic calculator with function)
+- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
 - "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
 - Continue: =for= loops to repeat a code block a given number of times
 - Webscraping tables with =pandas.read_html= (for Ethan and others)
