@@ -6,7 +6,7 @@
 - Notes usually based on whiteboard screenshots ([[https://drive.google.com/drive/folders/1_UwbKsqmefLu97aVizfUE_qCYeg6IvHm?usp=sharing][GDrive]]).
 - Includes further reading, watching and comments
 
-* First part of term
+* DONE First part of term
 ** 1.1 Mon, 21-Aug
 
 - R vs. Python: two dominant data science languages ([[https://www.datacamp.com/blog/python-vs-r-for-data-science-whats-the-difference?irclickid=0a2UQaStbxyNWhXRYE2FCwsmUkF3qu3eNVpDxo0&irgwc=1&utm_medium=affiliate&utm_source=impact&utm_campaign=000000_1-1310690_2-mix_3-all_4-na_5-na_6-na_7-mp_8-affl-ip_9-na_10-bau_11-Admitad%20-%201310690&utm_content=TEXT_LINK&utm_term=442763][more on the
@@ -900,7 +900,7 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
 - Review: test 5
 - Conditional statements I
   
-* 9.1 Mon, 16-Oct: Summary / Sprint review
+* DONE 9.1 Mon, 16-Oct: Summary / Sprint review
 #+caption: Photo of a female 'Python Hacker' action figure in clear plastic wrapping. The figure sports a black hoodie with a prominent white Python logo. She has a utility belt filled with mini computer devices and USB drives. Posing confidently, one hand holds a mini tablet displaying code, while the other is poised with a stylus. The packaging features graphics such as 'Code Queen!', 'Debugging Diva!', 'Scripting Superstar!', and 'Automation Ace!' with illustrations of her masterfully navigating a digital landscape and resolving complex coding challenges.
 #+attr_latex: :width 400px
 [[../img/PythonSuperhero.png]]
@@ -989,7 +989,7 @@ measurement. (Albert Einstein)
 
 *** Assignments: Booleans, programming (Tue)
 
-* 9.2 Tue, 17-Oct: Programming assignments
+* DONE 9.2 Tue, 17-Oct: Programming assignments
 
 I have opened three more simple (bonus) exercises. Solve as many of
 these as you can on Tuesday:
@@ -1003,14 +1003,20 @@ the Google Colab notebook (because of the input) for 3.
 I will comment your solutions in the notebook and give you a sample
 solution.
 
-* 9.3 Wed, 18-Oct: Conditional statements
+* DONE 9.3 Wed, 18-Oct: Conditional statements
 
 New printout new lecture new practice.
 
-* 9.4 Thu, 19-Oct: Test 6: functions, if, else
-* 9.5 Fri, 20-Oct: NO CLASS
-* 10.1 Mon, 23-Oct: If, else, elif, while loops
-* 10.2 Tue, 24-Oct: DataCamp assignment
-* 10.3 Wed, 25-Oct: For loops
-* 10.4 Thu, 26-Oct: Pgm assignment II
-* 10.5 Fri, 27-Oct NO CLASS - Pgm assignment II
+* DONE 9.4 Thu, 19-Oct: Test 6: functions, if, else
+* DONE 9.5 Fri, 20-Oct: NO CLASS
+* DONE 10.1 Mon, 23-Oct: If, else, elif, while loops
+* DONE 10.2 Tue, 24-Oct: DataCamp assignment
+* DONE 10.3 Wed, 25-Oct: For loops
+* DONE 10.4 Thu, 26-Oct: Pgm assignment II
+* DONE 10.5 Fri, 27-Oct NO CLASS - Pgm assignment II
+* 11.1 Mon, 30-Oct
+
+- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =if=, =elif=, =else=, =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
+- "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
+- Continue: =for= loops to repeat a code block a given number of times
+- Webscraping tables with =pandas.read_html= (for Ethan and others)
