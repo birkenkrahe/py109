@@ -1018,7 +1018,88 @@ New printout new lecture new practice.
 
 - [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =if=, =elif=, =else= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
 
-* 11.2 Tue, 31-Oct
+* DONE 11.2 Tue, 31-Oct
+
+- Turn the "basic calculator" into a function and make it safe
+
+* 11.3 Wed, 1-Nov
+
+** Review last session
+1) Getting two variables at once
+   #+begin_example python
+     foo, bar = map(int,input("Enter two numbers: ").split())
+   #+end_example
+2) Printing with f-string
+   #+begin_example python
+     print(f'{foo}, {bar}')
+   #+end_example
+3) Managing exceptions
+   #+begin_src python
+     try:
+         foo, bar = map(int,input("Enter two numbers: ").split())
+     except:
+         print("Error")
+   #+end_src
+
+
+** Review exercises
+
+- Bonus assignment: basic calculator function ([[https://colab.research.google.com/drive/14oM2L86Wi0qdRVZFuYRYlF940qX8wzd_?usp=sharing][colab notebook]])
+
+- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]]) and loops ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
+
+- "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
+
+
+** Webscraping tables
+
+With =pandas.read_html= (for Ethan and others)
+
+
+* 11.4 Thu, 2-Nov [Test 7]
+
+** (Bonus) Element-wise list operations
+
+In the introductory Python course chapter for NumPy, Hugo shows that
+this Python code to calculate BMI based on height and weight stored in
+different lists raises a ~TypeError~ because Python "has no idea how to
+do calculations on lists."
+#+begin_src python
+  height = [1.73, 1.68, 1.71, 1.89, 1.79]
+  weight = [65.4, 59.2, 63.6, 88.4, 68.7]
+  weight / height ** 2
+#+end_src
+He goes on to say: "You could solve this by going through each list
+element one after the other, and calculating the BMI for each person
+separately, but this is terribly inefficient and tiresome to write."
+
+Write code to achieve exactly this (it's not actually that 'tiresome
+to write'):
+1) Calculate BMI = weight / height ** 2 for the lists shown above.
+2) Print the resulting numbers. Sample output looks like this:
+#+begin_example
+  21.85171572722109
+  20.97505668934241
+  21.750282138093777
+  24.74734749867025
+  21.44127836209856
+#+end_example
+
+Submit a link to an appropriately documented Colab notebook for bonus
+points [[https://lyon.instructure.com/courses/1700/assignments/14917][here in Canvas]] no later than June 15.
+
+Bonus: Use the ~%timeit~ magic function in Colab to time the calculation
+of the BMI with and without NumPy. For example, to run a the
+corresponding BMI computation in NumPy 100 times and repeat this run
+10 times, you write:
+#+begin_example python
+%timeit -n 100 -r 10 bmi = weight_np / height_np ** 2
+#+end_example
+
+
+** Rock, Paper, Scissors programming assignment
+
+* 11.5 Fri, 3-Nov
 
 ** Test preview / review =NumPy= library (DataCamp)
 
@@ -1145,74 +1226,10 @@ New printout new lecture new practice.
 -----
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
-** Review last session
-1) Getting two variables at once
-   #+begin_example python
-     foo, bar = map(int,input("Enter two numbers: ").split())
-   #+end_example
-2) Printing with f-string
-   #+begin_example python
-     print(f'{foo}, {bar}')
-   #+end_example
-3) Managing exceptions
-   #+begin_src python
-     try:
-         foo, bar = map(int,input("Enter two numbers: ").split())
-     except:
-         print("Error")
-   #+end_src
-
-** Review exercises
-
-- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]]) and loops ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
-
-- Bonus assignment: basic calculator function ([[https://colab.research.google.com/drive/14oM2L86Wi0qdRVZFuYRYlF940qX8wzd_?usp=sharing][colab notebook]])
-
-** (Bonus) Element-wise list operations
-
-In the introductory Python course, Hugo shows that this Python code to
-calculate BMI based on height and weight stored in different lists
-raises a ~TypeError~ because Python "has no idea how to do calculations
-on lists."
-#+begin_src python
-  height = [1.73, 1.68, 1.71, 1.89, 1.79]
-  weight = [65.4, 59.2, 63.6, 88.4, 68.7]
-  weight / height ** 2
-#+end_src
-He goes on to say: "You could solve this by going through each list
-element one after the other, and calculating the BMI for each person
-separately, but this is terribly inefficient and tiresome to write."
-
-Write code to achieve exactly this (it's not actually that 'tiresome
-to write'):
-1) Calculate BMI = weight / height ** 2 for the lists shown above.
-2) Print the resulting numbers. Sample output looks like this:
-#+begin_example
-  21.85171572722109
-  20.97505668934241
-  21.750282138093777
-  24.74734749867025
-  21.44127836209856
-#+end_example
-
-Submit a link to an appropriately documented Colab notebook for bonus
-points [[https://lyon.instructure.com/courses/1700/assignments/14917][here in Canvas]] no later than June 15.
-
-Bonus: Use the ~%timeit~ magic function in Colab to time the calculation
-of the BMI with and without NumPy. For example, to run a the
-corresponding BMI computation in NumPy 100 times and repeat this run
-10 times, you write:
-#+begin_example python
-%timeit -n 100 -r 10 bmi = weight_np / height_np ** 2
-#+end_example
 
 
-** TODO Test 7 - NumPy arrays
+* 12.1 Mon, 6-Nov
 
-* 11.3 Wed, 01-Nov
+* 12.2 Tue, 7-Nov
 
-- Solution Tuesday problem (basic calculator with function)
-- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
-- "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
-- Continue: =for= loops to repeat a code block a given number of times
-- Webscraping tables with =pandas.read_html= (for Ethan and others)
+** Complete Test 7 - NumPy
