@@ -545,7 +545,7 @@ tomorrow (Tue 3-Oct) for you to complete:
    : ['Marcus', 59]
    : ['Carlye', 64]
    : ['Lucia', 22]
-   
+
 4) Print only the names of ~fam2~ using the index operator =[]=:
    #+begin_src python
      print(fam2[0][0],fam2[1][0],fam2[2][0])
@@ -853,7 +853,7 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
   #+RESULTS:
   : ['Ethan', 'Loren', 'Lou', 'Saige']
   : 2
-  
+
 *** Review assignments (deadlines extended!)
 
 - Assignment for Thu 5 Oct: bonus assignment similar to what we did in
@@ -899,7 +899,7 @@ For answers and code examples, see ~notebook.ipynb~ in [[https://app.datacamp.co
 
 - Review: test 5
 - Conditional statements I
-  
+
 * DONE 9.1 Mon, 16-Oct: Summary / Sprint review
 #+caption: Photo of a female 'Python Hacker' action figure in clear plastic wrapping. The figure sports a black hoodie with a prominent white Python logo. She has a utility belt filled with mini computer devices and USB drives. Posing confidently, one hand holds a mini tablet displaying code, while the other is poised with a stylus. The packaging features graphics such as 'Code Queen!', 'Debugging Diva!', 'Scripting Superstar!', and 'Automation Ace!' with illustrations of her masterfully navigating a digital landscape and resolving complex coding challenges.
 #+attr_latex: :width 400px
@@ -1014,13 +1014,126 @@ New printout new lecture new practice.
 * DONE 10.3 Wed, 25-Oct: For loops
 * DONE 10.4 Thu, 26-Oct: Pgm assignment II
 * DONE 10.5 Fri, 27-Oct NO CLASS - Pgm assignment II
-* 11.1 Mon, 30-Oct
+* DONE 11.1 Mon, 30-Oct
 
 - [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =if=, =elif=, =else= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]])
 
 * 11.2 Tue, 31-Oct
 
+** Review last session
+  1) Getting two variables at once
+     #+begin_example python
+       foo, bar = map(int,input("Enter two numbers: ").split())
+     #+end_example
+  2) Printing with f-string
+     #+begin_example python
+       print(f'{foo}, {bar}')
+     #+end_example
+  3) Managing exceptions
+     #+begin_src python
+       try:
+           foo, bar = map(int,input("Enter two numbers: ").split())
+       except:
+           print("Error")
+     #+end_src
 
+** Review exercises
+
+- [[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][Programming exercises]] for =while= ([[https://app.datacamp.com/workspace/w/d8ac4091-9134-4462-a6b0-57b255987565/edit][workspace]]) and loops ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
+
+- Bonus assignment: basic calculator function ([[https://colab.research.google.com/drive/14oM2L86Wi0qdRVZFuYRYlF940qX8wzd_?usp=sharing][colab notebook]])
+
+** Review =NumPy= library (DataCamp)
+  1) What do you need to do to use ~np.array~ instead of ~numpy.array~?
+     #+begin_src python
+       import numpy as np
+       docstring = np.array.__doc__
+       print(docstring)
+     #+end_src
+  2) What is the output of this code?
+     #+begin_src python
+       import numpy as np
+       print(help(numpy.array))
+     #+end_src
+     #+begin_quote
+     ~NameError~: name 'numpy' not defined.
+     #+end_quote
+  3) ~array~ is a function in ~numpy~. Use it on a list ~[1,2,3]~.
+     #+begin_src python
+       import numpy
+       print(numpy.array([1,2,3]))
+     #+end_src
+  4) What can you do with NumPy arrays that lists cannot do?
+     #+begin_src python
+       # Vectorization
+       foo = [1,2,3]
+       print(foo * 4)
+       print(np.array(foo)*4)
+     #+end_src
+
+     #+RESULTS:
+     : [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+     : [ 4  8 12]
+  5) How many data types can a list have? How many can an array have?
+     #+begin_src python
+       foo = ["me", 1, True]
+       print(foo, type(foo))
+       print(np.array(foo))
+     #+end_src
+
+     #+RESULTS:
+     : ['me', 1, True] <class 'list'>
+     : ['me' '1' 'True']
+  6) SELECTING array elements bmi > 23, bmi[bmi>23]
+  7) 2D arrays
+  8) Statistics
+
+  9) 
+
+  10) 
+          
+  Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
+
+** (Bonus) Element-wise list operations
+
+In the introductory Python course, Hugo shows that this Python code to
+calculate BMI based on height and weight stored in different lists
+raises a ~TypeError~ because Python "has no idea how to do calculations
+on lists."
+#+begin_src python
+  height = [1.73, 1.68, 1.71, 1.89, 1.79]
+  weight = [65.4, 59.2, 63.6, 88.4, 68.7]
+  weight / height ** 2
+#+end_src
+He goes on to say: "You could solve this by going through each list
+element one after the other, and calculating the BMI for each person
+separately, but this is terribly inefficient and tiresome to write."
+
+Write code to achieve exactly this (it's not actually that 'tiresome
+to write'):
+1) Calculate BMI = weight / height ** 2 for the lists shown above.
+2) Print the resulting numbers. Sample output looks like this:
+#+begin_example
+  21.85171572722109
+  20.97505668934241
+  21.750282138093777
+  24.74734749867025
+  21.44127836209856
+#+end_example
+
+Submit a link to an appropriately documented Colab notebook for bonus
+points [[https://lyon.instructure.com/courses/1700/assignments/14917][here in Canvas]] no later than June 15.
+
+Bonus: Use the ~%timeit~ magic function in Colab to time the calculation
+of the BMI with and without NumPy. For example, to run a the
+corresponding BMI computation in NumPy 100 times and repeat this run
+10 times, you write:
+#+begin_example python
+%timeit -n 100 -r 10 bmi = weight_np / height_np ** 2
+#+end_example
+
+  
+** TODO Test 7 - NumPy arrays
 
 * 11.3 Wed, 01-Nov
 
