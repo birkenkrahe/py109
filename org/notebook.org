@@ -1023,16 +1023,17 @@ New printout new lecture new practice.
 - Turn the "basic calculator" into a function and make it safe
 
 * 11.3 Wed, 1-Nov
-
 ** Review last session
 1) Getting two variables at once
    #+begin_example python
      foo, bar = map(int,input("Enter two numbers: ").split())
    #+end_example
+
 2) Printing with f-string
    #+begin_example python
      print(f'{foo}, {bar}')
    #+end_example
+
 3) Managing exceptions
    #+begin_src python
      try:
@@ -1040,7 +1041,6 @@ New printout new lecture new practice.
      except:
          print("Error")
    #+end_src
-
 
 ** Review exercises
 
@@ -1050,11 +1050,9 @@ New printout new lecture new practice.
 
 - "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
 
-
 ** Webscraping tables
 
 With =pandas.read_html= (for Ethan and others)
-
 
 * 11.4 Thu, 2-Nov [Test 7]
 
