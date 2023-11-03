@@ -1048,8 +1048,7 @@ New printout new lecture new practice.
 
 - "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
 
-* 11.4 Thu, 2-Nov
-
+* DONE 11.4 Thu, 2-Nov
 ** (Bonus) Element-wise list operations
 
 In the introductory Python course chapter for NumPy, Hugo shows that
@@ -1088,8 +1087,7 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 %timeit -n 100 -r 10 bmi = weight_np / height_np ** 2
 #+end_example
 
-
-** Rock, Paper, Scissors programming assignment
+** Rock, Paper, Scissors programming assignment (deadline extended)
 
 * 11.5 Fri, 3-Nov
 ** Test 7 preview / review =NumPy= library (DataCamp)
@@ -1213,14 +1211,12 @@ corresponding BMI computation in NumPy 100 times and repeat this run
     : [1.8  1.92 1.74]
     : 176.33333333333334
     : 1.82
-
 -----
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
-
 ** Webscraping tables
 
-With =pandas.read_html= (for Ethan and others)
+With =pandas.read_html= (for Ethan and others) - notebook
 
 * 12.1 Mon, 6-Nov
 
