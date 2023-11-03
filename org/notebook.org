@@ -1022,18 +1022,16 @@ New printout new lecture new practice.
 
 - Turn the "basic calculator" into a function and make it safe
 
-* 11.3 Wed, 1-Nov
+* DONE 11.3 Wed, 1-Nov
 ** Review last session
 1) Getting two variables at once
    #+begin_example python
      foo, bar = map(int,input("Enter two numbers: ").split())
    #+end_example
-
 2) Printing with f-string
    #+begin_example python
      print(f'{foo}, {bar}')
    #+end_example
-
 3) Managing exceptions
    #+begin_src python
      try:
@@ -1050,11 +1048,7 @@ New printout new lecture new practice.
 
 - "Guess the number" game dissected ([[https://app.datacamp.com/workspace/w/bee3a53b-7c8c-42c4-92f9-1ee55c065e4b/edit][workspace]])
 
-** Webscraping tables
-
-With =pandas.read_html= (for Ethan and others)
-
-* 11.4 Thu, 2-Nov [Test 7]
+* 11.4 Thu, 2-Nov
 
 ** (Bonus) Element-wise list operations
 
@@ -1098,8 +1092,7 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 ** Rock, Paper, Scissors programming assignment
 
 * 11.5 Fri, 3-Nov
-
-** Test preview / review =NumPy= library (DataCamp)
+** Test 7 preview / review =NumPy= library (DataCamp)
 
 1) What do you need to do to use ~np.array~ instead of ~numpy.array~?
    #+begin_src python
@@ -1225,9 +1218,27 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
 
+** Webscraping tables
+
+With =pandas.read_html= (for Ethan and others)
 
 * 12.1 Mon, 6-Nov
 
-* 12.2 Tue, 7-Nov
+** Review: Rock, Paper, Scissors programming assignment
 
+* 12.2 Tue, 7-Nov
+** Complete DataCamp lesson on plotting
+* 12.3 Wed, 8-Nov
+
+Review DataCamp lesson - =matplotlib=
+
+* 12.4 Thu, 9-Nov
 ** Complete Test 7 - NumPy
+* 12.5 Fri, 10-Nov
+
+Functions revisited
+
+* Week 13 - Lists
+* Week 14 - References and tuples
+* Week 15 - Game of Life
+* Week 16 - Project presentations
