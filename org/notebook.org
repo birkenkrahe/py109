@@ -1090,6 +1090,34 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 ** Rock, Paper, Scissors programming assignment (deadline extended)
 
 * 11.5 Fri, 3-Nov
+
+** Web scraping tables
+
+With =pandas.read_html= (for Ethan and others) - notebook
+
+* 12.1 Mon, 6-Nov
+** Summary from the web scraping class
+- Works only when the pages have no active elements (i.e. tables
+  and other static stuff is fine)
+- pandas ~read_html~ returns a list of data frames, each of whom
+  corresponds to a table from the original HTML file
+- once you have these list (call it ~tables~), you can access its
+  elements as usual. For example, to store the second table from
+  a web page in a data frame, assign ~~~table2 = tables[2]~~~
+- In a data frame, each column is a vector or 1-dimensional array
+  of ordered, indexed, and possibly labeled elements (like
+  ~census~, which had the ~year~ as a label and the population as a
+  value).
+- The function ~columns~ either gets or sets column values. E.g.
+~table2.columns = ['a','b','c']~ sets the names of the column vectors of the data frame ~table2~ to ~a~, ~b~, and ~c~.
+- To work with a vector, which is part of a data frame, you need
+  to extract it. E.g. you can store the ~census~ column of the data
+  frame ~table2~ in another variable ~pop~ like this: ~~~pop =
+  table2.census~~~
+- And now you can get the first five values of the vector ~pop~
+  like this: ~pop[0:5]~, and the last value of ~pop~ like this:
+  ~pop[-1]~.
+
 ** Test 7 preview / review =NumPy= library (DataCamp)
 
 1) What do you need to do to use ~np.array~ instead of ~numpy.array~?
@@ -1214,14 +1242,8 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 -----
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
-** Webscraping tables
 
-With =pandas.read_html= (for Ethan and others) - notebook
-
-* 12.1 Mon, 6-Nov
-
-** Review: Rock, Paper, Scissors programming assignment
-
+** TODO Review: Rock, Paper, Scissors programming assignment
 * 12.2 Tue, 7-Nov
 ** Complete DataCamp lesson on plotting
 * 12.3 Wed, 8-Nov
