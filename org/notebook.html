@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-11-03 Fri 10:27 -->
+<!-- 2023-11-04 Sat 18:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -195,14 +195,46 @@
 </head>
 <body>
 <div id="content" class="content">
-<div id="outline-container-orgb497813" class="outline-2">
-<h2 id="orgb497813">Test 7 preview / review <code>NumPy</code> library (DataCamp)</h2>
-<div class="outline-text-2" id="text-orgb497813">
+<div id="outline-container-orgf12b09f" class="outline-2">
+<h2 id="orgf12b09f">Summary from the web scraping class</h2>
+<div class="outline-text-2" id="text-orgf12b09f">
+<ul class="org-ul">
+<li>Works only when the pages have no active elements (i.e. tables
+and other static stuff is fine)</li>
+<li>pandas <code>read_html</code> returns a list of data frames, each of whom
+corresponds to a table from the original HTML file</li>
+<li>once you have these list (call it <code>tables</code>), you can access its
+elements as usual. For example, to store the second table from
+a web page in a data frame, assign <code>~~table2 = tables[2]~~</code></li>
+<li>In a data frame, each column is a vector or 1-dimensional array
+of ordered, indexed, and possibly labeled elements (like
+<code>census</code>, which had the <code>year</code> as a label and the population as a
+value).</li>
+<li>The function <code>columns</code> either gets or sets column values. E.g.</li>
+</ul>
+<p>
+<code>table2.columns = ['a','b','c']</code> sets the names of the column vectors of the data frame <code>table2</code> to <code>a</code>, <code>b</code>, and <code>c</code>.
+</p>
+<ul class="org-ul">
+<li>To work with a vector, which is part of a data frame, you need
+to extract it. E.g. you can store the <code>census</code> column of the data
+frame <code>table2</code> in another variable <code>pop</code> like this: <code>~~pop =
+  table2.census~~</code></li>
+<li>And now you can get the first five values of the vector <code>pop</code>
+like this: <code>pop[0:5]</code>, and the last value of <code>pop</code> like this:
+<code>pop[-1]</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb8b2bf" class="outline-2">
+<h2 id="orgeb8b2bf">Test 7 preview / review <code>NumPy</code> library (DataCamp)</h2>
+<div class="outline-text-2" id="text-orgeb8b2bf">
 <ol class="org-ol">
 <li><p>
 What do you need to do to use <code>np.array</code> instead of <code>numpy.array</code>?
 </p>
-<pre class="example" id="orgc19a8a5">
+<pre class="example" id="orgec740e5">
 import numpy as np
 docstring = np.array.__doc__
 print(docstring)
@@ -210,7 +242,7 @@ print(docstring)
 <li><p>
 What is the output of this code?
 </p>
-<pre class="example" id="org20a2b0b">
+<pre class="example" id="orga74dde0">
 import numpy as np
 print(help(numpy.array))
 </pre>
@@ -222,14 +254,14 @@ print(help(numpy.array))
 <li><p>
 <code>array</code> is a function in <code>numpy</code>. Use it on a list <code>[1,2,3]</code>.
 </p>
-<pre class="example" id="org2bd81c8">
+<pre class="example" id="org6100aa0">
 import numpy
 print(numpy.array([1,2,3]))
 </pre></li>
 <li><p>
 What can you do with NumPy arrays that lists cannot do?
 </p>
-<pre class="example" id="org907395c">
+<pre class="example" id="org2134370">
 # Vectorization
 foo = [1,2,3]
 print(foo * 4)
@@ -243,7 +275,7 @@ print(np.array(foo)*4)
 <li><p>
 How many data types can a list have? How many can an array have?
 </p>
-<pre class="example" id="orgb2e6522">
+<pre class="example" id="org16de648">
 foo = ["me", 1, True]
 print(foo, type(foo))
 print(np.array(foo))
@@ -256,13 +288,13 @@ print(np.array(foo))
 <li><p>
 How can you extract all array items in [5,10)?
 </p>
-<pre class="example" id="orgd6ccf57">
+<pre class="example" id="org15b59e3">
 foo = np.array([0,1,2,5,8,10,11,12])
 </pre>
 <p>
 Solution:
 </p>
-<pre class="example" id="orgf038592">
+<pre class="example" id="orgdfccc30">
 print(foo)
 print((foo &gt;= 5) &amp; (foo &lt; 10))
 bar = (foo &gt;= 5) &amp; (foo &lt; 10)
@@ -281,7 +313,7 @@ print(foo[~bar]) # ~ inverts the condition: not in [5,10)
 Can you put <code>['Joe','Jim','Jane']</code> and <code>[1.8,1.92,1.74]</code> in a NumPy
 array?
 </p>
-<pre class="example" id="org904e580">
+<pre class="example" id="orge607ed9">
 name = ['Joe','Jim','Jane']
 height = [1.8, 1.92, 1.74]
 np_name_height = np.array([name,height])
@@ -297,7 +329,7 @@ print(type(np_name_height))
 <li><p>
 Consider this 2D array - how can you extract the element <code>1.92</code>?
 </p>
-<pre class="example" id="orgb2d2b1b">
+<pre class="example" id="orge717279">
 weight = [179.,210.,140.]
 height = [1.8, 1.92, 1.74]
 np_weight_height = np.array([weight,height])
@@ -313,7 +345,7 @@ print(np_weight_height)
 <p>
 Solution:
 </p>
-<pre class="example" id="org307fcae">
+<pre class="example" id="orgd13c54b">
 print(np_weight_height[1,1])
 </pre>
 
@@ -323,7 +355,7 @@ print(np_weight_height[1,1])
 <li><p>
 What does the <code>:</code> operator do in NumPy arrays?
 </p>
-<pre class="example" id="org974c578">
+<pre class="example" id="org3e5e681">
 print(foo)
 print(foo[:]) # all elements
 print(foo[:-1])  # all except the last element
@@ -340,7 +372,7 @@ print(foo[3:5])  # elements foo[3], foo[4] but not foo[5]
 Compute the arithmetic average of <code>np_weight_height</code> over both
 dimensions of the matrix:
 </p>
-<pre class="example" id="orgec4d537">
+<pre class="example" id="org1f1ef4b">
 print(np_weight_height[0,])
 print(np_weight_height[1,])      
 print(np.mean(np_weight_height[0,]))
@@ -358,14 +390,11 @@ print(np.mean(np_weight_height[1,]))
 <p>
 Note: There is a whole course on <code>NumPy</code> <a href="https://app.datacamp.com/learn/courses/introduction-to-numpy">at DataCamp</a> (intermediate+)
 </p>
-
-<p>
-*</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-11-03 Fri 10:27</p>
+<p class="date">Created: 2023-11-04 Sat 18:34</p>
 </div>
 </body>
 </html>

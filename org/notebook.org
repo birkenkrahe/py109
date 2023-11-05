@@ -1090,11 +1090,8 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 ** Rock, Paper, Scissors programming assignment (deadline extended)
 
 * 11.5 Fri, 3-Nov
-
 ** Web scraping tables
-
-With =pandas.read_html= (for Ethan and others) - notebook
-
+With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/workspace/w/5a6fde7f-dca5-41f5-8c84-b9f303a1a61b/edit][notebook]] to code along
 * 12.1 Mon, 6-Nov
 ** Summary from the web scraping class
 - Works only when the pages have no active elements (i.e. tables
@@ -1118,7 +1115,7 @@ With =pandas.read_html= (for Ethan and others) - notebook
   like this: ~pop[0:5]~, and the last value of ~pop~ like this:
   ~pop[-1]~.
 
-** Test 7 preview / review =NumPy= library (DataCamp)
+** Test 8 preview / review =NumPy= library (DataCamp)
 
 1) What do you need to do to use ~np.array~ instead of ~numpy.array~?
    #+begin_src python
@@ -1242,16 +1239,18 @@ With =pandas.read_html= (for Ethan and others) - notebook
 -----
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
-
 ** TODO Review: Rock, Paper, Scissors programming assignment
 * 12.2 Tue, 7-Nov
-** Complete DataCamp lesson on plotting
+** Complete DataCamp lesson on plotting (matplotlib)
+** Complete Test 7 - loops (Canvas)
 * 12.3 Wed, 8-Nov
 
 Review DataCamp lesson - =matplotlib=
 
 * 12.4 Thu, 9-Nov
-** Complete Test 7 - NumPy
+
+** Work on your project
+
 * 12.5 Fri, 10-Nov
 
 Functions revisited
