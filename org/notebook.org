@@ -1089,10 +1089,10 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 
 ** Rock, Paper, Scissors programming assignment (deadline extended)
 
-* 11.5 Fri, 3-Nov
+* DONE 11.5 Fri, 3-Nov
 ** Web scraping tables
 With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/workspace/w/5a6fde7f-dca5-41f5-8c84-b9f303a1a61b/edit][notebook]] to code along
-* 12.1 Mon, 6-Nov
+* NEXT 12.1 Mon, 6-Nov
 ** Summary from the web scraping class
 - Works only when the pages have no active elements (i.e. tables
   and other static stuff is fine)
@@ -1245,11 +1245,12 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 ** Complete Test 7 - loops (Canvas)
 * 12.3 Wed, 8-Nov
 
-Review DataCamp lesson - =matplotlib=
-
+- Review DataCamp lesson - =matplotlib=
+- Review test 7
+  
 * 12.4 Thu, 9-Nov
 
-** Work on your project
+** Complete Test 8 - NumPy (Canvas)
 
 * 12.5 Fri, 10-Nov
 
