@@ -1076,13 +1076,13 @@ to write'):
   21.44127836209856
 #+end_example
 
-Submit a link to an appropriately documented Colab notebook for bonus
-points [[https://lyon.instructure.com/courses/1700/assignments/14917][here in Canvas]] no later than June 15.
+Submit a link to an appropriately documented notebook for bonus
+points.
 
-Bonus: Use the ~%timeit~ magic function in Colab to time the calculation
-of the BMI with and without NumPy. For example, to run a the
-corresponding BMI computation in NumPy 100 times and repeat this run
-10 times, you write:
+Extra fat bonus: Use the ~%timeit~ magic function in Colab to time the
+calculation of the BMI with and without NumPy. For example, to run a
+the corresponding BMI computation in NumPy 100 times and repeat this
+run 10 times, you write:
 #+begin_example python
 %timeit -n 100 -r 10 bmi = weight_np / height_np ** 2
 #+end_example
@@ -1092,7 +1092,7 @@ corresponding BMI computation in NumPy 100 times and repeat this run
 * DONE 11.5 Fri, 3-Nov
 ** Web scraping tables
 With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/workspace/w/5a6fde7f-dca5-41f5-8c84-b9f303a1a61b/edit][notebook]] to code along
-* NEXT 12.1 Mon, 6-Nov
+* DONE 12.1 Mon, 6-Nov
 ** Summary from the web scraping class
 - Works only when the pages have no active elements (i.e. tables
   and other static stuff is fine)
@@ -1115,7 +1115,15 @@ With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/work
   like this: ~pop[0:5]~, and the last value of ~pop~ like this:
   ~pop[-1]~.
 
+** Review: Rock, Paper, Scissors programming assignment
+** Lecture: =for= loops and the =range= function
+* DONE 12.2 Tue, 7-Nov
+** Complete DataCamp lesson on plotting (matplotlib)
+** Complete Test 7 - loops (Canvas)
+* 12.3 Wed, 8-Nov
 ** Test 8 preview / review =NumPy= library (DataCamp)
+
+[[https://app.datacamp.com/workspace/w/07949a3d-8b9b-4145-b28a-1ae99706f589/edit][DataCamp workspace]]
 
 1) What do you need to do to use ~np.array~ instead of ~numpy.array~?
    #+begin_src python
@@ -1211,45 +1219,27 @@ With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/work
    : 1.92
 9) What does the =:= operator do in NumPy arrays?
    #+begin_src python
+     foo = np.arange(2,12)
      print(foo)
      print(foo[:]) # all elements
      print(foo[:-1])  # all except the last element
      print(foo[3:5])  # elements foo[3], foo[4] but not foo[5]
+     # all elements except the first element?
+     print(foo[1:])
    #+end_src
 
    #+RESULTS:
-   : [ 0  1  2  5  8 10 11 12]
-   : [ 0  1  2  5  8 10 11 12]
-   : [ 0  1  2  5  8 10 11]
-   : [5 8]
-10) Compute the arithmetic average of ~np_weight_height~ over both
-    dimensions of the matrix:
-    #+begin_src python
-      print(np_weight_height[0,])
-      print(np_weight_height[1,])      
-      print(np.mean(np_weight_height[0,]))
-      print(np.mean(np_weight_height[1,]))     
-    #+end_src
-
-    #+RESULTS:
-    : [179. 210. 140.]
-    : [1.8  1.92 1.74]
-    : 176.33333333333334
-    : 1.82
+   : [ 2  3  4  5  6  7  8  9 10 11]
+   : [ 2  3  4  5  6  7  8  9 10 11]
+   : [ 2  3  4  5  6  7  8  9 10]
+   : [5 6]
+   : [ 3  4  5  6  7  8  9 10 11]
 -----
 Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/courses/introduction-to-numpy][at DataCamp]] (intermediate+)
 
-** TODO Review: Rock, Paper, Scissors programming assignment
-* 12.2 Tue, 7-Nov
-** Complete DataCamp lesson on plotting (matplotlib)
-** Complete Test 7 - loops (Canvas)
-* 12.3 Wed, 8-Nov
+** DataCamp review: =matplotlib=
 
-- Review DataCamp lesson - =matplotlib=
-- Review test 7
-  
 * 12.4 Thu, 9-Nov
-
 ** Complete Test 8 - NumPy (Canvas)
 
 * 12.5 Fri, 10-Nov
