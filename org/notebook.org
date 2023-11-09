@@ -1120,7 +1120,7 @@ With =pandas.read_html= (for Ethan and others) - [[https://app.datacamp.com/work
 * DONE 12.2 Tue, 7-Nov
 ** Complete DataCamp lesson on plotting (matplotlib)
 ** Complete Test 7 - loops (Canvas)
-* 12.3 Wed, 8-Nov
+* DONE 12.3 Wed, 8-Nov
 ** Test 8 preview / review =NumPy= library (DataCamp)
 
 [[https://app.datacamp.com/workspace/w/07949a3d-8b9b-4145-b28a-1ae99706f589/edit][DataCamp workspace]]
@@ -1239,14 +1239,11 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 
 ** DataCamp review: =matplotlib=
 
-* 12.4 Thu, 9-Nov
+* DONE 12.4 Thu, 9-Nov
 ** Complete Test 8 - NumPy (Canvas)
 
-* 12.5 Fri, 10-Nov
-
-Functions revisited
-
-* Week 13 - Lists
+* DONE 12.5 Fri, 10-Nov CANCELLED
+* Week 13 - Functions and plotting
 * Week 14 - References and tuples
 * Week 15 - Game of Life
 * Week 16 - Project presentations
