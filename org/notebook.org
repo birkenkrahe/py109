@@ -1243,7 +1243,16 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 ** Complete Test 8 - NumPy (Canvas)
 
 * DONE 12.5 Fri, 10-Nov CANCELLED
-* Week 13 - Functions and plotting
-* Week 14 - References and tuples
-* Week 15 - Game of Life
+* Week 13 - Functions & Matplotlib
+
+- Review: Matplotlib (workspace)
+- Functions (workspace)
+
+* Week 14 - Tuples & Dictionaries & Pandas
+
+- Review: Dictionaries & Pandas (workspace)
+- References & Tuples (workspace)
+
+* Week 15 - Two case studies: Game of Life / Hacker Statistics
+
 * Week 16 - Project presentations
