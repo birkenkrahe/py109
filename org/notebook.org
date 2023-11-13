@@ -1245,8 +1245,9 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 * DONE 12.5 Fri, 10-Nov CANCELLED
 * Week 13 - Functions & Matplotlib
 
-- Review: Matplotlib (workspace)
+- 3rd sprint review
 - Functions (workspace)
+- Review: Matplotlib (workspace)
 
 * Week 14 - Tuples & Dictionaries & Pandas
 
