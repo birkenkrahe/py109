@@ -134,11 +134,24 @@ Solution:
   | Function parameter  | Variables that have arguments assigned to them  |
 
 - Analyse this function and decide how to call it - what is 'result'?
-  #+begin_src python :results silent
+  #+begin_src python
     def result(result):
         print(result)
+
+    result('result')
   #+end_src
 
+  #+RESULTS:
+  : result
+
+  1. ~result~ in the function definition is the function name.
+  2. ~result~ in the function definition is also a parameter that takes
+     an argument from the function call (no default)
+  3. ~result~ in the =print= function body is a variable with the value
+     ~result~, assigned when ~result~ is called using the function.
+  4. ~'result'~ in the function call is a string value argument for the
+     parameter in the function
+     
 - Example calls:
   #+begin_src python
     result(12)
