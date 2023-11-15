@@ -144,12 +144,12 @@ Solution:
   #+RESULTS:
   : result
 
-  1. ~result~ in the function definition is the function name.
-  2. ~result~ in the function definition is also a parameter that takes
+  1) ~result~ in the function definition is the function name.
+  2) ~result~ in the function definition is also a parameter that takes
      an argument from the function call (no default)
-  3. ~result~ in the =print= function body is a variable with the value
+  3) ~result~ in the =print= function body is a variable with the value
      ~result~, assigned when ~result~ is called using the function.
-  4. ~'result'~ in the function call is a string value argument for the
+  4) "result" in the function call is a string value argument for the
      parameter in the function
      
 - Example calls:
