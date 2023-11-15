@@ -96,6 +96,31 @@ What are functions?
   '''
   #+end_example
 
+Write a function ~greet_all~ that takes only one argument ~friends~, a
+list with names of your friends, and prints a greeting "hello [name]"
+for each friend when called. Remember that you can loop over lists.
+
+Solution:
+#+begin_src python
+  # function definition
+  def greet_all(friends):
+        for name in friends:
+            print(f'Hello, {name}!')
+
+  # create list of friends' names
+  friends = ['Slawa', 'Christian', 'Francesco', 'David']
+
+  # greet all friends in the list
+  greet_all(friends)
+
+          #+end_src
+
+          #+RESULTS:
+          : Hello, Slawa
+          : Hello, Christian
+          : Hello, Francesco
+          : Hello, David
+
 * Define, Call, Pass, Argument, Parameter, Recursion
 
 - It may sound trivial, but it's not trivial to keep these concepts
