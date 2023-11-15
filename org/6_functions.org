@@ -202,10 +202,12 @@ Solution:
 
 * Practice defining functions with one parameter
 
-1) In Colab, write a function ~count~ that takes a string ~str~ as an
-   argument and prints the number of its characters.
+1) Write a function ~count~ that takes a string ~str~ as an argument and
+   prints the number of its characters.
 
-   Tip: remember that there is a built-in function called ~str.count~ that can count the characters of a string ~str~ when given the right argument.
+   Tip: remember that there is a built-in function called ~str.count~
+   that can count the characters of a string ~str~ when given the right
+   argument.
 
 2) Call ~count~ on these arguments: ~a~, ~abcd~, ~a b c d~. Output:
 
