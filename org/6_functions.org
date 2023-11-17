@@ -209,9 +209,28 @@ Solution:
    that can count the characters of a string ~str~ when given the right
    argument.
 
+   Remind yourself of the meaning of =count= by counting characters,
+   words, sentences (and perhaps looking at the definition):
+   #+begin_src python
+     print("How many?".count('')) # character count - count empty spaces
+     print("How many?".count(' ')+1) # word count - count single spaces
+     print("   Strip this   ".strip())
+     print("  How many? ".strip().count(' ')+1) # word count (strip whitespace)
+     print("split this".split())
+     print(len("  How    many?".split())) # word count (after split)
+   #+end_src
+
+   #+RESULTS:
+   : 10
+   : 2
+   : Strip this
+   : 2
+   : ['split', 'this']
+   : 2
+
 2) Call ~count~ on these arguments: ~a~, ~abcd~, ~a b c d~. Output:
 
-3) Is it Okay to call this function ~count~?
+3) Is it Okay to call this function ~count~ as in ~def count()~?
    #+begin_quote
    - It's OK to call your own function by a name used by Python: it
      will not affect the built-in function of the same name.
@@ -221,7 +240,7 @@ Solution:
      modern editor, the syntax highlighting will tip you off.
    #+end_quote
 
-4) Is it Okay to call the function parameter ~str~?
+4) Is it Okay to call the function parameter ~str~ as in ~def count(str)~?
    #+begin_quote
    - It is OK to call a parameter inside your own function by a known
      name - it won't affect its use outside of the function.
@@ -394,6 +413,20 @@ Solution:
 
 - Test the function with the values 4 and 7.
 
+*** Solution
+
+#+begin_src python
+  def is_even(number):
+      if number % 2 == 0:
+          return print(True)
+      return print(False)
+
+  is_even(7)
+#+end_src
+
+#+RESULTS:
+: False
+
 * The ~None~ Value
 
 - In Python, ~None~ represents the absence of a value.
@@ -407,7 +440,14 @@ Solution:
   #+begin_src python
     spam = print('Hello') # prints 'Hello'
     print(None == spam)   # spam now contains None
+    print(print()) # printing without an argument also returns 'None'
   #+end_src
+
+  #+RESULTS:
+  : Hello
+  : True
+  : 
+  : None
 
 - Python adds ~return None~ to the end of any function definition with
   no ~return~ statement.
@@ -417,6 +457,8 @@ Solution:
 
 - Also, using ~return~ without a return value, returns ~None~. Show this
   with a function that you write yourself!
+
+  Solution:
   #+begin_src python
     def none():
         return
