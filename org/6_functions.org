@@ -483,6 +483,25 @@ Solution:
     print(find_max([]))  # Output: None
   #+end_example
 
+*** Solution
+
+#+begin_src python
+  def find_max(x):
+      '''Find maximum number in a list of numbers
+      x: list of numbers
+      '''
+      if x == []:
+          return print('None. Empty list')
+      return print(f'The maximum number in the list {x} is {max(x)}')
+
+  find_max([2,3])
+  find_max([])
+#+end_src
+
+#+RESULTS:
+: The maximum number in the list [2, 3] is 3
+: None. Empty list
+
 ** Check divisibility of two integers (do it at home)
 
 - Write a function called ~check_divisibility~ that takes two integers,
