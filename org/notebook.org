@@ -1243,17 +1243,106 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 ** Complete Test 8 - NumPy (Canvas)
 
 * DONE 12.5 Fri, 10-Nov CANCELLED
-* Week 13 - Functions & Matplotlib
+* DONE Week 13 - Functions & Matplotlib
 
 - 3rd sprint review
-- Functions (workspace)
-- Review: Matplotlib (workspace)
+- Functions ([[https://app.datacamp.com/workspace/w/c010d77a-f494-459f-9773-fbfaf67eab6c/edit][workspace]])
 
-* Week 14 - Tuples & Dictionaries & Pandas
+* DONE Week 14 - Thanksgiving break
 
-- Review: Dictionaries & Pandas (workspace)
-- References & Tuples (workspace)
+* Week 15 - Plotting & Test 9
 
-* Week 15 - Two case studies: Game of Life / Hacker Statistics
+- Finish the function practice [[https://app.datacamp.com/workspace/w/c010d77a-f494-459f-9773-fbfaf67eab6c/edit][notebook]] on your own using the script
+  that I distributed in class
+- There are more data structures that we did not discuss:
+  dictionaries, tuples, sets, and pandas (see DataCamp).
+- Plotting practice: histograms, scatterplots, lineplots, and subplots
+  ([[file:7_plotting.org][Org]] / [[https://app.datacamp.com/workspace/w/72c934ff-643c-4214-b2ac-e333ed91289d/edit][workspace]])
+- Application: Monte Carlo Method of numerical integration
 
-* Week 16 - Project presentations
+** Test 9 - functions and lists - preview
+
+[[https://app.datacamp.com/workspace/w/e73be228-3cc8-4eb5-b415-f5db26f74a64/edit][Open the workspace.]]
+
+1. What is a function?
+2. What's wrong here?
+   #+begin_example python
+   def function1()
+       print()
+   #+end_example
+3. What does this function return?
+   #+begin_src python
+     def function():
+         return 0
+
+     print(function())
+   #+end_src
+
+   #+RESULTS:
+   : 0
+4. What is a function parameter? (A variable that takes its value from an argument)
+5. What is a function argument? (A value passed to a function parameter)
+6. Do function parameters have to appear in a specific order?
+   #+begin_quote
+   - Positional parameters come first (in a specific order)
+   - Keyword parameters come next (in any order)
+   #+end_quote   
+7. When is the code in a function executed?
+8. What happens to the variables of a function when it's finished?
+9. How many global and how many local variables do you see in this code?
+   #+begin_src python
+     def hello():
+         x = "Hello there,"
+         y = "friend."
+         print(x,y)
+         return
+
+     foo = "hello"
+     bar = input("What's your name? ")
+     hello()
+   #+end_src   
+10. Can you extract
+    1) the number 400,
+    2) the second row,
+    3) the middle column, and
+    4) the last two columns?
+    #+begin_src python
+      from numpy import array 
+
+      a = array([[100,200,300],
+                 [400,500,600]])
+
+      print(a)
+    #+end_src
+
+    #+RESULTS:
+    : [[100 200 300]
+    :  [400 500 600]]
+
+    #+begin_src python
+      print(a[1:,0])  # same number as an array - slicing
+      print(a[1:,])   # second row as numbers - slicing
+      print(a[:,1])   # middle (2nd) column
+      print(a[:,1:])  # last two columns (2 and 3)
+
+      # confusing:
+      print(a[1][0])  # second row, first element = integer - direct indexing
+      print(a[1:][:]) # second row as numbers - slicing
+      print(a[1])     # second row as array (confusing!)
+    #+end_src
+
+    #+RESULTS:
+    : 400
+    : [400]
+    : [[400 500 600]]
+    : [[400 500 600]]
+    : [400 500 600]
+    : [200 500]
+    : [[200 300]
+    :  [500 600]]
+
+* Week 16 - Test 10 & Project presentations - Final exam
+
+- Project presentations (Dec 4 + Dec 6)
+- Final exam (Dec 8)
+
