@@ -1250,14 +1250,14 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 
 * DONE Week 14 - Thanksgiving break
 
-* Week 15 - Plotting & Test 9
+* Week 15 - Introduction to plotting & Test 9
 
 - Finish the function practice [[https://app.datacamp.com/workspace/w/c010d77a-f494-459f-9773-fbfaf67eab6c/edit][notebook]] on your own using my script.
+
 - There are more data structures that we did not discuss:
   dictionaries, tuples, sets, and pandas (see DataCamp for details).
+
 - Plotting: histograms,scatter/line/subplots ([[file:7_plotting.org][Org]] / [[https://app.datacamp.com/workspace/w/72c934ff-643c-4214-b2ac-e333ed91289d/edit][workspace]])
-- Application: Monte Carlo Method of numerical integration
-- Application: Conway's Game of Life (see also [[https://realpython.com/conway-game-of-life-python/][realpython.com]])
 
 ** Test 9 - functions and lists - preview
 
@@ -1340,8 +1340,14 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
     : [[200 300]
     :  [500 600]]
     
-* Week 16 - Test 10 & Project presentations - Final exam
 
-- Project presentations (Dec 4 + Dec 6)
-- Final exam (Dec 8)
+* Week 16 + 17 - Test 10 & Project presentations & Applications
 
+- Project presentations
+- Application: Monte Carlo Method of numerical integration
+- Application: Conway's Game of Life (see also [[https://realpython.com/conway-game-of-life-python/][realpython.com]])
+
+* Final exam: open book (2 hours) - by December 15, 11:59 pm
+
+- According to the [[https://assets.speakcdn.com/assets/2433/fa23_final_exam_schedule_final.pdf][FA23 Final Exam Schedule]].
+- If this is a problem for you, talk to me.

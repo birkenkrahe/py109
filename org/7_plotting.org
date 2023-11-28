@@ -33,9 +33,11 @@ Test 2. Draw the average of each test as a straight dashed line.
    #+begin_src python :results graphics output file :file ../img/plt_demo1.png
      import numpy as np
      x = np.arange(0,5,0.1)
-     y = np.sin(x)
-
-     plt.plot(x,y)  # line plot
+     y_sin = np.sin(x)
+     plt.clf()
+     plt.plot(x,y_sin)  # line plot
+     y_cos = np.cos(x)
+     plt.plot(x,y_cos) 
      plt.savefig('../img/plt_demo1.png')
    #+end_src
 
