@@ -1,9 +1,5 @@
 #+property: header-args:python :results output :exports both :session *Python*
 #+startup: overview hideblocks indent inlineimages
-* README
-
-- [[https://gist.github.com/birkenkrahe/a61584bb88d5b97390e5781e9d62358c][See GitHub for a Colab version of this file]].
-
 * Plotting practice: histograms
 
 *Plot challenge:* make a histogram of the results for Test 1 and for
