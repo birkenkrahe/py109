@@ -1250,12 +1250,12 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
 
 * DONE Week 14 - Thanksgiving break
 
-* Week 15 - Introduction to plotting & Test 9
+* DONE Week 15 - Introduction to plotting & Test 9
 
 - Finish the function practice [[https://app.datacamp.com/workspace/w/c010d77a-f494-459f-9773-fbfaf67eab6c/edit][notebook]] on your own using my script.
 
 - There are more data structures that we did not discuss:
-  dictionaries, tuples, sets, and pandas (see DataCamp for details).
+  dictionaries, tuples, sets, and pandas (see DataCamp lessons).
 
 - Plotting: histograms,scatter/line/subplots ([[file:7_plotting.org][Org]] / [[https://app.datacamp.com/workspace/w/72c934ff-643c-4214-b2ac-e333ed91289d/edit][workspace]])
 
@@ -1340,12 +1340,11 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
     : [[200 300]
     :  [500 600]]
     
-
 * Week 16 + 17 - Test 10 & Project presentations & Applications
-
-- Project presentations
-- Application: Monte Carlo Method of numerical integration
-- Application: Conway's Game of Life (see also [[https://realpython.com/conway-game-of-life-python/][realpython.com]])
+** Project presentations on Dec 13 (Lou: Dec 8)
+** Review of Python datastructures ([[https://chat.openai.com/share/249b2dc2-072b-4ae3-a9de-e7b681525382][source]])
+** Application: Monte Carlo Method of numerical integration
+** Application: Conway's Game of Life (see also [[https://realpython.com/conway-game-of-life-python/][realpython.com]])
 
 * Final exam: open book (2 hours) - by December 15, 11:59 pm
 
