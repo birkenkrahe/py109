@@ -1,0 +1,242 @@
+#+title: Python datastructures with examples
+#+property: header-args:python :results output :exports both :session *Python*
+#+startup: overview hideblocks indent inlineimages
+* List
+
+A list is a dynamic array that can store elements of different
+types. Lists are *ordered* and *mutable*, which means that their elements
+can be changed.
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  fruits = ["apple", "banana", "cherry"]
+  fruits.append("orange")  # Adding an element
+  print(fruits)
+#+end_src
+
+#+RESULTS:
+: ['apple', 'banana', 'cherry', 'orange']
+
+You can extract list items using the ordered indices:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  print(fruits[1]) # output: 'banana'
+  print(fruits[-1]) # output: 'orange'
+  print(fruits[-2:-1]) # output: 'cherry'
+#+end_src
+
+#+RESULTS:
+: banana
+: orange
+: ['cherry']
+
+Typical =list= problem: You have a list of temperatures in Celsius and
+need to convert each temperature to Fahrenheit.
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  celsius = [0,10,20,30]
+  print(celsius)
+  fahrenheit = [(9/5) * temp + 32 for temp in celsius]
+  print(fahrenheit)
+#+end_src
+
+#+RESULTS:
+: [0, 10, 20, 30]
+: [32.0, 50.0, 68.0, 86.0]
+
+* Tuple
+
+A tuple is similar to a list except that it is *immutable*, that is its
+elements cannot be changed (like a string):
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  dimensions = (200, 50, 100)
+  print(dimensions)
+  print(dimensions[1])
+#+end_src
+
+#+RESULTS:
+: (200, 50, 100)
+: 50
+
+Typical =tuple= problem: you need to create a function that returns
+multiple values: the result of a division operation and its remainder.
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  def div(dividend,divisor):
+      quotient = dividend // divisor  # integer division
+      remainder = dividend % divisor  # modulo operation
+      return (quotient,remainder)
+
+  result = div(10,3)
+  print(result)
+  print(f'10/3 = {result[0]} with remainder {result[1]}')
+#+end_src
+
+#+RESULTS:
+: (3, 1)
+: 10/3 = 3 with remainder 1
+
+* Set
+
+A set is an *unordered* collection of *unique* elements. They are *mutable*
+and useful for testing membership and eliminating duplicate entries:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  unique_numbers = {1,2,3,4,4,5}
+  unique_numbers.add(6)
+  print(unique_numbers)
+#+end_src
+
+#+RESULTS:
+: {1, 2, 3, 4, 5, 6}
+
+You can use a =set= if you have two lists of elements and you need to
+find the unique elements in both lists:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  list1 = [1,2,3,4,5]
+  list2 = [4,5,6,7,8]
+  unique = set(list1).intersection(set(list2))
+  print(unique)
+#+end_src
+
+#+RESULTS:
+: {4, 5}
+
+* Dictionary
+
+A =dictionary= is a collection of key-value pairs: it is *unordered*,
+*mutable* and does not allow duplicate keys.
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  person = {"name": "John", "age": 30, "city": "New York"}
+  person["age"] = 31  # Modifying a value
+  print(person)
+#+end_src
+
+#+RESULTS:
+: {'name': 'John', 'age': 31, 'city': 'New York'}
+
+A typical problem for a =dictionary= is a library that needs to keep
+track of book titles:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  books = ["Book A", "Book B", "Book A", "Book C"]
+  book_count = {}
+  for book in books:
+      book_count[book] = book_count.get(book, 0) + 1
+
+  print(book_count)
+#+end_src
+
+#+RESULTS:
+: {'Book A': 2, 'Book B': 1, 'Book C': 1}
+
+To access =dictionary= items, values and keys, you can use functions:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  print(book_count.keys())
+  print(book_count.values())
+  print(book_count.items())
+#+end_src
+
+#+RESULTS:
+: dict_keys(['Book A', 'Book B', 'Book C'])
+: dict_values([2, 1, 1])
+: dict_items([('Book A', 2), ('Book B', 1), ('Book C', 1)])
+
+* Pandas DataFrame
+
+A =DataFrame= is a data structure provided by the =pandas= library used to
+handle tabular data. It is like a 2-dimensional array with labeled
+axes (rows and columns).
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  # import pandas library
+  import pandas as pd
+
+  # define a data dictionary
+  data = {'Name': ['Tom', 'Nick', 'Julia'], 'Age': [20, 21, 19]}
+
+  # convert dictionary to DataFrame
+  df = pd.DataFrame(data)
+
+  # print DataFrame
+  print(df)
+#+end_src
+
+#+RESULTS:
+:     Name  Age
+: 0    Tom   20
+: 1   Nick   21
+: 2  Julia   19
+
+You can access the columns, rows and any subset of the =DataFrame= in different ways:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  # extract columns
+  print(df['Name']) # Output: column vector aka Series
+  print(type(df['Name'])) # Output: pandas Series
+
+  print(df[['Name','Age']])
+#+end_src
+
+#+RESULTS:
+: 0      Tom
+: 1     Nick
+: 2    Julia
+: Name: Name, dtype: object
+: <class 'pandas.core.series.Series'>
+:     Name  Age
+: 0    Tom   20
+: 1   Nick   21
+: 2  Julia   19
+
+Using =iloc= (extract column by position) and =loc= (extract row by index):
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  print(df.iloc[:,0]) # slice by position
+  print(df.loc[1:2]) # slicing by index label
+#+end_src
+
+#+RESULTS:
+: 0      Tom
+: 1     Nick
+: 2    Julia
+: Name: Name, dtype: object
+:     Name  Age
+: 1   Nick   21
+: 2  Julia   19
+
+In a =DataFrame= you can filter rows based on certain criteria:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  young_adults = df[df['Age'] < 21]
+  print(young_adults)
+#+end_src
+
+#+RESULTS:
+:     Name  Age
+: 0    Tom   20
+: 2  Julia   19
+
+* NumPy array
+
+A =numpy= array is an N-dimensional array object in the NumPy library,
+useful for fast numerical opeations, storage of numerical data and
+scientific computing:
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  import numpy as np
+
+  arr = np.array([1,2,3,4,5])
+  squared_arr = arr**2
+  print(squared_arr)
+#+end_src
+
+#+RESULTS:
+: [ 1  4  9 16 25]
+
+We used this example before to show what you can do with lists. You
+can convert Celsius to Fahrenheit without having to know anything
+about =list= comprehensions, since NumPy supports element-wise
+operations ('vectorization'):
+#+begin_src python :results output :session *Python* :exports both :noweb yes
+  import numpy as np
+
+  celsius_temperatures = np.array(celsius)
+  fahrenheit_temperatures = (9/5) * celsius_temperatures + 32  # Vectorized operation
+
+  print(celsius_temperatures)
+  print(fahrenheit_temperatures)  
+#+end_src
+
+#+RESULTS:
+: [ 0 10 20 30]
+: [32. 50. 68. 86.]
+

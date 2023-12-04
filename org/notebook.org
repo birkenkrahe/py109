@@ -1342,11 +1342,13 @@ Note: There is a whole course on =NumPy= [[https://app.datacamp.com/learn/course
     
 * Week 16 + 17 - Test 10 & Project presentations & Applications
 ** Project presentations on Dec 13 (Lou: Dec 8)
-** Review of Python datastructures ([[https://chat.openai.com/share/249b2dc2-072b-4ae3-a9de-e7b681525382][source]])
+** Review of Python datastructures ([[https://chat.openai.com/share/249b2dc2-072b-4ae3-a9de-e7b681525382][source]], [[file:8_data_structures.org][org]], [[https://app.datacamp.com/workspace/w/4bdb4827-6bbf-4311-a6b9-9394c07a07c7/edit][workbook]])
 ** Application: Monte Carlo Method of numerical integration
 ** Application: Conway's Game of Life (see also [[https://realpython.com/conway-game-of-life-python/][realpython.com]])
 
 * Final exam: open book (2 hours) - by December 15, 11:59 pm
 
-- According to the [[https://assets.speakcdn.com/assets/2433/fa23_final_exam_schedule_final.pdf][FA23 Final Exam Schedule]].
+- Final exam optional unless you want to improve your grade.
+- If you're okay with it as it is (at the end of the week) you don't
+  have to write the exam (and I won't have to create one).
 - If this is a problem for you, talk to me.
